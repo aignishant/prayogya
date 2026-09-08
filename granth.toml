@@ -1,0 +1,77 @@
+# granth.toml - this repository's identity, and the knobs the depth contract exposes.
+#
+# The master plan is the single source of truth for *what the curriculum is*: the tracks, the
+# phases and the day map all live there, between `<!-- granth:...:start -->` markers, so that a
+# human reading the plan and a script parsing it can never disagree. This file holds only what
+# the plan cannot express - where things live, and the shell commands of the local toolchain.
+
+[project]
+name         = "Prayoga"
+slug         = "prayoga"
+topic        = "40 independent agentic systems with Google ADK 2.x, MCP, Agent Skills and A2A"
+plan_version = "v3.1.0"
+driver       = "python p.py"
+
+[paths]
+plan = "docs/00_MASTER_PLAN.md"
+docs = "docs"
+days = "days"
+
+[contract]
+parts_dir   = "parts"
+sources_dir = "sources"
+
+levels = ["foundation", "working", "production"]
+
+no_walkthrough_langs = [
+  "", "text", "console", "output", "traceback", "mermaid", "diff", "json", "toml", "yaml", "ini", "csv",
+]
+
+exempt_headings = "when it breaks|check yourself|verified|verify|budget|ledger|the map|setup|files this day prints"
+
+require_failure_part = true
+require_sources      = true
+
+# The part contract is the plan's own SS5 - eight sections, of which `frontmatter` is not a
+# heading. The order is the pedagogy: claim, scene, real code, walkthrough, failure, production,
+# rep. Changing it is a plan amendment, not a preference.
+part_sections = [
+  "one-line answer",
+  "the idea",
+  "the mechanism",
+  "line by line",
+  "when it breaks",
+  "in production",
+  "check yourself",
+]
+
+
+# The hub contract is the plan's own SS4.1 - ten sections, numbered `## SS1 ...` through
+# `## SS10 ...`. The checker matches them by number, so these titles are labels for its error
+# messages and for `python p.py depth --list`.
+hub_sections = [
+  "The scene",
+  "The map",
+  "Setup - run this",
+  "Files this day prints",
+  "Build brief",
+  "The check that must be able to fail",
+  "Request budget",
+  "Traps",
+  "Verified today",
+  "Ledger & commit",
+]
+
+[contract.section_patterns]
+# `the idea` is this plan's merged story-plus-plain-language section; the checker ships no
+# pattern for a heading by that name, so the plan supplies one.
+"the idea" = "the idea"
+
+[toolchain]
+# This is the authoring repository. It ships one stdlib-only script and no package, so there is
+# nothing here to lint, format or unit-test - `check` runs the depth contract and the generated
+# documents, and that is the whole of it. Every *project* carries its own `./run check`, which is
+# where ruff and pytest live.
+lint         = ""
+format_check = ""
+test         = ""

@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python p.py status)",
+      "Bash(python p.py brief:*)",
+      "Bash(python p.py depth:*)",
+      "Bash(python p.py index:*)",
+      "Bash(python p.py check)",
+      "Bash(python p.py doctor)",
+      "Bash(python p.py parts:*)",
+      "Bash(python p.py start:*)"
+    ]
+  }
+}
