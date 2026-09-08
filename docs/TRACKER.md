@@ -10,7 +10,7 @@ only when it also has a ledger row. A thin day is visible from the parts column.
 | --- | --- | --- |
 | Days in the plan | **297** | 100% |
 | Days written | **1** | 0.3% |
-| Days complete | **0** | 0.0% |
+| Days complete | **1** | 0.3% |
 | Subtopic documents | **4** | — |
 | Source documents | **0** | — |
 
@@ -18,7 +18,7 @@ only when it also has a ledger row. A thin day is visible from the parts column.
 
 | Day | Phase | Title | Status | Parts | Sources | IDs |
 | --- | --- | --- | --- | --- | --- | --- |
-| 0 | 0 | [Day zero — the toolchain, the skeleton, and the ./p driver](../days/day-000-toolchain-skeleton-driver/LESSON.md) | written | 4 | 0 | `RB-01`, `RB-02`, `RB-03` |
+| 0 | 0 | [Day zero — the toolchain, the skeleton, and the ./p driver](../days/day-000-toolchain-skeleton-driver/LESSON.md) | complete | 4 | 0 | `RB-01`, `RB-02`, `RB-03` |
 | 1 | P00 | P00 Foundry · 1 — The machine: uv, Python 3.12, and the four Pythons th… | not started | 0 | 0 | `FN-01` |
 | 2 | P00 | P00 Foundry · 2 — The skeleton: `.gitignore` before `.env` exists, and… | not started | 0 | 0 | `FN-02` |
 | 3 | P00 | P00 Foundry · 3 — Keys, pinning, and the check that refuses a half-fini… | not started | 0 | 0 | `FN-03` |
@@ -320,7 +320,7 @@ only when it also has a ledger row. A thin day is visible from the parts column.
 
 | Phase | Days | Theme | Written | Complete | Gate |
 | --- | --- | --- | --- | --- | --- |
-| 0 | 0 | The authoring repository — the plan, the ledger… | 1/1 | 0/1 | `python p.py doctor` and `python p.py check` both green… |
+| 0 | 0 | The authoring repository — the plan, the ledger… | 1/1 | 1/1 | `python p.py doctor` and `python p.py check` both green… |
 | P00 | 1–3 | Foundry — reference only; no project depends on… | 0/3 | 0/3 | A bare machine reaches a green check, and the check ref… |
 | P01 | 4–10 | Ask Desk — the loop, tools, the ADK agent, even… | 0/7 | 0/7 | D1: `api_server` answers `/healthz`, and the first eval… |
 | P02 | 11–18 | Parts Counter — the MCP boundary, taught deeply | 0/8 | 0/8 | D2: a stateless container, secrets injected and not bak… |

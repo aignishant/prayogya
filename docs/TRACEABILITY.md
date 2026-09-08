@@ -7,13 +7,13 @@ An ID counts as **closed** only when its day has a row in `docs/PROGRESS.md` *an
 hub's frontmatter claims the ID. **An open ID from a completed phase is a bug**, not a
 backlog item.
 
-**0 of 310 closed.**
+**3 of 310 closed.**
 
 | ID | Track | Phase | Planned day | Status |
 | --- | --- | --- | --- | --- |
-| `RB-01` | Repository & authoring | 0 | 0 | [~] written day 0, not in the ledger |
-| `RB-02` | Repository & authoring | 0 | 0 | [~] written day 0, not in the ledger |
-| `RB-03` | Repository & authoring | 0 | 0 | [~] written day 0, not in the ledger |
+| `RB-01` | Repository & authoring | 0 | 0 | [x] closed day 0 |
+| `RB-02` | Repository & authoring | 0 | 0 | [x] closed day 0 |
+| `RB-03` | Repository & authoring | 0 | 0 | [x] closed day 0 |
 | `FN-01` | Foundations & the kit | P00 | 1 | [ ] open |
 | `FN-02` | Foundations & the kit | P00 | 2 | [ ] open |
 | `FN-03` | Foundations & the kit | P00 | 3 | [ ] open |
