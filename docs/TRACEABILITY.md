@@ -7,7 +7,7 @@ An ID counts as **closed** only when its day has a row in `docs/PROGRESS.md` *an
 hub's frontmatter claims the ID. **An open ID from a completed phase is a bug**, not a
 backlog item.
 
-**5 of 310 closed.**
+**6 of 310 closed.**
 
 | ID | Track | Phase | Planned day | Status |
 | --- | --- | --- | --- | --- |
@@ -16,7 +16,7 @@ backlog item.
 | `RB-03` | Repository & authoring | 0 | 0 | [x] closed day 0 |
 | `FN-01` | Foundations & the kit | P00 | 1 | [x] closed day 1 |
 | `FN-02` | Foundations & the kit | P00 | 2 | [x] closed day 2 |
-| `FN-03` | Foundations & the kit | P00 | 3 | [ ] open |
+| `FN-03` | Foundations & the kit | P00 | 3 | [x] closed day 3 |
 | `AG-01` | Agents, casts & workflows | P01 | 4 | [ ] open |
 | `TL-01` | Tools, schemas & skills | P01 | 5 | [ ] open |
 | `AG-02` | Agents, casts & workflows | P01 | 6 | [ ] open |

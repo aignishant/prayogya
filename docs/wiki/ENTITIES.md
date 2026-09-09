@@ -18,6 +18,7 @@ questions a long curriculum makes expensive to answer by reading.
 | --- | --- |
 | `FN-01` | [day 1](day-01.md) |
 | `FN-02` | [day 2](day-02.md) |
+| `FN-03` | [day 3](day-03.md) |
 | `RB-01` | [day 0](day-00.md) |
 | `RB-02` | [day 0](day-00.md) |
 | `RB-03` | [day 0](day-00.md) |

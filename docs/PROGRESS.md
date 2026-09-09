@@ -12,6 +12,7 @@ went wrong — a ledger that only records successes is a ledger nobody can learn
 | 0 | 2026-09-08 | RB-01, RB-02, RB-03 | 4 | <hash> | yes |
 | 1 | 2026-09-08 | FN-01 | 4 | <hash> | yes |
 | 2 | 2026-09-09 | FN-02 | 4 | <hash> | yes |
+| 3 | 2026-09-09 | FN-03 | 4 | <hash> | yes |
 
 
 > **Note on day 0.** Every check, build rep and deliberate break in `CHECKLIST.md` was run and its
@@ -33,3 +34,29 @@ went wrong — a ledger that only records successes is a ledger nobody can learn
 > `uv run` disagreement — and the observations are dated in that hub's §9. The *learner's* reps in
 > §5 and the four *Say out loud* questions were not separately witnessed here. The same caveat as
 > day 0 therefore applies to this row, and it is recorded rather than smoothed over.
+
+> **Note on day 2.** The row above was appended when the day was written, and its 27
+> `CHECKLIST.md` boxes stayed unticked afterwards. On 2026-09-09, before day 3 was written, the
+> learner confirmed the day was done and instructed that the boxes be ticked; they were ticked on
+> that instruction rather than observed one by one. What that means precisely: the day-2
+> document's own transcripts were run and observed when it was written — the two `.gitignore`
+> writes, `git check-ignore -v` from both the project and the repository root, the `-v` against
+> plain exit-status disagreement, the `git add .env` refusal and the silent `-f` override, the
+> negation moved above `.env.*`, the appended `!.env` overruling the root file, the staged
+> `service-account.json` that `check-ignore` would not report, `--no-index` naming line 10,
+> `git rm --cached`, and the `fatal: pathspec` exit `128` — and all of them are dated in that
+> hub's §9. The *learner's* reps in §5 and the four *Say out loud* questions were not separately
+> witnessed here. The same caveat as days 0 and 1 therefore applies to this row.
+
+> **Note on day 3.** Every transcript in this day's documents was run on this machine on
+> 2026-09-09 and its real output pasted: the `os.environ` / `.env` disagreement and the shell
+> override, the default-argument bug that made the first draft of part 1.2 print three identical
+> rows, the three-state probe, the unstripped-quote failure, the `if not os.environ.get(...)`
+> misreport, the live `400 INVALID_ARGUMENT` from the Gemini endpoint with the synthetic key, the
+> two floors resolving to 3.12.12 and 4.11.8, `uv python pin`, `uv add` with an exact specifier,
+> `uv lock --check` refusing a stale lock, the four-green check at exit `0`, the `sys.exit`
+> removal printing `1 problem(s)` at exit `0`, the `uv run` lockfile rewrite against `--frozen`,
+> and the Windows `Access is denied` from `uv sync` inside `uv run`. The learner's `TODO(me)` reps
+> in §5 and the four *Say out loud* questions were not performed; this row was appended when the
+> day was written, as days 1 and 2 were, and its `CHECKLIST.md` boxes are unticked at the time of
+> writing.

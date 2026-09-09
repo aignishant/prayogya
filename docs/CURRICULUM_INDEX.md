@@ -22,7 +22,7 @@ bug.
 | --- | --- | --- |
 | `FN-01` | [1](../days/00-foundry/day-01-machine-four-pythons/LESSON.md) | P00 Foundry · 1 — The machine: uv, Python 3.12, and the four Pythons that ruin a Monday |
 | `FN-02` | [2](../days/00-foundry/day-02-skeleton-gitignore-before-env/LESSON.md) | P00 Foundry · 2 — The skeleton: `.gitignore` before `.env` exists, and why that order |
-| `FN-03` | [3](../days/00-foundry/day-03/LESSON.md) | P00 Foundry · 3 — Keys, pinning, and the check that refuses a half-finished day |
+| `FN-03` | [3](../days/00-foundry/day-03-keys-pinning-refusing-check/LESSON.md) | P00 Foundry · 3 — Keys, pinning, and the check that refuses a half-finished day |
 | `FN-04` | [11](../days/02-parts-counter/day-11/LESSON.md) | P02 Parts Counter · 1 — The kit: this project's own utils, in full |
 | `FN-05` | [19](../days/03-triage-room/day-19/LESSON.md) | P03 Triage Room · 1 — The kit |
 | `FN-06` | [27](../days/04-trip-ledger/day-27/LESSON.md) | P04 Trip Ledger · 1 — The kit |

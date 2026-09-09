@@ -11,7 +11,7 @@ dependencies = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "platformdirs", specifier = ">=4.11.8" }]
+requires-dist = [{ name = "platformdirs", specifier = "==4.11.8" }]
 
 [[package]]
 name = "platformdirs"

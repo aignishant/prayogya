@@ -11,3 +11,4 @@ it. Cross-day lookups live in `wiki/ENTITIES.md`.
 | [00](wiki/day-00.md) | Day zero — the toolchain, the skeleton, and the ./p driver | RB-01, RB-02, RB-03 | 4 | — |
 | [01](wiki/day-01.md) | P00 Foundry · 1 — The machine: uv, Python 3.12, and the four Pythons that ruin a Mo… | FN-01 | 4 | — |
 | [02](wiki/day-02.md) | P00 Foundry · 2 — The skeleton: `.gitignore` before `.env` exists, and why that ord… | FN-02 | 4 | — |
+| [03](wiki/day-03.md) | P00 Foundry · 3 — Keys, pinning, and the check that refuses a half-finished day | FN-03 | 4 | — |
