@@ -45,3 +45,44 @@ Anything structural also gets an ADR in `docs/adr/`, and the entry here links it
   under `days/` is one level deeper, so a link from one project's day into another's needs one
   more `../`, and nothing checks relative links. Three days moved; one link was fixed by hand. See
   `docs/adr/ADR-0003-days-grouped-by-project.md`.
+
+- 2026-09-09 — **v3.1.0, P01 hand-rolls `generateContent`; the Interactions API is named, not
+  taught.** *What moved:* the provider's guides. The quickstart and function-calling pages now
+  teach a stateful Interactions API at `POST /v1beta/interactions`; the migration page says
+  `generateContent` "remains fully supported" but is no longer recommended for new development.
+  Checked live 2026-09-09. *What the plan now says:* section 12's P01 map is unchanged — days 4 and
+  5 hand-roll the stateless endpoint, because that is the version in which think → act → observe is
+  the learner's own loop rather than server-side state. Both days say so in their own text, with the
+  dated quotation. *What it costs:* P01 teaches an endpoint the provider does not recommend for new
+  work, and the Interactions API now has no home in the curriculum — a further amendment owes it
+  one. See `docs/adr/ADR-0004-generatecontent-by-hand-and-unpublished-limits.md`.
+
+- 2026-09-09 — **v3.1.0, hub section 7 states the count and refuses to state the limit.** *What
+  moved:* the free-tier RPM/TPM/RPD table has been removed from the provider's rate-limit page,
+  which now says limits "can be viewed in Google AI Studio" and that "specified rate limits are not
+  guaranteed". Checked live 2026-09-09; the pricing page publishes no numbers either. *What the
+  plan now says:* section 4.1's hub section 7 keeps the per-turn request count across the whole
+  cast, which is a fact about our own code and stays mandatory, and replaces the provider limit with
+  a `TODO(me)` naming where to read it. *What it costs:* no hub can state a quota ceiling, so
+  "will this fit in the free tier" stops being answerable from the document. What it buys is that no
+  hub prints a number nobody can verify.
+
+- 2026-09-09 — **v3.1.0, section 9: `GOOGLE_GENAI_USE_VERTEXAI=FALSE` removed.** *What moved:* the
+  variable does not appear on the framework's current Gemini model page, checked 2026-09-09. The
+  documented AI Studio path is `GOOGLE_API_KEY` alone; the enterprise path uses
+  `GOOGLE_CLOUD_PROJECT`, `GOOGLE_CLOUD_LOCATION` and `GOOGLE_GENAI_USE_ENTERPRISE=True`. That the
+  old and new flags are aliases is claimed only in discussion threads and on no documentation page.
+  *What the plan now says:* the AI Studio path is configured by `GOOGLE_API_KEY` alone, and no day
+  writes `GOOGLE_GENAI_USE_VERTEXAI` anywhere until a page says what it does. *What it costs:*
+  nothing observed; the flag was never exercised, since day 0 through day 3 make no model calls.
+
+- 2026-09-09 — **v3.1.0, section 9: the default-model claim corrected, and the rule kept.** *What
+  moved:* the plan said ADK 2.x's default is "a preview model". It is not. The framework's API
+  reference documents `DEFAULT_MODEL : ClassVar[str] = 'gemini-3.5-flash'`, confirmed by
+  constructing an agent under google-adk 2.8.0 on this machine on 2026-09-09, and the provider's
+  models page lists that ID as **Stable** while describing it as "our legacy Flash model" — four
+  generations behind `gemini-3.8-flash`. *What the plan now says:* every agent still pins its model
+  explicitly, and the reason is stated accurately: an unpinned agent silently gets the oldest
+  supported model, not a preview one. P01 pins `gemini-3.8-flash`; no `-latest` alias is used
+  anywhere, since the models page documents those as hot-swapped on every release. *What it costs:*
+  nothing. The rule is unchanged and now has a citation instead of an assertion behind it.

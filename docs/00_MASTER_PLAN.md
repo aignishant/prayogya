@@ -7,7 +7,7 @@ ids: 310
 days: 297
 phases: 42
 doc_architecture: "hub + parts/ (see §4 and §5)"
-amended: "2026-09-08"
+amended: "2026-09-09"
 ---
 
 | plan | prayoga |
@@ -426,11 +426,21 @@ deliverable, marked 🅿️.
 
 ## §9 · Model & budget policy — $0, by construction
 
-- **Gemini Flash-class** on a free AI Studio key, `GOOGLE_GENAI_USE_VERTEXAI=FALSE`, is the primary brain.
+- **Gemini Flash-class** on a free AI Studio key is the primary brain. The AI Studio path is
+  configured by `GOOGLE_API_KEY` alone; no day writes `GOOGLE_GENAI_USE_VERTEXAI`, which is absent
+  from the framework's current documentation (amended 2026-09-09, ADR-0004).
 - **Groq** is the speed lane; **OpenRouter models ending in `:free`** are the breadth lane (the suffix is linted per project); **Ollama** is the offline baseline.
-- **Every agent pins its model explicitly.** ADK 2.x's default is a preview model. With three agents that is three silent bugs.
+- **Every agent pins its model explicitly**, as an exact ID and never a `-latest` alias, which the
+  provider documents as hot-swapped on every release. ADK 2.x's built-in default is
+  `gemini-3.5-flash` — Stable, and the provider's own "legacy Flash model", four generations behind
+  the current one. An unpinned agent is therefore silently stale rather than silently experimental,
+  and with three agents that is three silent bugs (corrected 2026-09-09, ADR-0004).
 - **Each project pins independently.** Its `PACKAGES.md` records package, version, the date verified, and the day. Two projects may legitimately sit on different pins; that is what independence means, and the freshness check (§10) is where the newer one wins.
-- **Multi-agent multiplies quota.** A three-agent turn is at least three requests; a writer↔critic loop is unbounded until you bound it. Every hub's §7 states the per-turn count.
+- **Multi-agent multiplies quota.** A three-agent turn is at least three requests; a writer↔critic
+  loop is unbounded until you bound it. Every hub's §7 states the per-turn count **across the whole
+  cast**. It does not state the provider's RPM/TPM/RPD: those were withdrawn from publication and
+  the rate-limit page now directs you to Google AI Studio, so the ceiling is a `TODO(me)` naming
+  where to read it rather than a number no one can verify (amended 2026-09-09, ADR-0004).
 - **Every call path handles HTTP 429 honestly:** `Retry-After`, back off, escalate. Never fabricate a result to cover an error.
 - **All data is synthetic, always.**
 
