@@ -5,6 +5,10 @@
     python run.py plan "..."     print the request a question would send, and send nothing
     python run.py ask "..."      ask the desk one question, hand-rolled (needs a working key)
     python run.py adk "..."      the same question through the ADK agent (needs a working key)
+    python run.py events [--stream]   every event one question produces, against a scripted model
+    python run.py session             two questions in one session, and what the second one sees
+    python run.py eval                the evalset; exits non-zero when a case fails
+    python run.py serve               the D1 API on :8080
 """
 
 from __future__ import annotations
@@ -15,6 +19,8 @@ import subprocess
 import sys
 import tomllib
 from pathlib import Path
+
+from google.adk.sessions import InMemorySessionService
 
 from ask_desk import loop, provider
 from ask_desk.util import keys, models
@@ -74,12 +80,26 @@ def check_model_is_registered() -> list[str]:
     return []
 
 
+def check_evals_go_green() -> list[str]:
+    """The evalset must pass, and it runs against a scripted model so it can say that honestly.
+
+    This is what makes `check` a gate rather than a config linter: it is the only check here whose
+    subject is the desk's behaviour. It needs no key and contacts nothing.
+    """
+    import evals
+
+    if evals.main() != 0:
+        return ["the evalset has a failing case — see the output above"]
+    return []
+
+
 CHECKS = {
     "keys": check_keys,
     "interpreter": check_interpreter,
     "pins": check_pins_are_pins,
     "lock": check_lock_is_obeyed,
     "model": check_model_is_registered,
+    "evals": check_evals_go_green,
 }
 
 
@@ -128,6 +148,105 @@ def adk(question: str) -> int:
     return 0
 
 
+def events(stream: bool) -> int:
+    """Print every event one question produces, against a scripted model. No key, no network."""
+    import asyncio
+
+    from google.genai import types
+
+    from ask_desk import agent, scripted
+
+    async def go() -> None:
+        model = scripted.ScriptedModel(scripted.LOOKS_IT_UP, name="looks-it-up")
+        desk = agent.build_desk(model)
+        sessions = InMemorySessionService()
+        await sessions.create_session(app_name=agent.APP_NAME, user_id="u", session_id="s")
+        runner = agent.build_runner(sessions, desk)
+        message = types.Content(role="user", parts=[types.Part(text="Is the VPN down?")])
+        n = 0
+        async for event in runner.run_async(
+            user_id="u", session_id="s", new_message=message,
+            run_config=agent.run_config(stream=stream),
+        ):
+            n += 1
+            calls = [c.name for c in event.get_function_calls()]
+            responses = [r.name for r in event.get_function_responses()]
+            text = ""
+            if event.content and event.content.parts:
+                text = "".join(p.text for p in event.content.parts if p.text)
+            if calls:
+                kind = "call:" + ",".join(calls)
+            elif responses:
+                kind = "result:" + ",".join(responses)
+            else:
+                kind = "text"
+            print(f"{n:3}. partial={str(event.partial):5} "
+                  f"final={str(event.is_final_response()):5} {kind:34} {text[:48]!r}")
+        print()
+        print(f"{n} events, {model.calls} model call(s)")
+
+    asyncio.run(go())
+    return 0
+
+
+def session() -> int:
+    """Two questions down one session, and the same two down two sessions. No key, no network."""
+    import asyncio
+
+    from google.genai import types
+
+    from ask_desk import agent, scripted
+
+    async def turns(session_ids: list[str], label: str) -> None:
+        sessions = InMemorySessionService()
+        model = scripted.ScriptedModel(
+            scripted.LOOKS_IT_UP + scripted.LOOKS_IT_UP, name="looks-it-up")
+        desk = agent.build_desk(model)
+        runner = agent.build_runner(sessions, desk)
+        print(f"--- {label} ---")
+        for i, sid in enumerate(session_ids, start=1):
+            # `create_session` raises AlreadyExistsError on a second call with the same id, so a
+            # session is created once and then reused. That refusal is the right one: silently
+            # returning the existing session would hide a caller who thought they were starting
+            # fresh and was not.
+            if await sessions.get_session(
+                    app_name=agent.APP_NAME, user_id="u", session_id=sid) is None:
+                await sessions.create_session(
+                    app_name=agent.APP_NAME, user_id="u", session_id=sid)
+            message = types.Content(
+                role="user", parts=[types.Part(text=f"question {i}")])
+            async for _ in runner.run_async(
+                user_id="u", session_id=sid, new_message=message,
+                run_config=agent.run_config(),
+            ):
+                pass
+            stored = await sessions.get_session(
+                app_name=agent.APP_NAME, user_id="u", session_id=sid)
+            print(f"  after question {i}: session {sid!r} holds {len(stored.events)} event(s)")
+
+    asyncio.run(turns(["s-1", "s-1"], "one session, two questions"))
+    print()
+    asyncio.run(turns(["s-1", "s-2"], "two sessions, one question each"))
+    return 0
+
+
+def evaluate() -> int:
+    """Run the evalset. Non-zero exit when a case fails — that is the whole point of it."""
+    import evals
+
+    return evals.main()
+
+
+def serve() -> int:
+    """The D1 surface: the agent behind HTTP, with a health endpoint that means something."""
+    import uvicorn
+
+    from ask_desk import api
+
+    uvicorn.run(api.app, host="127.0.0.1", port=8080, log_level="warning")
+    return 0
+
+
 def main(argv: list[str]) -> int:
     match argv[1:]:
         case ["check"]:
@@ -138,6 +257,16 @@ def main(argv: list[str]) -> int:
             return ask(question)
         case ["adk", question]:
             return adk(question)
+        case ["events"]:
+            return events(stream=False)
+        case ["events", "--stream"]:
+            return events(stream=True)
+        case ["session"]:
+            return session()
+        case ["eval"]:
+            return evaluate()
+        case ["serve"]:
+            return serve()
         case _:
             print(__doc__, file=sys.stderr)
             return 2

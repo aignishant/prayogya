@@ -1,0 +1,29 @@
+{
+  "_comment": "Synthetic evalset for P01 Ask Desk. Every case names the scripted behaviour it runs against, so a red result means this project's code changed and never that a model had an off day.",
+  "cases": [
+    {
+      "name": "grounded-status-question",
+      "question": "Is the VPN down?",
+      "script": "looks_it_up",
+      "expects_tools": [
+        "check_service_status"
+      ],
+      "expects_text": [
+        "degraded"
+      ],
+      "forbids_text": []
+    },
+    {
+      "name": "ungrounded-answer-is-caught",
+      "question": "Is the VPN down?",
+      "script": "guesses",
+      "expects_tools": [
+        "check_service_status"
+      ],
+      "expects_text": [],
+      "forbids_text": [],
+      "expect_fail": true,
+      "_comment": "Inverted: the scripted model answers without looking anything up. This case passes when the grounding assertion CATCHES it, and goes red if the assertion ever stops objecting."
+    }
+  ]
+}

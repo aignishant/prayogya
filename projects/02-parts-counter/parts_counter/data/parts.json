@@ -1,0 +1,53 @@
+{
+  "_comment": "Synthetic parts inventory for P02. No real supplier, part number or price.",
+  "parts": [
+    {
+      "part_no": "BRK-0142",
+      "name": "Brake pad set, front",
+      "bin": "A-12-3",
+      "on_hand": 18,
+      "reorder_at": 6,
+      "unit": "set"
+    },
+    {
+      "part_no": "BRK-0143",
+      "name": "Brake pad set, rear",
+      "bin": "A-12-4",
+      "on_hand": 4,
+      "reorder_at": 6,
+      "unit": "set"
+    },
+    {
+      "part_no": "FLT-0071",
+      "name": "Oil filter, spin-on",
+      "bin": "B-03-1",
+      "on_hand": 96,
+      "reorder_at": 24,
+      "unit": "each"
+    },
+    {
+      "part_no": "FLT-0072",
+      "name": "Air filter, panel",
+      "bin": "B-03-2",
+      "on_hand": 12,
+      "reorder_at": 10,
+      "unit": "each"
+    },
+    {
+      "part_no": "BLT-0310",
+      "name": "Timing belt kit",
+      "bin": "C-07-2",
+      "on_hand": 0,
+      "reorder_at": 2,
+      "unit": "kit"
+    },
+    {
+      "part_no": "SPK-0055",
+      "name": "Spark plug, iridium",
+      "bin": "B-11-5",
+      "on_hand": 240,
+      "reorder_at": 48,
+      "unit": "each"
+    }
+  ]
+}
