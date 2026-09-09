@@ -21,3 +21,8 @@ it. Cross-day lookups live in `wiki/ENTITIES.md`.
 | [10](wiki/day-10.md) | P01 Ask Desk · 7 — Ship D1: `api_server`, `/healthz`, the first eval that can go re… | DP-01, EV-01 | 5 | — |
 | [11](wiki/day-11.md) | P02 Parts Counter · 1 — The kit: this project's own utils, in full | FN-04 | 4 | — |
 | [12](wiki/day-12.md) | P02 Parts Counter · 2 — Why the data goes behind a boundary, and what breaks when i… | MC-01 | 4 | — |
+| [13](wiki/day-13.md) | <the day's subject as a phrase — this is where the folder slug comes from> | XX-00, XX-01 | 1 | — |
+| [14](wiki/day-14.md) | <the day's subject as a phrase — this is where the folder slug comes from> | XX-00, XX-01 | 1 | — |
+| [15](wiki/day-15.md) | <the day's subject as a phrase — this is where the folder slug comes from> | XX-00, XX-01 | 1 | — |
+| [16](wiki/day-16.md) | <the day's subject as a phrase — this is where the folder slug comes from> | XX-00, XX-01 | 1 | — |
+| [17](wiki/day-17.md) | <the day's subject as a phrase — this is where the folder slug comes from> | XX-00, XX-01 | 1 | — |

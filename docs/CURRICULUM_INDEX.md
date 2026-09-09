@@ -135,11 +135,11 @@ bug.
 | ID | Day | Day title |
 | --- | --- | --- |
 | `MC-01` | [12](../days/02-parts-counter/day-12-why-data-behind-boundary/LESSON.md) | P02 Parts Counter · 2 — Why the data goes behind a boundary, and what breaks when it does not |
-| `MC-02` | [13](../days/02-parts-counter/day-13/LESSON.md) | P02 Parts Counter · 3 — MCP 2026: the stateless core, and the phone-call to web reframe |
-| `MC-03` | [14](../days/02-parts-counter/day-14/LESSON.md) | P02 Parts Counter · 4 — The server skeleton and its first tool |
-| `MC-04` | [15](../days/02-parts-counter/day-15/LESSON.md) | P02 Parts Counter · 5 — Lifecycle, stateless-first: the old handshake as history |
-| `MC-05` | [16](../days/02-parts-counter/day-16/LESSON.md) | P02 Parts Counter · 6 — Transports: stdio and Streamable HTTP |
-| `MC-06` | [17](../days/02-parts-counter/day-17/LESSON.md) | P02 Parts Counter · 7 — The client side: connecting the agent to a tool that now lives elsewhere |
+| `MC-02` | [13](../days/02-parts-counter/day-13-mcp-stateless-core/LESSON.md) | P02 Parts Counter · 3 — MCP 2026: the stateless core, and the phone-call to web reframe |
+| `MC-03` | [14](../days/02-parts-counter/day-14-server-skeleton-first-tool/LESSON.md) | P02 Parts Counter · 4 — The server skeleton and its first tool |
+| `MC-04` | [15](../days/02-parts-counter/day-15-lifecycle-handshake-history/LESSON.md) | P02 Parts Counter · 5 — Lifecycle, stateless-first: the old handshake as history |
+| `MC-05` | [16](../days/02-parts-counter/day-16-transports-stdio-http/LESSON.md) | P02 Parts Counter · 6 — Transports: stdio and Streamable HTTP |
+| `MC-06` | [17](../days/02-parts-counter/day-17-client-side/LESSON.md) | P02 Parts Counter · 7 — The client side: connecting the agent to a tool that now lives elsewhere |
 | `MC-07` | [20](../days/03-triage-room/day-20/LESSON.md) | P03 Triage Room · 2 — The boundary: `desk_mcp`, printed whole |
 | `MC-08` | [28](../days/04-trip-ledger/day-28/LESSON.md) | P04 Trip Ledger · 2 — The boundary: `desk_mcp` and the meter |
 | `MC-09` | [35](../days/05-bench-runner/day-35/LESSON.md) | P05 Bench Runner · 2 — The boundary: `bench_mcp`, fixtures behind it |

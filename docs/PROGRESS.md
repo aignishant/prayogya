@@ -143,3 +143,15 @@ went wrong — a ledger that only records successes is a ledger nobody can learn
 >
 > As with every day so far, these rows were appended when the days were written and their
 > `CHECKLIST.md` boxes are unticked at the time of writing.
+
+> **Note on ticking days 8 to 12.** On 2026-09-10, under the standing policy the learner set on
+> 2026-09-09, the 168 boxes across those five checklists were ticked on instruction rather than
+> observed one by one. The distinction those earlier notes draw still holds: **the documents' own
+> transcripts were run and observed** when the days were written and are dated in each hub's §9;
+> the learner's `TODO(me)` reps and *Say out loud* questions were not separately witnessed.
+>
+> Days 8 to 12 are unusual in how little of that caveat bites, and it is worth saying why. Those
+> days introduced `ask_desk/scripted.py`, a stand-in model, so almost everything they teach runs
+> with no key and reproduces exactly — the event stream, the streaming duplication, the bound
+> firing, the error propagating, the evalset going red. The part still owed is unchanged and small:
+> what a **real model** does. That remains `TODO(me)` in 84 places across days 4 to 12.

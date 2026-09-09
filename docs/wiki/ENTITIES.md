@@ -33,3 +33,13 @@ questions a long curriculum makes expensive to answer by reading.
 | `RS-01` | [day 9](day-09.md) |
 | `TL-01` | [day 5](day-05.md) |
 | `TL-02` | [day 7](day-07.md) |
+| `XX-00` | [day 13](day-13.md) |
+| `XX-00` | [day 14](day-14.md) |
+| `XX-00` | [day 15](day-15.md) |
+| `XX-00` | [day 16](day-16.md) |
+| `XX-00` | [day 17](day-17.md) |
+| `XX-01` | [day 13](day-13.md) |
+| `XX-01` | [day 14](day-14.md) |
+| `XX-01` | [day 15](day-15.md) |
+| `XX-01` | [day 16](day-16.md) |
+| `XX-01` | [day 17](day-17.md) |
