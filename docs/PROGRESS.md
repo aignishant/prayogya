@@ -11,6 +11,7 @@ went wrong — a ledger that only records successes is a ledger nobody can learn
 | --- | ---- | ---------- | ----- | ------ | ------------ |
 | 0 | 2026-09-08 | RB-01, RB-02, RB-03 | 4 | <hash> | yes |
 | 1 | 2026-09-08 | FN-01 | 4 | <hash> | yes |
+| 2 | 2026-09-09 | FN-02 | 4 | <hash> | yes |
 
 
 > **Note on day 0.** Every check, build rep and deliberate break in `CHECKLIST.md` was run and its
@@ -21,3 +22,14 @@ went wrong — a ledger that only records successes is a ledger nobody can learn
 > the parts' `Check yourself` sections were **not** performed by the learner; the boxes asserting
 > them were ticked on the learner's instruction. The commit hash column reads `<hash>` because
 > `done` requires this row before the commit it would name exists.
+
+> **Note on day 1.** The row above was appended when the day was written, and its 23 `CHECKLIST.md`
+> boxes stayed unticked afterwards. On 2026-09-09, before day 2 was written, the learner confirmed
+> the day was done and instructed that the boxes be ticked; they were ticked on that instruction
+> rather than observed one by one. What that means precisely: the day-1 document's own transcripts
+> were run and observed when it was written — `uv python list`, `where python`, `uv python find`,
+> `uv init --bare`, `uv sync`, `uv add platformdirs`, the `uv run --python 3.11` refusal, the
+> `requires-python = ">=3.99"` sync error, the removed `pyvenv.cfg`, and the `python` against
+> `uv run` disagreement — and the observations are dated in that hub's §9. The *learner's* reps in
+> §5 and the four *Say out loud* questions were not separately witnessed here. The same caveat as
+> day 0 therefore applies to this row, and it is recorded rather than smoothed over.

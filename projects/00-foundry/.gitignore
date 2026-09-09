@@ -1,0 +1,15 @@
+# projects/00-foundry/.gitignore
+# The rule comes first. This file exists before any file it names does.
+
+# Secrets. Never committed — not once, not "just to test the pipeline".
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+service-account.json
+
+# Written by uv from uv.lock. Rebuildable, so never committed and never copied.
+.venv/
+__pycache__/
+*.pyc
