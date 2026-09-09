@@ -106,7 +106,7 @@ And the standing rules of the format:
 The full contract is plan §5 and §4.1. This is the shape only.
 
 ```text
-days/day-NN-<day-slug>/
+days/<NN-project-slug>/day-NN-<day-slug>/      phase 0 lives in days/_authoring/
 ├── LESSON.md      hub: scene · map · setup · files printed · brief · check · budget · ledger
 ├── CHECKLIST.md   definition of done; `python p.py done N` refuses until ticked
 ├── parts/         THE TEACHING — one document per subtopic
@@ -117,6 +117,8 @@ days/day-NN-<day-slug>/
 The rules broken most often, and therefore worth repeating:
 
 - **`parts/` is mandatory.** A day without it is not written.
+- **A day goes in its project's folder** — `days/00-foundry/`, `days/01-ask-desk/`, one per
+  phase of §16, named the way `projects/<NN-name>/` is. `python p.py new N` picks it for you.
 - **The hub never teaches.** No `**Line by line:**` in `LESSON.md`.
 - **`The idea` carries no jargon in its first paragraph**, and its scene must be one the reader
   has plausibly lived. **One metaphor family per day** — grep the day's other parts first.

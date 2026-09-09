@@ -11,358 +11,358 @@ bug.
 
 | ID | Day | Day title |
 | --- | --- | --- |
-| `RB-01` | [0](../days/day-000-toolchain-skeleton-driver/LESSON.md) | Day zero — the toolchain, the skeleton, and the `./p` driver |
-| `RB-02` | [0](../days/day-000-toolchain-skeleton-driver/LESSON.md) | Day zero — the toolchain, the skeleton, and the `./p` driver |
-| `RB-03` | [0](../days/day-000-toolchain-skeleton-driver/LESSON.md) | Day zero — the toolchain, the skeleton, and the `./p` driver |
-| `RB-04` | [296](../days/day-296/LESSON.md) | P40 The Desk · 11 — Repository public; the demo script; the interview drill over every ADR |
+| `RB-01` | [0](../days/_authoring/day-000-toolchain-skeleton-driver/LESSON.md) | Day zero — the toolchain, the skeleton, and the `./p` driver |
+| `RB-02` | [0](../days/_authoring/day-000-toolchain-skeleton-driver/LESSON.md) | Day zero — the toolchain, the skeleton, and the `./p` driver |
+| `RB-03` | [0](../days/_authoring/day-000-toolchain-skeleton-driver/LESSON.md) | Day zero — the toolchain, the skeleton, and the `./p` driver |
+| `RB-04` | [296](../days/40-desk/day-296/LESSON.md) | P40 The Desk · 11 — Repository public; the demo script; the interview drill over every ADR |
 
 ## Foundations & the kit (`FN-`) — 42 IDs
 
 | ID | Day | Day title |
 | --- | --- | --- |
-| `FN-01` | [1](../days/day-01-machine-four-pythons/LESSON.md) | P00 Foundry · 1 — The machine: uv, Python 3.12, and the four Pythons that ruin a Monday |
-| `FN-02` | [2](../days/day-02-skeleton-gitignore-before-env/LESSON.md) | P00 Foundry · 2 — The skeleton: `.gitignore` before `.env` exists, and why that order |
-| `FN-03` | [3](../days/day-03/LESSON.md) | P00 Foundry · 3 — Keys, pinning, and the check that refuses a half-finished day |
-| `FN-04` | [11](../days/day-11/LESSON.md) | P02 Parts Counter · 1 — The kit: this project's own utils, in full |
-| `FN-05` | [19](../days/day-19/LESSON.md) | P03 Triage Room · 1 — The kit |
-| `FN-06` | [27](../days/day-27/LESSON.md) | P04 Trip Ledger · 1 — The kit |
-| `FN-07` | [34](../days/day-34/LESSON.md) | P05 Bench Runner · 1 — The kit |
-| `FN-08` | [41](../days/day-41/LESSON.md) | P06 Field Inspector · 1 — The kit |
-| `FN-09` | [48](../days/day-48/LESSON.md) | P07 Form Filler · 1 — The kit |
-| `FN-10` | [55](../days/day-55/LESSON.md) | P08 Shop Floor · 1 — The kit |
-| `FN-11` | [63](../days/day-63/LESSON.md) | P09 Long Haul · 1 — The kit |
-| `FN-12` | [71](../days/day-71/LESSON.md) | P10 Gatekeeper · 1 — The kit |
-| `FN-13` | [78](../days/day-78/LESSON.md) | P11 Skill Forge · 1 — The kit |
-| `FN-14` | [86](../days/day-86/LESSON.md) | P12 Skill Auditor · 1 — The kit |
-| `FN-15` | [93](../days/day-93/LESSON.md) | P13 Server Farm · 1 — The kit |
-| `FN-16` | [101](../days/day-101/LESSON.md) | P14 Peer Desk · 1 — The kit |
-| `FN-17` | [108](../days/day-108/LESSON.md) | P15 Audit Room · 1 — The kit |
-| `FN-18` | [115](../days/day-115/LESSON.md) | P16 Recall Desk · 1 — The kit |
-| `FN-19` | [122](../days/day-122/LESSON.md) | P17 Forget Me · 1 — The kit |
-| `FN-20` | [128](../days/day-128/LESSON.md) | P18 Archive Finder · 1 — The kit |
-| `FN-21` | [137](../days/day-137/LESSON.md) | P19 Second Opinion · 1 — The kit |
-| `FN-22` | [144](../days/day-144/LESSON.md) | P20 Cache Keeper · 1 — The kit |
-| `FN-23` | [150](../days/day-150/LESSON.md) | P21 Graph Runner · 1 — The kit |
-| `FN-24` | [158](../days/day-158/LESSON.md) | P22 Writer & Critic · 1 — The kit |
-| `FN-25` | [165](../days/day-165/LESSON.md) | P23 Dispatch Yard · 1 — The kit |
-| `FN-26` | [172](../days/day-172/LESSON.md) | P24 Plan Room · 1 — The kit |
-| `FN-27` | [180](../days/day-180/LESSON.md) | P25 Swarm Limits · 1 — The kit |
-| `FN-28` | [187](../days/day-187/LESSON.md) | P26 Never Lose Work · 1 — The kit |
-| `FN-29` | [195](../days/day-195/LESSON.md) | P27 Approval Gate · 1 — The kit |
-| `FN-30` | [202](../days/day-202/LESSON.md) | P28 Injection Range · 1 — The kit |
-| `FN-31` | [211](../days/day-211/LESSON.md) | P29 Least Privilege · 1 — The kit |
-| `FN-32` | [217](../days/day-217/LESSON.md) | P30 Sandbox Yard · 1 — The kit |
-| `FN-33` | [224](../days/day-224/LESSON.md) | P31 Quota Router · 1 — The kit |
-| `FN-34` | [230](../days/day-230/LESSON.md) | P32 Night Shift · 1 — The kit |
-| `FN-35` | [236](../days/day-236/LESSON.md) | P33 Watch Tower · 1 — The kit |
-| `FN-36` | [242](../days/day-242/LESSON.md) | P34 Voice Standup · 1 — The kit |
-| `FN-37` | [250](../days/day-250/LESSON.md) | P35 Eval Bench · 1 — The kit |
-| `FN-38` | [258](../days/day-258/LESSON.md) | P36 Regression Gate · 1 — The kit |
-| `FN-39` | [265](../days/day-265/LESSON.md) | P37 Glass Box · 1 — The kit |
-| `FN-40` | [272](../days/day-272/LESSON.md) | P38 Blue Green · 1 — The kit |
-| `FN-41` | [279](../days/day-279/LESSON.md) | P39 Peer Network · 1 — The kit |
-| `FN-42` | [286](../days/day-286/LESSON.md) | P40 The Desk · 1 — The kit |
+| `FN-01` | [1](../days/00-foundry/day-01-machine-four-pythons/LESSON.md) | P00 Foundry · 1 — The machine: uv, Python 3.12, and the four Pythons that ruin a Monday |
+| `FN-02` | [2](../days/00-foundry/day-02-skeleton-gitignore-before-env/LESSON.md) | P00 Foundry · 2 — The skeleton: `.gitignore` before `.env` exists, and why that order |
+| `FN-03` | [3](../days/00-foundry/day-03/LESSON.md) | P00 Foundry · 3 — Keys, pinning, and the check that refuses a half-finished day |
+| `FN-04` | [11](../days/02-parts-counter/day-11/LESSON.md) | P02 Parts Counter · 1 — The kit: this project's own utils, in full |
+| `FN-05` | [19](../days/03-triage-room/day-19/LESSON.md) | P03 Triage Room · 1 — The kit |
+| `FN-06` | [27](../days/04-trip-ledger/day-27/LESSON.md) | P04 Trip Ledger · 1 — The kit |
+| `FN-07` | [34](../days/05-bench-runner/day-34/LESSON.md) | P05 Bench Runner · 1 — The kit |
+| `FN-08` | [41](../days/06-field-inspector/day-41/LESSON.md) | P06 Field Inspector · 1 — The kit |
+| `FN-09` | [48](../days/07-form-filler/day-48/LESSON.md) | P07 Form Filler · 1 — The kit |
+| `FN-10` | [55](../days/08-shop-floor/day-55/LESSON.md) | P08 Shop Floor · 1 — The kit |
+| `FN-11` | [63](../days/09-long-haul/day-63/LESSON.md) | P09 Long Haul · 1 — The kit |
+| `FN-12` | [71](../days/10-gatekeeper/day-71/LESSON.md) | P10 Gatekeeper · 1 — The kit |
+| `FN-13` | [78](../days/11-skill-forge/day-78/LESSON.md) | P11 Skill Forge · 1 — The kit |
+| `FN-14` | [86](../days/12-skill-auditor/day-86/LESSON.md) | P12 Skill Auditor · 1 — The kit |
+| `FN-15` | [93](../days/13-server-farm/day-93/LESSON.md) | P13 Server Farm · 1 — The kit |
+| `FN-16` | [101](../days/14-peer-desk/day-101/LESSON.md) | P14 Peer Desk · 1 — The kit |
+| `FN-17` | [108](../days/15-audit-room/day-108/LESSON.md) | P15 Audit Room · 1 — The kit |
+| `FN-18` | [115](../days/16-recall-desk/day-115/LESSON.md) | P16 Recall Desk · 1 — The kit |
+| `FN-19` | [122](../days/17-forget-me/day-122/LESSON.md) | P17 Forget Me · 1 — The kit |
+| `FN-20` | [128](../days/18-archive-finder/day-128/LESSON.md) | P18 Archive Finder · 1 — The kit |
+| `FN-21` | [137](../days/19-second-opinion/day-137/LESSON.md) | P19 Second Opinion · 1 — The kit |
+| `FN-22` | [144](../days/20-cache-keeper/day-144/LESSON.md) | P20 Cache Keeper · 1 — The kit |
+| `FN-23` | [150](../days/21-graph-runner/day-150/LESSON.md) | P21 Graph Runner · 1 — The kit |
+| `FN-24` | [158](../days/22-writer-critic/day-158/LESSON.md) | P22 Writer & Critic · 1 — The kit |
+| `FN-25` | [165](../days/23-dispatch-yard/day-165/LESSON.md) | P23 Dispatch Yard · 1 — The kit |
+| `FN-26` | [172](../days/24-plan-room/day-172/LESSON.md) | P24 Plan Room · 1 — The kit |
+| `FN-27` | [180](../days/25-swarm-limits/day-180/LESSON.md) | P25 Swarm Limits · 1 — The kit |
+| `FN-28` | [187](../days/26-never-lose-work/day-187/LESSON.md) | P26 Never Lose Work · 1 — The kit |
+| `FN-29` | [195](../days/27-approval-gate/day-195/LESSON.md) | P27 Approval Gate · 1 — The kit |
+| `FN-30` | [202](../days/28-injection-range/day-202/LESSON.md) | P28 Injection Range · 1 — The kit |
+| `FN-31` | [211](../days/29-least-privilege/day-211/LESSON.md) | P29 Least Privilege · 1 — The kit |
+| `FN-32` | [217](../days/30-sandbox-yard/day-217/LESSON.md) | P30 Sandbox Yard · 1 — The kit |
+| `FN-33` | [224](../days/31-quota-router/day-224/LESSON.md) | P31 Quota Router · 1 — The kit |
+| `FN-34` | [230](../days/32-night-shift/day-230/LESSON.md) | P32 Night Shift · 1 — The kit |
+| `FN-35` | [236](../days/33-watch-tower/day-236/LESSON.md) | P33 Watch Tower · 1 — The kit |
+| `FN-36` | [242](../days/34-voice-standup/day-242/LESSON.md) | P34 Voice Standup · 1 — The kit |
+| `FN-37` | [250](../days/35-eval-bench/day-250/LESSON.md) | P35 Eval Bench · 1 — The kit |
+| `FN-38` | [258](../days/36-regression-gate/day-258/LESSON.md) | P36 Regression Gate · 1 — The kit |
+| `FN-39` | [265](../days/37-glass-box/day-265/LESSON.md) | P37 Glass Box · 1 — The kit |
+| `FN-40` | [272](../days/38-blue-green/day-272/LESSON.md) | P38 Blue Green · 1 — The kit |
+| `FN-41` | [279](../days/39-peer-network/day-279/LESSON.md) | P39 Peer Network · 1 — The kit |
+| `FN-42` | [286](../days/40-desk/day-286/LESSON.md) | P40 The Desk · 1 — The kit |
 
 ## Agents, casts & workflows (`AG-`) — 39 IDs
 
 | ID | Day | Day title |
 | --- | --- | --- |
-| `AG-01` | [4](../days/day-04/LESSON.md) | P01 Ask Desk · 1 — The loop by hand: think, act, observe, no framework |
-| `AG-02` | [6](../days/day-06/LESSON.md) | P01 Ask Desk · 3 — The first ADK agent: `Agent` plus runner, model pinned explicitly |
-| `AG-03` | [8](../days/day-08/LESSON.md) | P01 Ask Desk · 5 — Events and streaming: the 2.x event model |
-| `AG-04` | [9](../days/day-09/LESSON.md) | P01 Ask Desk · 6 — Sessions, runs, and errors that surface instead of hiding |
-| `AG-05` | [21](../days/day-21/LESSON.md) | P03 Triage Room · 3 — One agent is a function; two is an architecture |
-| `AG-06` | [22](../days/day-22/LESSON.md) | P03 Triage Room · 4 — The Workflow Runtime: nodes and edges |
-| `AG-07` | [23](../days/day-23/LESSON.md) | P03 Triage Room · 5 — The classifier: a specialist with three tools and no opinions |
-| `AG-08` | [24](../days/day-24/LESSON.md) | P03 Triage Room · 6 — The writer: a specialist that only writes |
-| `AG-09` | [25](../days/day-25/LESSON.md) | P03 Triage Room · 7 — Delegation, transfer and the handback |
-| `AG-10` | [29](../days/day-29/LESSON.md) | P04 Trip Ledger · 3 — Callbacks before and after the model |
-| `AG-11` | [36](../days/day-36/LESSON.md) | P05 Bench Runner · 3 — Models and providers; LiteLLM; Ollama offline |
-| `AG-12` | [38](../days/day-38/LESSON.md) | P05 Bench Runner · 5 — Different models for different agents: the cheap critic |
-| `AG-13` | [104](../days/day-104/LESSON.md) | P14 Peer Desk · 4 — Agent-as-tool against agent-as-peer: the choice that decides your architect… |
-| `AG-14` | [106](../days/day-106/LESSON.md) | P14 Peer Desk · 6 — Failure lab: the served agent that called back into its caller |
-| `AG-15` | [141](../days/day-141/LESSON.md) | P19 Second Opinion · 5 — The router that picks a source, and logs why |
-| `AG-16` | [142](../days/day-142/LESSON.md) | P19 Second Opinion · 6 — The adjudicator: two answers that disagree |
-| `AG-17` | [152](../days/day-152/LESSON.md) | P21 Graph Runner · 3 — State on the graph: who owns which key |
-| `AG-18` | [153](../days/day-153/LESSON.md) | P21 Graph Runner · 4 — Sequential |
-| `AG-19` | [154](../days/day-154/LESSON.md) | P21 Graph Runner · 5 — Parallel, and the two nodes that wrote the same key |
-| `AG-20` | [155](../days/day-155/LESSON.md) | P21 Graph Runner · 6 — Loop, and how it terminates |
-| `AG-21` | [156](../days/day-156/LESSON.md) | P21 Graph Runner · 7 — Conditional edges and routing |
-| `AG-22` | [160](../days/day-160/LESSON.md) | P22 Writer & Critic · 3 — The critique loop |
-| `AG-23` | [162](../days/day-162/LESSON.md) | P22 Writer & Critic · 5 — Stopping: when good enough is a rule, not a feeling |
-| `AG-24` | [163](../days/day-163/LESSON.md) | P22 Writer & Critic · 6 — The arbiter: breaking a deadlock without a human |
-| `AG-25` | [167](../days/day-167/LESSON.md) | P23 Dispatch Yard · 3 — Delegation against transfer, the hard cases |
-| `AG-26` | [168](../days/day-168/LESSON.md) | P23 Dispatch Yard · 4 — Agent-as-tool in ADK |
-| `AG-27` | [169](../days/day-169/LESSON.md) | P23 Dispatch Yard · 5 — A specialist registry the dispatcher reads at runtime |
-| `AG-28` | [174](../days/day-174/LESSON.md) | P24 Plan Room · 3 — Plan and execute |
-| `AG-29` | [175](../days/day-175/LESSON.md) | P24 Plan Room · 4 — The plan as data, not prose |
-| `AG-30` | [176](../days/day-176/LESSON.md) | P24 Plan Room · 5 — Decomposition: subgoals that are actually separable |
-| `AG-31` | [177](../days/day-177/LESSON.md) | P24 Plan Room · 6 — Replanning on failure |
-| `AG-32` | [182](../days/day-182/LESSON.md) | P25 Swarm Limits · 3 — Shared state under concurrency: the last writer wins, and should not |
-| `AG-33` | [199](../days/day-199/LESSON.md) | P27 Approval Gate · 5 — Human-in-the-loop resumption for standalone nodes |
-| `AG-34` | [232](../days/day-232/LESSON.md) | P32 Night Shift · 3 — Ambient agents: nobody typed anything |
-| `AG-35` | [244](../days/day-244/LESSON.md) | P34 Voice Standup · 3 — The Live API: the streaming architecture |
-| `AG-36` | [245](../days/day-245/LESSON.md) | P34 Voice Standup · 4 — The bidirectional loop |
-| `AG-37` | [247](../days/day-247/LESSON.md) | P34 Voice Standup · 6 — Voice activity events: knowing when they stopped talking |
-| `AG-38` | [282](../days/day-282/LESSON.md) | P39 Peer Network · 4 — Agent-as-peer against agent-as-tool, decided |
-| `AG-39` | [288](../days/day-288/LESSON.md) | P40 The Desk · 3 — The cast: six agents, and why not four or nine |
+| `AG-01` | [4](../days/01-ask-desk/day-04/LESSON.md) | P01 Ask Desk · 1 — The loop by hand: think, act, observe, no framework |
+| `AG-02` | [6](../days/01-ask-desk/day-06/LESSON.md) | P01 Ask Desk · 3 — The first ADK agent: `Agent` plus runner, model pinned explicitly |
+| `AG-03` | [8](../days/01-ask-desk/day-08/LESSON.md) | P01 Ask Desk · 5 — Events and streaming: the 2.x event model |
+| `AG-04` | [9](../days/01-ask-desk/day-09/LESSON.md) | P01 Ask Desk · 6 — Sessions, runs, and errors that surface instead of hiding |
+| `AG-05` | [21](../days/03-triage-room/day-21/LESSON.md) | P03 Triage Room · 3 — One agent is a function; two is an architecture |
+| `AG-06` | [22](../days/03-triage-room/day-22/LESSON.md) | P03 Triage Room · 4 — The Workflow Runtime: nodes and edges |
+| `AG-07` | [23](../days/03-triage-room/day-23/LESSON.md) | P03 Triage Room · 5 — The classifier: a specialist with three tools and no opinions |
+| `AG-08` | [24](../days/03-triage-room/day-24/LESSON.md) | P03 Triage Room · 6 — The writer: a specialist that only writes |
+| `AG-09` | [25](../days/03-triage-room/day-25/LESSON.md) | P03 Triage Room · 7 — Delegation, transfer and the handback |
+| `AG-10` | [29](../days/04-trip-ledger/day-29/LESSON.md) | P04 Trip Ledger · 3 — Callbacks before and after the model |
+| `AG-11` | [36](../days/05-bench-runner/day-36/LESSON.md) | P05 Bench Runner · 3 — Models and providers; LiteLLM; Ollama offline |
+| `AG-12` | [38](../days/05-bench-runner/day-38/LESSON.md) | P05 Bench Runner · 5 — Different models for different agents: the cheap critic |
+| `AG-13` | [104](../days/14-peer-desk/day-104/LESSON.md) | P14 Peer Desk · 4 — Agent-as-tool against agent-as-peer: the choice that decides your architect… |
+| `AG-14` | [106](../days/14-peer-desk/day-106/LESSON.md) | P14 Peer Desk · 6 — Failure lab: the served agent that called back into its caller |
+| `AG-15` | [141](../days/19-second-opinion/day-141/LESSON.md) | P19 Second Opinion · 5 — The router that picks a source, and logs why |
+| `AG-16` | [142](../days/19-second-opinion/day-142/LESSON.md) | P19 Second Opinion · 6 — The adjudicator: two answers that disagree |
+| `AG-17` | [152](../days/21-graph-runner/day-152/LESSON.md) | P21 Graph Runner · 3 — State on the graph: who owns which key |
+| `AG-18` | [153](../days/21-graph-runner/day-153/LESSON.md) | P21 Graph Runner · 4 — Sequential |
+| `AG-19` | [154](../days/21-graph-runner/day-154/LESSON.md) | P21 Graph Runner · 5 — Parallel, and the two nodes that wrote the same key |
+| `AG-20` | [155](../days/21-graph-runner/day-155/LESSON.md) | P21 Graph Runner · 6 — Loop, and how it terminates |
+| `AG-21` | [156](../days/21-graph-runner/day-156/LESSON.md) | P21 Graph Runner · 7 — Conditional edges and routing |
+| `AG-22` | [160](../days/22-writer-critic/day-160/LESSON.md) | P22 Writer & Critic · 3 — The critique loop |
+| `AG-23` | [162](../days/22-writer-critic/day-162/LESSON.md) | P22 Writer & Critic · 5 — Stopping: when good enough is a rule, not a feeling |
+| `AG-24` | [163](../days/22-writer-critic/day-163/LESSON.md) | P22 Writer & Critic · 6 — The arbiter: breaking a deadlock without a human |
+| `AG-25` | [167](../days/23-dispatch-yard/day-167/LESSON.md) | P23 Dispatch Yard · 3 — Delegation against transfer, the hard cases |
+| `AG-26` | [168](../days/23-dispatch-yard/day-168/LESSON.md) | P23 Dispatch Yard · 4 — Agent-as-tool in ADK |
+| `AG-27` | [169](../days/23-dispatch-yard/day-169/LESSON.md) | P23 Dispatch Yard · 5 — A specialist registry the dispatcher reads at runtime |
+| `AG-28` | [174](../days/24-plan-room/day-174/LESSON.md) | P24 Plan Room · 3 — Plan and execute |
+| `AG-29` | [175](../days/24-plan-room/day-175/LESSON.md) | P24 Plan Room · 4 — The plan as data, not prose |
+| `AG-30` | [176](../days/24-plan-room/day-176/LESSON.md) | P24 Plan Room · 5 — Decomposition: subgoals that are actually separable |
+| `AG-31` | [177](../days/24-plan-room/day-177/LESSON.md) | P24 Plan Room · 6 — Replanning on failure |
+| `AG-32` | [182](../days/25-swarm-limits/day-182/LESSON.md) | P25 Swarm Limits · 3 — Shared state under concurrency: the last writer wins, and should not |
+| `AG-33` | [199](../days/27-approval-gate/day-199/LESSON.md) | P27 Approval Gate · 5 — Human-in-the-loop resumption for standalone nodes |
+| `AG-34` | [232](../days/32-night-shift/day-232/LESSON.md) | P32 Night Shift · 3 — Ambient agents: nobody typed anything |
+| `AG-35` | [244](../days/34-voice-standup/day-244/LESSON.md) | P34 Voice Standup · 3 — The Live API: the streaming architecture |
+| `AG-36` | [245](../days/34-voice-standup/day-245/LESSON.md) | P34 Voice Standup · 4 — The bidirectional loop |
+| `AG-37` | [247](../days/34-voice-standup/day-247/LESSON.md) | P34 Voice Standup · 6 — Voice activity events: knowing when they stopped talking |
+| `AG-38` | [282](../days/39-peer-network/day-282/LESSON.md) | P39 Peer Network · 4 — Agent-as-peer against agent-as-tool, decided |
+| `AG-39` | [288](../days/40-desk/day-288/LESSON.md) | P40 The Desk · 3 — The cast: six agents, and why not four or nine |
 
 ## Tools, schemas & skills (`TL-`) — 18 IDs
 
 | ID | Day | Day title |
 | --- | --- | --- |
-| `TL-01` | [5](../days/day-05/LESSON.md) | P01 Ask Desk · 2 — Tools by hand: JSON schemas and the tool-result turn |
-| `TL-02` | [7](../days/day-07/LESSON.md) | P01 Ask Desk · 4 — `FunctionTool`, and what ADK does that you just did yourself |
-| `TL-03` | [30](../days/day-30/LESSON.md) | P04 Trip Ledger · 4 — Callbacks before and after the tool; plugins |
-| `TL-04` | [43](../days/day-43/LESSON.md) | P06 Field Inspector · 3 — Tool context, and state inside a tool |
-| `TL-05` | [44](../days/day-44/LESSON.md) | P06 Field Inspector · 4 — Long-running tools: the turn that does not return yet |
-| `TL-06` | [45](../days/day-45/LESSON.md) | P06 Field Inspector · 5 — Artifacts: files that survive the turn and cross the boundary |
-| `TL-07` | [46](../days/day-46/LESSON.md) | P06 Field Inspector · 6 — Toolsets and OpenAPI: wrapping a spec you did not write |
-| `TL-08` | [50](../days/day-50/LESSON.md) | P07 Form Filler · 3 — Structured output: schemas on the way out |
-| `TL-09` | [51](../days/day-51/LESSON.md) | P07 Form Filler · 4 — Schema evolution: the field that appeared last Tuesday |
-| `TL-10` | [57](../days/day-57/LESSON.md) | P08 Shop Floor · 3 — Tool design: the description is the API |
-| `TL-11` | [80](../days/day-80/LESSON.md) | P11 Skill Forge · 3 — The open spec: the anatomy of a skill document |
-| `TL-12` | [81](../days/day-81/LESSON.md) | P11 Skill Forge · 4 — `SkillToolset`: loading skills into ADK |
-| `TL-13` | [82](../days/day-82/LESSON.md) | P11 Skill Forge · 5 — Authoring skill one: a procedure your specialists repeat |
-| `TL-14` | [83](../days/day-83/LESSON.md) | P11 Skill Forge · 6 — Progressive disclosure: the skill that does not blow the window |
-| `TL-15` | [88](../days/day-88/LESSON.md) | P12 Skill Auditor · 3 — Sourcing third-party skills: the registry and its endpoints |
-| `TL-16` | [219](../days/day-219/LESSON.md) | P30 Sandbox Yard · 3 — Code execution, and why it is a different kind of tool |
-| `TL-17` | [222](../days/day-222/LESSON.md) | P30 Sandbox Yard · 6 — Computer use against a range you own |
-| `TL-18` | [248](../days/day-248/LESSON.md) | P34 Voice Standup · 7 — Non-blocking tools: the conversation that must not freeze |
+| `TL-01` | [5](../days/01-ask-desk/day-05/LESSON.md) | P01 Ask Desk · 2 — Tools by hand: JSON schemas and the tool-result turn |
+| `TL-02` | [7](../days/01-ask-desk/day-07/LESSON.md) | P01 Ask Desk · 4 — `FunctionTool`, and what ADK does that you just did yourself |
+| `TL-03` | [30](../days/04-trip-ledger/day-30/LESSON.md) | P04 Trip Ledger · 4 — Callbacks before and after the tool; plugins |
+| `TL-04` | [43](../days/06-field-inspector/day-43/LESSON.md) | P06 Field Inspector · 3 — Tool context, and state inside a tool |
+| `TL-05` | [44](../days/06-field-inspector/day-44/LESSON.md) | P06 Field Inspector · 4 — Long-running tools: the turn that does not return yet |
+| `TL-06` | [45](../days/06-field-inspector/day-45/LESSON.md) | P06 Field Inspector · 5 — Artifacts: files that survive the turn and cross the boundary |
+| `TL-07` | [46](../days/06-field-inspector/day-46/LESSON.md) | P06 Field Inspector · 6 — Toolsets and OpenAPI: wrapping a spec you did not write |
+| `TL-08` | [50](../days/07-form-filler/day-50/LESSON.md) | P07 Form Filler · 3 — Structured output: schemas on the way out |
+| `TL-09` | [51](../days/07-form-filler/day-51/LESSON.md) | P07 Form Filler · 4 — Schema evolution: the field that appeared last Tuesday |
+| `TL-10` | [57](../days/08-shop-floor/day-57/LESSON.md) | P08 Shop Floor · 3 — Tool design: the description is the API |
+| `TL-11` | [80](../days/11-skill-forge/day-80/LESSON.md) | P11 Skill Forge · 3 — The open spec: the anatomy of a skill document |
+| `TL-12` | [81](../days/11-skill-forge/day-81/LESSON.md) | P11 Skill Forge · 4 — `SkillToolset`: loading skills into ADK |
+| `TL-13` | [82](../days/11-skill-forge/day-82/LESSON.md) | P11 Skill Forge · 5 — Authoring skill one: a procedure your specialists repeat |
+| `TL-14` | [83](../days/11-skill-forge/day-83/LESSON.md) | P11 Skill Forge · 6 — Progressive disclosure: the skill that does not blow the window |
+| `TL-15` | [88](../days/12-skill-auditor/day-88/LESSON.md) | P12 Skill Auditor · 3 — Sourcing third-party skills: the registry and its endpoints |
+| `TL-16` | [219](../days/30-sandbox-yard/day-219/LESSON.md) | P30 Sandbox Yard · 3 — Code execution, and why it is a different kind of tool |
+| `TL-17` | [222](../days/30-sandbox-yard/day-222/LESSON.md) | P30 Sandbox Yard · 6 — Computer use against a range you own |
+| `TL-18` | [248](../days/34-voice-standup/day-248/LESSON.md) | P34 Voice Standup · 7 — Non-blocking tools: the conversation that must not freeze |
 
 ## The MCP boundary (`MC-`) — 56 IDs
 
 | ID | Day | Day title |
 | --- | --- | --- |
-| `MC-01` | [12](../days/day-12/LESSON.md) | P02 Parts Counter · 2 — Why the data goes behind a boundary, and what breaks when it does not |
-| `MC-02` | [13](../days/day-13/LESSON.md) | P02 Parts Counter · 3 — MCP 2026: the stateless core, and the phone-call to web reframe |
-| `MC-03` | [14](../days/day-14/LESSON.md) | P02 Parts Counter · 4 — The server skeleton and its first tool |
-| `MC-04` | [15](../days/day-15/LESSON.md) | P02 Parts Counter · 5 — Lifecycle, stateless-first: the old handshake as history |
-| `MC-05` | [16](../days/day-16/LESSON.md) | P02 Parts Counter · 6 — Transports: stdio and Streamable HTTP |
-| `MC-06` | [17](../days/day-17/LESSON.md) | P02 Parts Counter · 7 — The client side: connecting the agent to a tool that now lives elsewhere |
-| `MC-07` | [20](../days/day-20/LESSON.md) | P03 Triage Room · 2 — The boundary: `desk_mcp`, printed whole |
-| `MC-08` | [28](../days/day-28/LESSON.md) | P04 Trip Ledger · 2 — The boundary: `desk_mcp` and the meter |
-| `MC-09` | [35](../days/day-35/LESSON.md) | P05 Bench Runner · 2 — The boundary: `bench_mcp`, fixtures behind it |
-| `MC-10` | [42](../days/day-42/LESSON.md) | P06 Field Inspector · 2 — The boundary: `field_mcp`, photos and reports |
-| `MC-11` | [49](../days/day-49/LESSON.md) | P07 Form Filler · 2 — The boundary: `schema_mcp` |
-| `MC-12` | [52](../days/day-52/LESSON.md) | P07 Form Filler · 5 — Elicitation over MCP, including URL mode |
-| `MC-13` | [53](../days/day-53/LESSON.md) | P07 Form Filler · 6 — Resources and prompts: the server that ships its own instructions |
-| `MC-14` | [56](../days/day-56/LESSON.md) | P08 Shop Floor · 2 — The boundary: `floor_mcp` |
-| `MC-15` | [59](../days/day-59/LESSON.md) | P08 Shop Floor · 5 — Server capabilities: what a client can discover before it calls |
-| `MC-16` | [60](../days/day-60/LESSON.md) | P08 Shop Floor · 6 — Cacheable lists, and the method and name headers |
-| `MC-17` | [64](../days/day-64/LESSON.md) | P09 Long Haul · 2 — The boundary: `haul_mcp` |
-| `MC-18` | [65](../days/day-65/LESSON.md) | P09 Long Haul · 3 — Progress over a stateless protocol |
-| `MC-19` | [66](../days/day-66/LESSON.md) | P09 Long Haul · 4 — State handles in the payload, not a connection the server holds |
-| `MC-20` | [67](../days/day-67/LESSON.md) | P09 Long Haul · 5 — The Tasks extension: get, update, cancel |
-| `MC-21` | [72](../days/day-72/LESSON.md) | P10 Gatekeeper · 2 — The boundary: `vault_mcp` |
-| `MC-22` | [79](../days/day-79/LESSON.md) | P11 Skill Forge · 2 — The boundary: `forge_mcp` |
-| `MC-23` | [87](../days/day-87/LESSON.md) | P12 Skill Auditor · 2 — The boundary: `registry_mcp` |
-| `MC-24` | [94](../days/day-94/LESSON.md) | P13 Server Farm · 2 — The boundary: `farm_mcp` |
-| `MC-25` | [95](../days/day-95/LESSON.md) | P13 Server Farm · 3 — Stateless by default: any instance answers any request |
-| `MC-26` | [96](../days/day-96/LESSON.md) | P13 Server Farm · 4 — Deprecations: roots, sampling and logging, and what replaced them |
-| `MC-27` | [102](../days/day-102/LESSON.md) | P14 Peer Desk · 2 — The boundary |
-| `MC-28` | [103](../days/day-103/LESSON.md) | P14 Peer Desk · 3 — `to_mcp_server`: a whole agent served over MCP |
-| `MC-29` | [105](../days/day-105/LESSON.md) | P14 Peer Desk · 5 — MCP Apps: sandboxed-iframe interfaces |
-| `MC-30` | [109](../days/day-109/LESSON.md) | P15 Audit Room · 2 — The boundary, plus a fixture boundary to audit |
-| `MC-31` | [116](../days/day-116/LESSON.md) | P16 Recall Desk · 2 — The boundary: `memory_mcp` |
-| `MC-32` | [123](../days/day-123/LESSON.md) | P17 Forget Me · 2 — The boundary: `memory_mcp` with a redactor |
-| `MC-33` | [129](../days/day-129/LESSON.md) | P18 Archive Finder · 2 — The boundary: `archive_mcp`, index and store |
-| `MC-34` | [138](../days/day-138/LESSON.md) | P19 Second Opinion · 2 — The boundaries: `archive_mcp` and `web_mcp` |
-| `MC-35` | [145](../days/day-145/LESSON.md) | P20 Cache Keeper · 2 — The boundary, with a cache layer in front of it |
-| `MC-36` | [151](../days/day-151/LESSON.md) | P21 Graph Runner · 2 — The boundary: `desk_mcp` |
-| `MC-37` | [159](../days/day-159/LESSON.md) | P22 Writer & Critic · 2 — The boundary: `style_mcp`, guides and examples |
-| `MC-38` | [166](../days/day-166/LESSON.md) | P23 Dispatch Yard · 2 — The boundary: `roster_mcp`, the specialist registry |
-| `MC-39` | [173](../days/day-173/LESSON.md) | P24 Plan Room · 2 — The boundary: `plan_mcp`, the plan store |
-| `MC-40` | [181](../days/day-181/LESSON.md) | P25 Swarm Limits · 2 — The boundary: `desk_mcp` |
-| `MC-41` | [188](../days/day-188/LESSON.md) | P26 Never Lose Work · 2 — The boundary: `job_mcp`, the checkpoint store |
-| `MC-42` | [196](../days/day-196/LESSON.md) | P27 Approval Gate · 2 — The boundary: every write operation behind it |
-| `MC-43` | [203](../days/day-203/LESSON.md) | P28 Injection Range · 2 — The boundary: a deliberately hostile `feed_mcp` |
-| `MC-44` | [212](../days/day-212/LESSON.md) | P29 Least Privilege · 2 — The boundary: `vault_mcp` with scoped credentials |
-| `MC-45` | [218](../days/day-218/LESSON.md) | P30 Sandbox Yard · 2 — The boundary: `range_mcp`, a local dummy site |
-| `MC-46` | [225](../days/day-225/LESSON.md) | P31 Quota Router · 2 — The boundary: `quota_mcp`, the ledger |
-| `MC-47` | [231](../days/day-231/LESSON.md) | P32 Night Shift · 2 — The boundaries: `archive_mcp` and `report_mcp` |
-| `MC-48` | [237](../days/day-237/LESSON.md) | P33 Watch Tower · 2 — The boundary: `event_mcp` |
-| `MC-49` | [243](../days/day-243/LESSON.md) | P34 Voice Standup · 2 — The boundary: `queue_mcp` |
-| `MC-50` | [251](../days/day-251/LESSON.md) | P35 Eval Bench · 2 — The boundary: `evalset_mcp` |
-| `MC-51` | [259](../days/day-259/LESSON.md) | P36 Regression Gate · 2 — The boundaries: `evalset_mcp` and `metrics_mcp` |
-| `MC-52` | [266](../days/day-266/LESSON.md) | P37 Glass Box · 2 — The boundary, instrumented |
-| `MC-53` | [273](../days/day-273/LESSON.md) | P38 Blue Green · 2 — The boundary, in two colours |
-| `MC-54` | [280](../days/day-280/LESSON.md) | P39 Peer Network · 2 — The boundary, plus signed cards |
-| `MC-55` | [287](../days/day-287/LESSON.md) | P40 The Desk · 2 — The boundary day: three servers stood up |
-| `MC-56` | [289](../days/day-289/LESSON.md) | P40 The Desk · 4 — What each boundary owns, and the line between them |
+| `MC-01` | [12](../days/02-parts-counter/day-12/LESSON.md) | P02 Parts Counter · 2 — Why the data goes behind a boundary, and what breaks when it does not |
+| `MC-02` | [13](../days/02-parts-counter/day-13/LESSON.md) | P02 Parts Counter · 3 — MCP 2026: the stateless core, and the phone-call to web reframe |
+| `MC-03` | [14](../days/02-parts-counter/day-14/LESSON.md) | P02 Parts Counter · 4 — The server skeleton and its first tool |
+| `MC-04` | [15](../days/02-parts-counter/day-15/LESSON.md) | P02 Parts Counter · 5 — Lifecycle, stateless-first: the old handshake as history |
+| `MC-05` | [16](../days/02-parts-counter/day-16/LESSON.md) | P02 Parts Counter · 6 — Transports: stdio and Streamable HTTP |
+| `MC-06` | [17](../days/02-parts-counter/day-17/LESSON.md) | P02 Parts Counter · 7 — The client side: connecting the agent to a tool that now lives elsewhere |
+| `MC-07` | [20](../days/03-triage-room/day-20/LESSON.md) | P03 Triage Room · 2 — The boundary: `desk_mcp`, printed whole |
+| `MC-08` | [28](../days/04-trip-ledger/day-28/LESSON.md) | P04 Trip Ledger · 2 — The boundary: `desk_mcp` and the meter |
+| `MC-09` | [35](../days/05-bench-runner/day-35/LESSON.md) | P05 Bench Runner · 2 — The boundary: `bench_mcp`, fixtures behind it |
+| `MC-10` | [42](../days/06-field-inspector/day-42/LESSON.md) | P06 Field Inspector · 2 — The boundary: `field_mcp`, photos and reports |
+| `MC-11` | [49](../days/07-form-filler/day-49/LESSON.md) | P07 Form Filler · 2 — The boundary: `schema_mcp` |
+| `MC-12` | [52](../days/07-form-filler/day-52/LESSON.md) | P07 Form Filler · 5 — Elicitation over MCP, including URL mode |
+| `MC-13` | [53](../days/07-form-filler/day-53/LESSON.md) | P07 Form Filler · 6 — Resources and prompts: the server that ships its own instructions |
+| `MC-14` | [56](../days/08-shop-floor/day-56/LESSON.md) | P08 Shop Floor · 2 — The boundary: `floor_mcp` |
+| `MC-15` | [59](../days/08-shop-floor/day-59/LESSON.md) | P08 Shop Floor · 5 — Server capabilities: what a client can discover before it calls |
+| `MC-16` | [60](../days/08-shop-floor/day-60/LESSON.md) | P08 Shop Floor · 6 — Cacheable lists, and the method and name headers |
+| `MC-17` | [64](../days/09-long-haul/day-64/LESSON.md) | P09 Long Haul · 2 — The boundary: `haul_mcp` |
+| `MC-18` | [65](../days/09-long-haul/day-65/LESSON.md) | P09 Long Haul · 3 — Progress over a stateless protocol |
+| `MC-19` | [66](../days/09-long-haul/day-66/LESSON.md) | P09 Long Haul · 4 — State handles in the payload, not a connection the server holds |
+| `MC-20` | [67](../days/09-long-haul/day-67/LESSON.md) | P09 Long Haul · 5 — The Tasks extension: get, update, cancel |
+| `MC-21` | [72](../days/10-gatekeeper/day-72/LESSON.md) | P10 Gatekeeper · 2 — The boundary: `vault_mcp` |
+| `MC-22` | [79](../days/11-skill-forge/day-79/LESSON.md) | P11 Skill Forge · 2 — The boundary: `forge_mcp` |
+| `MC-23` | [87](../days/12-skill-auditor/day-87/LESSON.md) | P12 Skill Auditor · 2 — The boundary: `registry_mcp` |
+| `MC-24` | [94](../days/13-server-farm/day-94/LESSON.md) | P13 Server Farm · 2 — The boundary: `farm_mcp` |
+| `MC-25` | [95](../days/13-server-farm/day-95/LESSON.md) | P13 Server Farm · 3 — Stateless by default: any instance answers any request |
+| `MC-26` | [96](../days/13-server-farm/day-96/LESSON.md) | P13 Server Farm · 4 — Deprecations: roots, sampling and logging, and what replaced them |
+| `MC-27` | [102](../days/14-peer-desk/day-102/LESSON.md) | P14 Peer Desk · 2 — The boundary |
+| `MC-28` | [103](../days/14-peer-desk/day-103/LESSON.md) | P14 Peer Desk · 3 — `to_mcp_server`: a whole agent served over MCP |
+| `MC-29` | [105](../days/14-peer-desk/day-105/LESSON.md) | P14 Peer Desk · 5 — MCP Apps: sandboxed-iframe interfaces |
+| `MC-30` | [109](../days/15-audit-room/day-109/LESSON.md) | P15 Audit Room · 2 — The boundary, plus a fixture boundary to audit |
+| `MC-31` | [116](../days/16-recall-desk/day-116/LESSON.md) | P16 Recall Desk · 2 — The boundary: `memory_mcp` |
+| `MC-32` | [123](../days/17-forget-me/day-123/LESSON.md) | P17 Forget Me · 2 — The boundary: `memory_mcp` with a redactor |
+| `MC-33` | [129](../days/18-archive-finder/day-129/LESSON.md) | P18 Archive Finder · 2 — The boundary: `archive_mcp`, index and store |
+| `MC-34` | [138](../days/19-second-opinion/day-138/LESSON.md) | P19 Second Opinion · 2 — The boundaries: `archive_mcp` and `web_mcp` |
+| `MC-35` | [145](../days/20-cache-keeper/day-145/LESSON.md) | P20 Cache Keeper · 2 — The boundary, with a cache layer in front of it |
+| `MC-36` | [151](../days/21-graph-runner/day-151/LESSON.md) | P21 Graph Runner · 2 — The boundary: `desk_mcp` |
+| `MC-37` | [159](../days/22-writer-critic/day-159/LESSON.md) | P22 Writer & Critic · 2 — The boundary: `style_mcp`, guides and examples |
+| `MC-38` | [166](../days/23-dispatch-yard/day-166/LESSON.md) | P23 Dispatch Yard · 2 — The boundary: `roster_mcp`, the specialist registry |
+| `MC-39` | [173](../days/24-plan-room/day-173/LESSON.md) | P24 Plan Room · 2 — The boundary: `plan_mcp`, the plan store |
+| `MC-40` | [181](../days/25-swarm-limits/day-181/LESSON.md) | P25 Swarm Limits · 2 — The boundary: `desk_mcp` |
+| `MC-41` | [188](../days/26-never-lose-work/day-188/LESSON.md) | P26 Never Lose Work · 2 — The boundary: `job_mcp`, the checkpoint store |
+| `MC-42` | [196](../days/27-approval-gate/day-196/LESSON.md) | P27 Approval Gate · 2 — The boundary: every write operation behind it |
+| `MC-43` | [203](../days/28-injection-range/day-203/LESSON.md) | P28 Injection Range · 2 — The boundary: a deliberately hostile `feed_mcp` |
+| `MC-44` | [212](../days/29-least-privilege/day-212/LESSON.md) | P29 Least Privilege · 2 — The boundary: `vault_mcp` with scoped credentials |
+| `MC-45` | [218](../days/30-sandbox-yard/day-218/LESSON.md) | P30 Sandbox Yard · 2 — The boundary: `range_mcp`, a local dummy site |
+| `MC-46` | [225](../days/31-quota-router/day-225/LESSON.md) | P31 Quota Router · 2 — The boundary: `quota_mcp`, the ledger |
+| `MC-47` | [231](../days/32-night-shift/day-231/LESSON.md) | P32 Night Shift · 2 — The boundaries: `archive_mcp` and `report_mcp` |
+| `MC-48` | [237](../days/33-watch-tower/day-237/LESSON.md) | P33 Watch Tower · 2 — The boundary: `event_mcp` |
+| `MC-49` | [243](../days/34-voice-standup/day-243/LESSON.md) | P34 Voice Standup · 2 — The boundary: `queue_mcp` |
+| `MC-50` | [251](../days/35-eval-bench/day-251/LESSON.md) | P35 Eval Bench · 2 — The boundary: `evalset_mcp` |
+| `MC-51` | [259](../days/36-regression-gate/day-259/LESSON.md) | P36 Regression Gate · 2 — The boundaries: `evalset_mcp` and `metrics_mcp` |
+| `MC-52` | [266](../days/37-glass-box/day-266/LESSON.md) | P37 Glass Box · 2 — The boundary, instrumented |
+| `MC-53` | [273](../days/38-blue-green/day-273/LESSON.md) | P38 Blue Green · 2 — The boundary, in two colours |
+| `MC-54` | [280](../days/39-peer-network/day-280/LESSON.md) | P39 Peer Network · 2 — The boundary, plus signed cards |
+| `MC-55` | [287](../days/40-desk/day-287/LESSON.md) | P40 The Desk · 2 — The boundary day: three servers stood up |
+| `MC-56` | [289](../days/40-desk/day-289/LESSON.md) | P40 The Desk · 4 — What each boundary owns, and the line between them |
 
 ## Memory & retrieval (`MR-`) — 16 IDs
 
 | ID | Day | Day title |
 | --- | --- | --- |
-| `MR-01` | [117](../days/day-117/LESSON.md) | P16 Recall Desk · 3 — Sessions against memory: two words for two different things |
-| `MR-02` | [118](../days/day-118/LESSON.md) | P16 Recall Desk · 4 — Persistent sessions, database-backed |
-| `MR-03` | [119](../days/day-119/LESSON.md) | P16 Recall Desk · 5 — Memory design: what to remember |
-| `MR-04` | [120](../days/day-120/LESSON.md) | P16 Recall Desk · 6 — Memory in a multi-agent flow: who is allowed to remember |
-| `MR-05` | [124](../days/day-124/LESSON.md) | P17 Forget Me · 3 — What to forget, and when |
-| `MR-06` | [126](../days/day-126/LESSON.md) | P17 Forget Me · 5 — Retention windows, and the deletion that must actually delete |
-| `MR-07` | [130](../days/day-130/LESSON.md) | P18 Archive Finder · 3 — Embeddings, plainly: why similar is a number |
-| `MR-08` | [131](../days/day-131/LESSON.md) | P18 Archive Finder · 4 — The local index at zero cost, owned by the boundary |
-| `MR-09` | [132](../days/day-132/LESSON.md) | P18 Archive Finder · 5 — Chunking: where you cut decides what you find |
-| `MR-10` | [133](../days/day-133/LESSON.md) | P18 Archive Finder · 6 — Top-k and thresholds: the confident wrong answer |
-| `MR-11` | [134](../days/day-134/LESSON.md) | P18 Archive Finder · 7 — Citations: an answer that shows its source |
-| `MR-12` | [139](../days/day-139/LESSON.md) | P19 Second Opinion · 3 — Grounding against retrieval: built-in search with brakes |
-| `MR-13` | [140](../days/day-140/LESSON.md) | P19 Second Opinion · 4 — When retrieval is the wrong tool |
-| `MR-14` | [146](../days/day-146/LESSON.md) | P20 Cache Keeper · 3 — What a cache key really is, and the one you got wrong |
-| `MR-15` | [148](../days/day-148/LESSON.md) | P20 Cache Keeper · 5 — Invalidation and staleness: the answer from last week |
-| `MR-16` | [290](../days/day-290/LESSON.md) | P40 The Desk · 5 — Memory and retrieval inside the graph |
+| `MR-01` | [117](../days/16-recall-desk/day-117/LESSON.md) | P16 Recall Desk · 3 — Sessions against memory: two words for two different things |
+| `MR-02` | [118](../days/16-recall-desk/day-118/LESSON.md) | P16 Recall Desk · 4 — Persistent sessions, database-backed |
+| `MR-03` | [119](../days/16-recall-desk/day-119/LESSON.md) | P16 Recall Desk · 5 — Memory design: what to remember |
+| `MR-04` | [120](../days/16-recall-desk/day-120/LESSON.md) | P16 Recall Desk · 6 — Memory in a multi-agent flow: who is allowed to remember |
+| `MR-05` | [124](../days/17-forget-me/day-124/LESSON.md) | P17 Forget Me · 3 — What to forget, and when |
+| `MR-06` | [126](../days/17-forget-me/day-126/LESSON.md) | P17 Forget Me · 5 — Retention windows, and the deletion that must actually delete |
+| `MR-07` | [130](../days/18-archive-finder/day-130/LESSON.md) | P18 Archive Finder · 3 — Embeddings, plainly: why similar is a number |
+| `MR-08` | [131](../days/18-archive-finder/day-131/LESSON.md) | P18 Archive Finder · 4 — The local index at zero cost, owned by the boundary |
+| `MR-09` | [132](../days/18-archive-finder/day-132/LESSON.md) | P18 Archive Finder · 5 — Chunking: where you cut decides what you find |
+| `MR-10` | [133](../days/18-archive-finder/day-133/LESSON.md) | P18 Archive Finder · 6 — Top-k and thresholds: the confident wrong answer |
+| `MR-11` | [134](../days/18-archive-finder/day-134/LESSON.md) | P18 Archive Finder · 7 — Citations: an answer that shows its source |
+| `MR-12` | [139](../days/19-second-opinion/day-139/LESSON.md) | P19 Second Opinion · 3 — Grounding against retrieval: built-in search with brakes |
+| `MR-13` | [140](../days/19-second-opinion/day-140/LESSON.md) | P19 Second Opinion · 4 — When retrieval is the wrong tool |
+| `MR-14` | [146](../days/20-cache-keeper/day-146/LESSON.md) | P20 Cache Keeper · 3 — What a cache key really is, and the one you got wrong |
+| `MR-15` | [148](../days/20-cache-keeper/day-148/LESSON.md) | P20 Cache Keeper · 5 — Invalidation and staleness: the answer from last week |
+| `MR-16` | [290](../days/40-desk/day-290/LESSON.md) | P40 The Desk · 5 — Memory and retrieval inside the graph |
 
 ## Reliability & durability (`RS-`) — 29 IDs
 
 | ID | Day | Day title |
 | --- | --- | --- |
-| `RS-01` | [9](../days/day-09/LESSON.md) | P01 Ask Desk · 6 — Sessions, runs, and errors that surface instead of hiding |
-| `RS-02` | [32](../days/day-32/LESSON.md) | P04 Trip Ledger · 6 — Token and quota accounting: a three-agent turn costs three |
-| `RS-03` | [33](../days/day-33/LESSON.md) | P04 Trip Ledger · 7 — Ship D3: the budget guard that refuses |
-| `RS-04` | [37](../days/day-37/LESSON.md) | P05 Bench Runner · 4 — Honest 429: `Retry-After`, 1/2/4/8, escalate |
-| `RS-05` | [39](../days/day-39/LESSON.md) | P05 Bench Runner · 6 — The fallback chain, and the answer you must not fabricate |
-| `RS-06` | [68](../days/day-68/LESSON.md) | P09 Long Haul · 6 — Client hardening: timeouts, retries, no held connections |
-| `RS-07` | [69](../days/day-69/LESSON.md) | P09 Long Haul · 7 — Failure lab: two replicas, one poll, unknown task id |
-| `RS-08` | [147](../days/day-147/LESSON.md) | P20 Cache Keeper · 4 — Response caching and context caching: the quota lifeline |
-| `RS-09` | [157](../days/day-157/LESSON.md) | P21 Graph Runner · 8 — Ship D3: the runaway graph, contained |
-| `RS-10` | [164](../days/day-164/LESSON.md) | P22 Writer & Critic · 7 — Ship D3: the loop that must not run forever |
-| `RS-11` | [178](../days/day-178/LESSON.md) | P24 Plan Room · 7 — What planning costs, in tokens |
-| `RS-12` | [179](../days/day-179/LESSON.md) | P24 Plan Room · 8 — Ship D3: the plan that never ends, and the bound that stops it |
-| `RS-13` | [183](../days/day-183/LESSON.md) | P25 Swarm Limits · 4 — The boundary under contention: six clients, one server |
-| `RS-14` | [184](../days/day-184/LESSON.md) | P25 Swarm Limits · 5 — The cost of coordination: when six agents are slower than one |
-| `RS-15` | [185](../days/day-185/LESSON.md) | P25 Swarm Limits · 6 — Containment: the swarm that would not stop |
-| `RS-16` | [189](../days/day-189/LESSON.md) | P26 Never Lose Work · 3 — Durable execution, plainly |
-| `RS-17` | [190](../days/day-190/LESSON.md) | P26 Never Lose Work · 4 — Idempotency keys: the email sent twice |
-| `RS-18` | [191](../days/day-191/LESSON.md) | P26 Never Lose Work · 5 — Checkpoints |
-| `RS-19` | [192](../days/day-192/LESSON.md) | P26 Never Lose Work · 6 — Pause and resume |
-| `RS-20` | [193](../days/day-193/LESSON.md) | P26 Never Lose Work · 7 — Replay and determinism: the tool that is not |
-| `RS-21` | [226](../days/day-226/LESSON.md) | P31 Quota Router · 3 — The quota ledger: requests remaining, per provider, per window |
-| `RS-22` | [227](../days/day-227/LESSON.md) | P31 Quota Router · 4 — The router plugin: send the cast to headroom |
-| `RS-23` | [228](../days/day-228/LESSON.md) | P31 Quota Router · 5 — Escalation and the runbook |
-| `RS-24` | [234](../days/day-234/LESSON.md) | P32 Night Shift · 5 — Quota-aware scheduling: the job that ran at the wrong hour |
-| `RS-25` | [239](../days/day-239/LESSON.md) | P33 Watch Tower · 4 — Deduplication: the same event, four times |
-| `RS-26` | [240](../days/day-240/LESSON.md) | P33 Watch Tower · 5 — Idempotent intake |
-| `RS-27` | [246](../days/day-246/LESSON.md) | P34 Voice Standup · 5 — Audio in, audio out; the free-quota check and the fallback |
-| `RS-28` | [261](../days/day-261/LESSON.md) | P36 Regression Gate · 4 — Cost guards: the eval that passed and cost triple |
-| `RS-29` | [291](../days/day-291/LESSON.md) | P40 The Desk · 6 — Durability, and the gate on every external write |
+| `RS-01` | [9](../days/01-ask-desk/day-09/LESSON.md) | P01 Ask Desk · 6 — Sessions, runs, and errors that surface instead of hiding |
+| `RS-02` | [32](../days/04-trip-ledger/day-32/LESSON.md) | P04 Trip Ledger · 6 — Token and quota accounting: a three-agent turn costs three |
+| `RS-03` | [33](../days/04-trip-ledger/day-33/LESSON.md) | P04 Trip Ledger · 7 — Ship D3: the budget guard that refuses |
+| `RS-04` | [37](../days/05-bench-runner/day-37/LESSON.md) | P05 Bench Runner · 4 — Honest 429: `Retry-After`, 1/2/4/8, escalate |
+| `RS-05` | [39](../days/05-bench-runner/day-39/LESSON.md) | P05 Bench Runner · 6 — The fallback chain, and the answer you must not fabricate |
+| `RS-06` | [68](../days/09-long-haul/day-68/LESSON.md) | P09 Long Haul · 6 — Client hardening: timeouts, retries, no held connections |
+| `RS-07` | [69](../days/09-long-haul/day-69/LESSON.md) | P09 Long Haul · 7 — Failure lab: two replicas, one poll, unknown task id |
+| `RS-08` | [147](../days/20-cache-keeper/day-147/LESSON.md) | P20 Cache Keeper · 4 — Response caching and context caching: the quota lifeline |
+| `RS-09` | [157](../days/21-graph-runner/day-157/LESSON.md) | P21 Graph Runner · 8 — Ship D3: the runaway graph, contained |
+| `RS-10` | [164](../days/22-writer-critic/day-164/LESSON.md) | P22 Writer & Critic · 7 — Ship D3: the loop that must not run forever |
+| `RS-11` | [178](../days/24-plan-room/day-178/LESSON.md) | P24 Plan Room · 7 — What planning costs, in tokens |
+| `RS-12` | [179](../days/24-plan-room/day-179/LESSON.md) | P24 Plan Room · 8 — Ship D3: the plan that never ends, and the bound that stops it |
+| `RS-13` | [183](../days/25-swarm-limits/day-183/LESSON.md) | P25 Swarm Limits · 4 — The boundary under contention: six clients, one server |
+| `RS-14` | [184](../days/25-swarm-limits/day-184/LESSON.md) | P25 Swarm Limits · 5 — The cost of coordination: when six agents are slower than one |
+| `RS-15` | [185](../days/25-swarm-limits/day-185/LESSON.md) | P25 Swarm Limits · 6 — Containment: the swarm that would not stop |
+| `RS-16` | [189](../days/26-never-lose-work/day-189/LESSON.md) | P26 Never Lose Work · 3 — Durable execution, plainly |
+| `RS-17` | [190](../days/26-never-lose-work/day-190/LESSON.md) | P26 Never Lose Work · 4 — Idempotency keys: the email sent twice |
+| `RS-18` | [191](../days/26-never-lose-work/day-191/LESSON.md) | P26 Never Lose Work · 5 — Checkpoints |
+| `RS-19` | [192](../days/26-never-lose-work/day-192/LESSON.md) | P26 Never Lose Work · 6 — Pause and resume |
+| `RS-20` | [193](../days/26-never-lose-work/day-193/LESSON.md) | P26 Never Lose Work · 7 — Replay and determinism: the tool that is not |
+| `RS-21` | [226](../days/31-quota-router/day-226/LESSON.md) | P31 Quota Router · 3 — The quota ledger: requests remaining, per provider, per window |
+| `RS-22` | [227](../days/31-quota-router/day-227/LESSON.md) | P31 Quota Router · 4 — The router plugin: send the cast to headroom |
+| `RS-23` | [228](../days/31-quota-router/day-228/LESSON.md) | P31 Quota Router · 5 — Escalation and the runbook |
+| `RS-24` | [234](../days/32-night-shift/day-234/LESSON.md) | P32 Night Shift · 5 — Quota-aware scheduling: the job that ran at the wrong hour |
+| `RS-25` | [239](../days/33-watch-tower/day-239/LESSON.md) | P33 Watch Tower · 4 — Deduplication: the same event, four times |
+| `RS-26` | [240](../days/33-watch-tower/day-240/LESSON.md) | P33 Watch Tower · 5 — Idempotent intake |
+| `RS-27` | [246](../days/34-voice-standup/day-246/LESSON.md) | P34 Voice Standup · 5 — Audio in, audio out; the free-quota check and the fallback |
+| `RS-28` | [261](../days/36-regression-gate/day-261/LESSON.md) | P36 Regression Gate · 4 — Cost guards: the eval that passed and cost triple |
+| `RS-29` | [291](../days/40-desk/day-291/LESSON.md) | P40 The Desk · 6 — Durability, and the gate on every external write |
 
 ## Security & privilege (`SC-`) — 31 IDs
 
 | ID | Day | Day title |
 | --- | --- | --- |
-| `SC-01` | [58](../days/day-58/LESSON.md) | P08 Shop Floor · 4 — Tool filtering and allowlists: who may call what |
-| `SC-02` | [61](../days/day-61/LESSON.md) | P08 Shop Floor · 7 — Failure lab: the agent that reached for a tool it should not have |
-| `SC-03` | [73](../days/day-73/LESSON.md) | P10 Gatekeeper · 3 — MCP auth: OAuth2 and the token that is not yours |
-| `SC-04` | [74](../days/day-74/LESSON.md) | P10 Gatekeeper · 4 — Issuer validation, and CIMD replacing dynamic registration |
-| `SC-05` | [75](../days/day-75/LESSON.md) | P10 Gatekeeper · 5 — Enterprise Managed Authorization and the extensions framework |
-| `SC-06` | [76](../days/day-76/LESSON.md) | P10 Gatekeeper · 6 — Scoped credentials per agent: the auditor that cannot write |
-| `SC-07` | [89](../days/day-89/LESSON.md) | P12 Skill Auditor · 4 — Reading a skill like an attacker |
-| `SC-08` | [90](../days/day-90/LESSON.md) | P12 Skill Auditor · 5 — The provenance ledger, and why `@latest` is not a version |
-| `SC-09` | [91](../days/day-91/LESSON.md) | P12 Skill Auditor · 6 — The audit report a reviewer will accept |
-| `SC-10` | [110](../days/day-110/LESSON.md) | P15 Audit Room · 3 — The MCP audit: what a reviewer checks, in order |
-| `SC-11` | [111](../days/day-111/LESSON.md) | P15 Audit Room · 4 — The security posture of a boundary you own |
-| `SC-12` | [112](../days/day-112/LESSON.md) | P15 Audit Room · 5 — The finding that is not: false positives and reviewer trust |
-| `SC-13` | [113](../days/day-113/LESSON.md) | P15 Audit Room · 6 — Failure lab: the audit that passed a server it should not have |
-| `SC-14` | [125](../days/day-125/LESSON.md) | P17 Forget Me · 4 — PII at the boundary: the thing that must not persist |
-| `SC-15` | [197](../days/day-197/LESSON.md) | P27 Approval Gate · 3 — What needs a human: blast radius before capability |
-| `SC-16` | [198](../days/day-198/LESSON.md) | P27 Approval Gate · 4 — Building the gate |
-| `SC-17` | [200](../days/day-200/LESSON.md) | P27 Approval Gate · 6 — The audit trail: who approved what, and when |
-| `SC-18` | [204](../days/day-204/LESSON.md) | P28 Injection Range · 3 — A threat model for agents |
-| `SC-19` | [205](../days/day-205/LESSON.md) | P28 Injection Range · 4 — Prompt injection, shown and not told |
-| `SC-20` | [206](../days/day-206/LESSON.md) | P28 Injection Range · 5 — Injection through a tool result: the boundary as attack surface |
-| `SC-21` | [207](../days/day-207/LESSON.md) | P28 Injection Range · 6 — The lethal trifecta |
-| `SC-22` | [208](../days/day-208/LESSON.md) | P28 Injection Range · 7 — Input guardrail callbacks |
-| `SC-23` | [209](../days/day-209/LESSON.md) | P28 Injection Range · 8 — Output guardrails: the exfiltration you did not see |
-| `SC-24` | [213](../days/day-213/LESSON.md) | P29 Least Privilege · 3 — Per-agent tool permissions |
-| `SC-25` | [214](../days/day-214/LESSON.md) | P29 Least Privilege · 4 — Scoped MCP credentials and capability tokens |
-| `SC-26` | [215](../days/day-215/LESSON.md) | P29 Least Privilege · 5 — The privilege review: what a reviewer asks |
-| `SC-27` | [220](../days/day-220/LESSON.md) | P30 Sandbox Yard · 4 — Sandboxing: the concept, then the boundary |
-| `SC-28` | [221](../days/day-221/LESSON.md) | P30 Sandbox Yard · 5 — Execution isolation in practice |
-| `SC-29` | [283](../days/day-283/LESSON.md) | P39 Peer Network · 5 — Agent identity and the registry |
-| `SC-30` | [285](../days/day-285/LESSON.md) | P39 Peer Network · 7 — Ship D5: the peer whose card fails verification |
-| `SC-31` | [292](../days/day-292/LESSON.md) | P40 The Desk · 7 — The security pass: injection, privilege, PII, synthetic-only |
+| `SC-01` | [58](../days/08-shop-floor/day-58/LESSON.md) | P08 Shop Floor · 4 — Tool filtering and allowlists: who may call what |
+| `SC-02` | [61](../days/08-shop-floor/day-61/LESSON.md) | P08 Shop Floor · 7 — Failure lab: the agent that reached for a tool it should not have |
+| `SC-03` | [73](../days/10-gatekeeper/day-73/LESSON.md) | P10 Gatekeeper · 3 — MCP auth: OAuth2 and the token that is not yours |
+| `SC-04` | [74](../days/10-gatekeeper/day-74/LESSON.md) | P10 Gatekeeper · 4 — Issuer validation, and CIMD replacing dynamic registration |
+| `SC-05` | [75](../days/10-gatekeeper/day-75/LESSON.md) | P10 Gatekeeper · 5 — Enterprise Managed Authorization and the extensions framework |
+| `SC-06` | [76](../days/10-gatekeeper/day-76/LESSON.md) | P10 Gatekeeper · 6 — Scoped credentials per agent: the auditor that cannot write |
+| `SC-07` | [89](../days/12-skill-auditor/day-89/LESSON.md) | P12 Skill Auditor · 4 — Reading a skill like an attacker |
+| `SC-08` | [90](../days/12-skill-auditor/day-90/LESSON.md) | P12 Skill Auditor · 5 — The provenance ledger, and why `@latest` is not a version |
+| `SC-09` | [91](../days/12-skill-auditor/day-91/LESSON.md) | P12 Skill Auditor · 6 — The audit report a reviewer will accept |
+| `SC-10` | [110](../days/15-audit-room/day-110/LESSON.md) | P15 Audit Room · 3 — The MCP audit: what a reviewer checks, in order |
+| `SC-11` | [111](../days/15-audit-room/day-111/LESSON.md) | P15 Audit Room · 4 — The security posture of a boundary you own |
+| `SC-12` | [112](../days/15-audit-room/day-112/LESSON.md) | P15 Audit Room · 5 — The finding that is not: false positives and reviewer trust |
+| `SC-13` | [113](../days/15-audit-room/day-113/LESSON.md) | P15 Audit Room · 6 — Failure lab: the audit that passed a server it should not have |
+| `SC-14` | [125](../days/17-forget-me/day-125/LESSON.md) | P17 Forget Me · 4 — PII at the boundary: the thing that must not persist |
+| `SC-15` | [197](../days/27-approval-gate/day-197/LESSON.md) | P27 Approval Gate · 3 — What needs a human: blast radius before capability |
+| `SC-16` | [198](../days/27-approval-gate/day-198/LESSON.md) | P27 Approval Gate · 4 — Building the gate |
+| `SC-17` | [200](../days/27-approval-gate/day-200/LESSON.md) | P27 Approval Gate · 6 — The audit trail: who approved what, and when |
+| `SC-18` | [204](../days/28-injection-range/day-204/LESSON.md) | P28 Injection Range · 3 — A threat model for agents |
+| `SC-19` | [205](../days/28-injection-range/day-205/LESSON.md) | P28 Injection Range · 4 — Prompt injection, shown and not told |
+| `SC-20` | [206](../days/28-injection-range/day-206/LESSON.md) | P28 Injection Range · 5 — Injection through a tool result: the boundary as attack surface |
+| `SC-21` | [207](../days/28-injection-range/day-207/LESSON.md) | P28 Injection Range · 6 — The lethal trifecta |
+| `SC-22` | [208](../days/28-injection-range/day-208/LESSON.md) | P28 Injection Range · 7 — Input guardrail callbacks |
+| `SC-23` | [209](../days/28-injection-range/day-209/LESSON.md) | P28 Injection Range · 8 — Output guardrails: the exfiltration you did not see |
+| `SC-24` | [213](../days/29-least-privilege/day-213/LESSON.md) | P29 Least Privilege · 3 — Per-agent tool permissions |
+| `SC-25` | [214](../days/29-least-privilege/day-214/LESSON.md) | P29 Least Privilege · 4 — Scoped MCP credentials and capability tokens |
+| `SC-26` | [215](../days/29-least-privilege/day-215/LESSON.md) | P29 Least Privilege · 5 — The privilege review: what a reviewer asks |
+| `SC-27` | [220](../days/30-sandbox-yard/day-220/LESSON.md) | P30 Sandbox Yard · 4 — Sandboxing: the concept, then the boundary |
+| `SC-28` | [221](../days/30-sandbox-yard/day-221/LESSON.md) | P30 Sandbox Yard · 5 — Execution isolation in practice |
+| `SC-29` | [283](../days/39-peer-network/day-283/LESSON.md) | P39 Peer Network · 5 — Agent identity and the registry |
+| `SC-30` | [285](../days/39-peer-network/day-285/LESSON.md) | P39 Peer Network · 7 — Ship D5: the peer whose card fails verification |
+| `SC-31` | [292](../days/40-desk/day-292/LESSON.md) | P40 The Desk · 7 — The security pass: injection, privilege, PII, synthetic-only |
 
 ## Evals & observability (`EV-`) — 24 IDs
 
 | ID | Day | Day title |
 | --- | --- | --- |
-| `EV-01` | [10](../days/day-10/LESSON.md) | P01 Ask Desk · 7 — Ship D1: `api_server`, `/healthz`, the first eval that can go red; cold clone |
-| `EV-02` | [31](../days/day-31/LESSON.md) | P04 Trip Ledger · 5 — Structured logging, three agents deep |
-| `EV-03` | [54](../days/day-54/LESSON.md) | P07 Form Filler · 7 — Ship D3: the validator that rejects the filler's confident guess |
-| `EV-04` | [84](../days/day-84/LESSON.md) | P11 Skill Forge · 7 — Testing and versioning; the skill that fires on the wrong request |
-| `EV-05` | [121](../days/day-121/LESSON.md) | P16 Recall Desk · 7 — Ship D3: the cross-session eval |
-| `EV-06` | [127](../days/day-127/LESSON.md) | P17 Forget Me · 6 — Ship D3: the redaction eval that goes red on a leaked field |
-| `EV-07` | [135](../days/day-135/LESSON.md) | P18 Archive Finder · 8 — The retrieval eval: `recall@5`, red when chunking is off |
-| `EV-08` | [161](../days/day-161/LESSON.md) | P22 Writer & Critic · 4 — The critic's rubric: vague feedback is no feedback |
-| `EV-09` | [170](../days/day-170/LESSON.md) | P23 Dispatch Yard · 6 — Reading a multi-agent trace when the wrong specialist answered |
-| `EV-10` | [210](../days/day-210/LESSON.md) | P28 Injection Range · 9 — Ship D4: the red-team evalset your desk survives |
-| `EV-11` | [252](../days/day-252/LESSON.md) | P35 Eval Bench · 3 — Evals are tests: the change that made it worse |
-| `EV-12` | [253](../days/day-253/LESSON.md) | P35 Eval Bench · 4 — Evalsets and metrics |
-| `EV-13` | [254](../days/day-254/LESSON.md) | P35 Eval Bench · 5 — The eval workhorse: a cheap model judging a cheap model |
-| `EV-14` | [255](../days/day-255/LESSON.md) | P35 Eval Bench · 6 — Trajectory evaluation: the right answer by the wrong route |
-| `EV-15` | [256](../days/day-256/LESSON.md) | P35 Eval Bench · 7 — Rubric-based multi-turn trajectory evaluation |
-| `EV-16` | [257](../days/day-257/LESSON.md) | P35 Eval Bench · 8 — Ship D5: the judge, and the honest baseline |
-| `EV-17` | [260](../days/day-260/LESSON.md) | P36 Regression Gate · 3 — Evals in CI: the pipeline that says no |
-| `EV-18` | [262](../days/day-262/LESSON.md) | P36 Regression Gate · 5 — Latency guards: p95, not the mean |
-| `EV-19` | [263](../days/day-263/LESSON.md) | P36 Regression Gate · 6 — Flaky evals, and the threshold you will be tempted to lower |
-| `EV-20` | [267](../days/day-267/LESSON.md) | P37 Glass Box · 3 — OpenTelemetry and the auto-tracing plugin |
-| `EV-21` | [268](../days/day-268/LESSON.md) | P37 Glass Box · 4 — The trace tree across three agents and two boundary hops |
-| `EV-22` | [269](../days/day-269/LESSON.md) | P37 Glass Box · 5 — Debugging slow, not broken |
-| `EV-23` | [270](../days/day-270/LESSON.md) | P37 Glass Box · 6 — The span that was missing: instrumenting your own boundary |
-| `EV-24` | [293](../days/day-293/LESSON.md) | P40 The Desk · 8 — Evals: the full set, and the one that must be able to fail |
+| `EV-01` | [10](../days/01-ask-desk/day-10/LESSON.md) | P01 Ask Desk · 7 — Ship D1: `api_server`, `/healthz`, the first eval that can go red; cold clone |
+| `EV-02` | [31](../days/04-trip-ledger/day-31/LESSON.md) | P04 Trip Ledger · 5 — Structured logging, three agents deep |
+| `EV-03` | [54](../days/07-form-filler/day-54/LESSON.md) | P07 Form Filler · 7 — Ship D3: the validator that rejects the filler's confident guess |
+| `EV-04` | [84](../days/11-skill-forge/day-84/LESSON.md) | P11 Skill Forge · 7 — Testing and versioning; the skill that fires on the wrong request |
+| `EV-05` | [121](../days/16-recall-desk/day-121/LESSON.md) | P16 Recall Desk · 7 — Ship D3: the cross-session eval |
+| `EV-06` | [127](../days/17-forget-me/day-127/LESSON.md) | P17 Forget Me · 6 — Ship D3: the redaction eval that goes red on a leaked field |
+| `EV-07` | [135](../days/18-archive-finder/day-135/LESSON.md) | P18 Archive Finder · 8 — The retrieval eval: `recall@5`, red when chunking is off |
+| `EV-08` | [161](../days/22-writer-critic/day-161/LESSON.md) | P22 Writer & Critic · 4 — The critic's rubric: vague feedback is no feedback |
+| `EV-09` | [170](../days/23-dispatch-yard/day-170/LESSON.md) | P23 Dispatch Yard · 6 — Reading a multi-agent trace when the wrong specialist answered |
+| `EV-10` | [210](../days/28-injection-range/day-210/LESSON.md) | P28 Injection Range · 9 — Ship D4: the red-team evalset your desk survives |
+| `EV-11` | [252](../days/35-eval-bench/day-252/LESSON.md) | P35 Eval Bench · 3 — Evals are tests: the change that made it worse |
+| `EV-12` | [253](../days/35-eval-bench/day-253/LESSON.md) | P35 Eval Bench · 4 — Evalsets and metrics |
+| `EV-13` | [254](../days/35-eval-bench/day-254/LESSON.md) | P35 Eval Bench · 5 — The eval workhorse: a cheap model judging a cheap model |
+| `EV-14` | [255](../days/35-eval-bench/day-255/LESSON.md) | P35 Eval Bench · 6 — Trajectory evaluation: the right answer by the wrong route |
+| `EV-15` | [256](../days/35-eval-bench/day-256/LESSON.md) | P35 Eval Bench · 7 — Rubric-based multi-turn trajectory evaluation |
+| `EV-16` | [257](../days/35-eval-bench/day-257/LESSON.md) | P35 Eval Bench · 8 — Ship D5: the judge, and the honest baseline |
+| `EV-17` | [260](../days/36-regression-gate/day-260/LESSON.md) | P36 Regression Gate · 3 — Evals in CI: the pipeline that says no |
+| `EV-18` | [262](../days/36-regression-gate/day-262/LESSON.md) | P36 Regression Gate · 5 — Latency guards: p95, not the mean |
+| `EV-19` | [263](../days/36-regression-gate/day-263/LESSON.md) | P36 Regression Gate · 6 — Flaky evals, and the threshold you will be tempted to lower |
+| `EV-20` | [267](../days/37-glass-box/day-267/LESSON.md) | P37 Glass Box · 3 — OpenTelemetry and the auto-tracing plugin |
+| `EV-21` | [268](../days/37-glass-box/day-268/LESSON.md) | P37 Glass Box · 4 — The trace tree across three agents and two boundary hops |
+| `EV-22` | [269](../days/37-glass-box/day-269/LESSON.md) | P37 Glass Box · 5 — Debugging slow, not broken |
+| `EV-23` | [270](../days/37-glass-box/day-270/LESSON.md) | P37 Glass Box · 6 — The span that was missing: instrumenting your own boundary |
+| `EV-24` | [293](../days/40-desk/day-293/LESSON.md) | P40 The Desk · 8 — Evals: the full set, and the one that must be able to fail |
 
 ## Deploy, ops & interop (`DP-`) — 51 IDs
 
 | ID | Day | Day title |
 | --- | --- | --- |
-| `DP-01` | [10](../days/day-10/LESSON.md) | P01 Ask Desk · 7 — Ship D1: `api_server`, `/healthz`, the first eval that can go red; cold clone |
-| `DP-02` | [18](../days/day-18/LESSON.md) | P02 Parts Counter · 8 — Ship D2: stateless container, secrets injected not baked; cold clone |
-| `DP-03` | [26](../days/day-26/LESSON.md) | P03 Triage Room · 8 — Ship D3: compose, agents and boundary as separate containers; cold clone |
-| `DP-04` | [33](../days/day-33/LESSON.md) | P04 Trip Ledger · 7 — Ship D3: the budget guard that refuses |
-| `DP-05` | [40](../days/day-40/LESSON.md) | P05 Bench Runner · 7 — Ship D3: the benchmark report as an artifact |
-| `DP-06` | [47](../days/day-47/LESSON.md) | P06 Field Inspector · 7 — Ship D3: the inspection that produces a real PDF |
-| `DP-07` | [54](../days/day-54/LESSON.md) | P07 Form Filler · 7 — Ship D3: the validator that rejects the filler's confident guess |
-| `DP-08` | [62](../days/day-62/LESSON.md) | P08 Shop Floor · 8 — Ship D3 |
-| `DP-09` | [70](../days/day-70/LESSON.md) | P09 Long Haul · 8 — Ship D3: the two-replica compose test |
-| `DP-10` | [77](../days/day-77/LESSON.md) | P10 Gatekeeper · 7 — Ship D3: the token that expires mid-run |
-| `DP-11` | [85](../days/day-85/LESSON.md) | P11 Skill Forge · 8 — Ship D3: skills lint inside the project check |
-| `DP-12` | [92](../days/day-92/LESSON.md) | P12 Skill Auditor · 7 — Ship D3: the gate blocks an unvetted skill |
-| `DP-13` | [97](../days/day-97/LESSON.md) | P13 Server Farm · 5 — Health, readiness, and the replica that lied |
-| `DP-14` | [98](../days/day-98/LESSON.md) | P13 Server Farm · 6 — Kubernetes on the laptop |
-| `DP-15` | [99](../days/day-99/LESSON.md) | P13 Server Farm · 7 — The sidecar pattern at three replicas |
-| `DP-16` | [100](../days/day-100/LESSON.md) | P13 Server Farm · 8 — Ship D4: scale to three, kill one mid-turn |
-| `DP-17` | [107](../days/day-107/LESSON.md) | P14 Peer Desk · 7 — Ship D3 |
-| `DP-18` | [114](../days/day-114/LESSON.md) | P15 Audit Room · 7 — Ship D4: the audit as a CI job |
-| `DP-19` | [121](../days/day-121/LESSON.md) | P16 Recall Desk · 7 — Ship D3: the cross-session eval |
-| `DP-20` | [127](../days/day-127/LESSON.md) | P17 Forget Me · 6 — Ship D3: the redaction eval that goes red on a leaked field |
-| `DP-21` | [136](../days/day-136/LESSON.md) | P18 Archive Finder · 9 — Ship D3: the index rebuilt on container start |
-| `DP-22` | [143](../days/day-143/LESSON.md) | P19 Second Opinion · 7 — Ship D3 |
-| `DP-23` | [149](../days/day-149/LESSON.md) | P20 Cache Keeper · 6 — Ship D3: the savings report, in requests not dollars |
-| `DP-24` | [157](../days/day-157/LESSON.md) | P21 Graph Runner · 8 — Ship D3: the runaway graph, contained |
-| `DP-25` | [164](../days/day-164/LESSON.md) | P22 Writer & Critic · 7 — Ship D3: the loop that must not run forever |
-| `DP-26` | [171](../days/day-171/LESSON.md) | P23 Dispatch Yard · 7 — Ship D3 |
-| `DP-27` | [179](../days/day-179/LESSON.md) | P24 Plan Room · 8 — Ship D3: the plan that never ends, and the bound that stops it |
-| `DP-28` | [186](../days/day-186/LESSON.md) | P25 Swarm Limits · 7 — Ship D4 |
-| `DP-29` | [194](../days/day-194/LESSON.md) | P26 Never Lose Work · 8 — Ship D4: delete the pod mid-run; it finishes |
-| `DP-30` | [201](../days/day-201/LESSON.md) | P27 Approval Gate · 7 — Ship D4: the gate that got bypassed, and how |
-| `DP-31` | [210](../days/day-210/LESSON.md) | P28 Injection Range · 9 — Ship D4: the red-team evalset your desk survives |
-| `DP-32` | [216](../days/day-216/LESSON.md) | P29 Least Privilege · 6 — Ship D4: the agent that escalated, caught by a test |
-| `DP-33` | [223](../days/day-223/LESSON.md) | P30 Sandbox Yard · 7 — Ship D4: the runaway, contained |
-| `DP-34` | [229](../days/day-229/LESSON.md) | P31 Quota Router · 6 — Ship D4: exhaust a provider on purpose |
-| `DP-35` | [233](../days/day-233/LESSON.md) | P32 Night Shift · 4 — Scheduled runs, and the CronJob |
-| `DP-36` | [235](../days/day-235/LESSON.md) | P32 Night Shift · 6 — Ship D4: the digest someone would actually act on |
-| `DP-37` | [238](../days/day-238/LESSON.md) | P33 Watch Tower · 3 — Event-driven intake: webhooks, and the retry you did not ask for |
-| `DP-38` | [241](../days/day-241/LESSON.md) | P33 Watch Tower · 6 — Ship D4 |
-| `DP-39` | [249](../days/day-249/LESSON.md) | P34 Voice Standup · 8 — Ship D3 |
-| `DP-40` | [257](../days/day-257/LESSON.md) | P35 Eval Bench · 8 — Ship D5: the judge, and the honest baseline |
-| `DP-41` | [264](../days/day-264/LESSON.md) | P36 Regression Gate · 7 — Ship D5: a regression blocked with nobody deciding |
-| `DP-42` | [271](../days/day-271/LESSON.md) | P37 Glass Box · 7 — Ship D5 |
-| `DP-43` | [274](../days/day-274/LESSON.md) | P38 Blue Green · 3 — The API surface: `api_server` and the endpoints around it |
-| `DP-44` | [275](../days/day-275/LESSON.md) | P38 Blue Green · 4 — The manifest set, whole |
-| `DP-45` | [276](../days/day-276/LESSON.md) | P38 Blue Green · 5 — Blue and green: two deployments, one service |
-| `DP-46` | [277](../days/day-277/LESSON.md) | P38 Blue Green · 6 — Auto-rollback: the health signal that decides |
-| `DP-47` | [278](../days/day-278/LESSON.md) | P38 Blue Green · 7 — Ship D5: roll forward into a bad build, watch it roll back |
-| `DP-48` | [281](../days/day-281/LESSON.md) | P39 Peer Network · 3 — A2A: signed agent cards, verified hands-on |
-| `DP-49` | [284](../days/day-284/LESSON.md) | P39 Peer Network · 6 — The agent economy, parked: payment and trust protocols |
-| `DP-50` | [294](../days/day-294/LESSON.md) | P40 The Desk · 9 — Traced, containerised, blue and green |
-| `DP-51` | [295](../days/day-295/LESSON.md) | P40 The Desk · 10 — The cold run: no edits, no retries, recorded |
+| `DP-01` | [10](../days/01-ask-desk/day-10/LESSON.md) | P01 Ask Desk · 7 — Ship D1: `api_server`, `/healthz`, the first eval that can go red; cold clone |
+| `DP-02` | [18](../days/02-parts-counter/day-18/LESSON.md) | P02 Parts Counter · 8 — Ship D2: stateless container, secrets injected not baked; cold clone |
+| `DP-03` | [26](../days/03-triage-room/day-26/LESSON.md) | P03 Triage Room · 8 — Ship D3: compose, agents and boundary as separate containers; cold clone |
+| `DP-04` | [33](../days/04-trip-ledger/day-33/LESSON.md) | P04 Trip Ledger · 7 — Ship D3: the budget guard that refuses |
+| `DP-05` | [40](../days/05-bench-runner/day-40/LESSON.md) | P05 Bench Runner · 7 — Ship D3: the benchmark report as an artifact |
+| `DP-06` | [47](../days/06-field-inspector/day-47/LESSON.md) | P06 Field Inspector · 7 — Ship D3: the inspection that produces a real PDF |
+| `DP-07` | [54](../days/07-form-filler/day-54/LESSON.md) | P07 Form Filler · 7 — Ship D3: the validator that rejects the filler's confident guess |
+| `DP-08` | [62](../days/08-shop-floor/day-62/LESSON.md) | P08 Shop Floor · 8 — Ship D3 |
+| `DP-09` | [70](../days/09-long-haul/day-70/LESSON.md) | P09 Long Haul · 8 — Ship D3: the two-replica compose test |
+| `DP-10` | [77](../days/10-gatekeeper/day-77/LESSON.md) | P10 Gatekeeper · 7 — Ship D3: the token that expires mid-run |
+| `DP-11` | [85](../days/11-skill-forge/day-85/LESSON.md) | P11 Skill Forge · 8 — Ship D3: skills lint inside the project check |
+| `DP-12` | [92](../days/12-skill-auditor/day-92/LESSON.md) | P12 Skill Auditor · 7 — Ship D3: the gate blocks an unvetted skill |
+| `DP-13` | [97](../days/13-server-farm/day-97/LESSON.md) | P13 Server Farm · 5 — Health, readiness, and the replica that lied |
+| `DP-14` | [98](../days/13-server-farm/day-98/LESSON.md) | P13 Server Farm · 6 — Kubernetes on the laptop |
+| `DP-15` | [99](../days/13-server-farm/day-99/LESSON.md) | P13 Server Farm · 7 — The sidecar pattern at three replicas |
+| `DP-16` | [100](../days/13-server-farm/day-100/LESSON.md) | P13 Server Farm · 8 — Ship D4: scale to three, kill one mid-turn |
+| `DP-17` | [107](../days/14-peer-desk/day-107/LESSON.md) | P14 Peer Desk · 7 — Ship D3 |
+| `DP-18` | [114](../days/15-audit-room/day-114/LESSON.md) | P15 Audit Room · 7 — Ship D4: the audit as a CI job |
+| `DP-19` | [121](../days/16-recall-desk/day-121/LESSON.md) | P16 Recall Desk · 7 — Ship D3: the cross-session eval |
+| `DP-20` | [127](../days/17-forget-me/day-127/LESSON.md) | P17 Forget Me · 6 — Ship D3: the redaction eval that goes red on a leaked field |
+| `DP-21` | [136](../days/18-archive-finder/day-136/LESSON.md) | P18 Archive Finder · 9 — Ship D3: the index rebuilt on container start |
+| `DP-22` | [143](../days/19-second-opinion/day-143/LESSON.md) | P19 Second Opinion · 7 — Ship D3 |
+| `DP-23` | [149](../days/20-cache-keeper/day-149/LESSON.md) | P20 Cache Keeper · 6 — Ship D3: the savings report, in requests not dollars |
+| `DP-24` | [157](../days/21-graph-runner/day-157/LESSON.md) | P21 Graph Runner · 8 — Ship D3: the runaway graph, contained |
+| `DP-25` | [164](../days/22-writer-critic/day-164/LESSON.md) | P22 Writer & Critic · 7 — Ship D3: the loop that must not run forever |
+| `DP-26` | [171](../days/23-dispatch-yard/day-171/LESSON.md) | P23 Dispatch Yard · 7 — Ship D3 |
+| `DP-27` | [179](../days/24-plan-room/day-179/LESSON.md) | P24 Plan Room · 8 — Ship D3: the plan that never ends, and the bound that stops it |
+| `DP-28` | [186](../days/25-swarm-limits/day-186/LESSON.md) | P25 Swarm Limits · 7 — Ship D4 |
+| `DP-29` | [194](../days/26-never-lose-work/day-194/LESSON.md) | P26 Never Lose Work · 8 — Ship D4: delete the pod mid-run; it finishes |
+| `DP-30` | [201](../days/27-approval-gate/day-201/LESSON.md) | P27 Approval Gate · 7 — Ship D4: the gate that got bypassed, and how |
+| `DP-31` | [210](../days/28-injection-range/day-210/LESSON.md) | P28 Injection Range · 9 — Ship D4: the red-team evalset your desk survives |
+| `DP-32` | [216](../days/29-least-privilege/day-216/LESSON.md) | P29 Least Privilege · 6 — Ship D4: the agent that escalated, caught by a test |
+| `DP-33` | [223](../days/30-sandbox-yard/day-223/LESSON.md) | P30 Sandbox Yard · 7 — Ship D4: the runaway, contained |
+| `DP-34` | [229](../days/31-quota-router/day-229/LESSON.md) | P31 Quota Router · 6 — Ship D4: exhaust a provider on purpose |
+| `DP-35` | [233](../days/32-night-shift/day-233/LESSON.md) | P32 Night Shift · 4 — Scheduled runs, and the CronJob |
+| `DP-36` | [235](../days/32-night-shift/day-235/LESSON.md) | P32 Night Shift · 6 — Ship D4: the digest someone would actually act on |
+| `DP-37` | [238](../days/33-watch-tower/day-238/LESSON.md) | P33 Watch Tower · 3 — Event-driven intake: webhooks, and the retry you did not ask for |
+| `DP-38` | [241](../days/33-watch-tower/day-241/LESSON.md) | P33 Watch Tower · 6 — Ship D4 |
+| `DP-39` | [249](../days/34-voice-standup/day-249/LESSON.md) | P34 Voice Standup · 8 — Ship D3 |
+| `DP-40` | [257](../days/35-eval-bench/day-257/LESSON.md) | P35 Eval Bench · 8 — Ship D5: the judge, and the honest baseline |
+| `DP-41` | [264](../days/36-regression-gate/day-264/LESSON.md) | P36 Regression Gate · 7 — Ship D5: a regression blocked with nobody deciding |
+| `DP-42` | [271](../days/37-glass-box/day-271/LESSON.md) | P37 Glass Box · 7 — Ship D5 |
+| `DP-43` | [274](../days/38-blue-green/day-274/LESSON.md) | P38 Blue Green · 3 — The API surface: `api_server` and the endpoints around it |
+| `DP-44` | [275](../days/38-blue-green/day-275/LESSON.md) | P38 Blue Green · 4 — The manifest set, whole |
+| `DP-45` | [276](../days/38-blue-green/day-276/LESSON.md) | P38 Blue Green · 5 — Blue and green: two deployments, one service |
+| `DP-46` | [277](../days/38-blue-green/day-277/LESSON.md) | P38 Blue Green · 6 — Auto-rollback: the health signal that decides |
+| `DP-47` | [278](../days/38-blue-green/day-278/LESSON.md) | P38 Blue Green · 7 — Ship D5: roll forward into a bad build, watch it roll back |
+| `DP-48` | [281](../days/39-peer-network/day-281/LESSON.md) | P39 Peer Network · 3 — A2A: signed agent cards, verified hands-on |
+| `DP-49` | [284](../days/39-peer-network/day-284/LESSON.md) | P39 Peer Network · 6 — The agent economy, parked: payment and trust protocols |
+| `DP-50` | [294](../days/40-desk/day-294/LESSON.md) | P40 The Desk · 9 — Traced, containerised, blue and green |
+| `DP-51` | [295](../days/40-desk/day-295/LESSON.md) | P40 The Desk · 10 — The cold run: no edits, no retries, recorded |

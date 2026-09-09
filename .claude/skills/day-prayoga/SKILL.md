@@ -73,10 +73,12 @@ argument-hint: "[day-number]"
 
 ## Step 4 — write the parts
 
-Path: `days/day-NN-<day-slug>/parts/<NN>-<section-slug>/<section>.<subtopic>-<slug>.md`
+Path: `days/<NN-project-slug>/day-NN-<day-slug>/parts/<NN>-<section-slug>/<section>.<subtopic>-<slug>.md`
 
 16. **Name the day folder `day-NN-<slug>`** — number zero-padded, then 1–4 kebab-case words from
-    the hub `title` with articles dropped. A bare `days/day-NN/` is rejected.
+    the hub `title` with articles dropped. A bare `day-NN/` is rejected. The project folder
+    is the phase's, from the plan §16 — `python p.py new N` puts the day in the right one, so
+    scaffold with it rather than by hand.
 17. **One folder per section**: two digits, then 1–3 kebab-case words. Every part lives inside its
     section folder, never loose in `parts/`, and the folder number must match the number before
     the dot. Sections run 1..N with no gaps, and so do subtopics inside each.
@@ -103,7 +105,7 @@ Path: `days/day-NN-<day-slug>/parts/<NN>-<section-slug>/<section>.<subtopic>-<sl
 
 ## Step 5 — write the hub
 
-26. `days/day-NN-<slug>/LESSON.md`, from `days/_TEMPLATES/LESSON.md`. **The hub never teaches** —
+26. `days/<NN-project-slug>/day-NN-<slug>/LESSON.md`, from `days/_TEMPLATES/LESSON.md`. **The hub never teaches** —
     no `**Line by line:**` anywhere in it. Ten numbered sections in order (§4.1), ending at §10
     with the verbatim ledger rows and the commit message.
 27. `frontmatter.parts` must equal the number of documents actually in `parts/`; the checker

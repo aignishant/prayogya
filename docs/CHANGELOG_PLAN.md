@@ -35,3 +35,13 @@ Anything structural also gets an ADR in `docs/adr/`, and the entry here links it
   section 3, and no day document carries a clock in any form. *What it costs:* a hub can no longer
   state its own budget, which was never information — every hub carried the same number. What it
   buys is that no day can be trimmed to fit one, which section 3 demanded and nothing enforced.
+
+- 2026-09-09 — **v3.1.0, day folders grouped by project.** *What moved:* nothing in the plan. The
+  plan never named a path under `days/`, so section 16's "a phase is a project" existed as a
+  statement and not as a shape on disk — 297 day folders were headed for one flat listing.
+  *What the plan now says:* unchanged. A day now lives at `days/<NN-project-slug>/day-NN-<slug>/`,
+  the project folder named from the section 16 phase row and derived by `p.py`, never stored;
+  phase 0 is not a project, so its days sit in `days/_authoring/`. *What it costs:* every path
+  under `days/` is one level deeper, so a link from one project's day into another's needs one
+  more `../`, and nothing checks relative links. Three days moved; one link was fixed by hand. See
+  `docs/adr/ADR-0003-days-grouped-by-project.md`.

@@ -72,4 +72,4 @@ p.py        the whole authoring toolchain, one file, standard library only
 granth.toml this repository's identity and the depth contract's knobs
 ```
 
-Start at [day 0](days/day-000-toolchain-skeleton-driver/LESSON.md).
+Start at [day 0](days/_authoring/day-000-toolchain-skeleton-driver/LESSON.md).

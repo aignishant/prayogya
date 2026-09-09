@@ -40,3 +40,4 @@ justification written after the fact, not a decision record.
 | --- | --- | --- | --- |
 | [0001](ADR-0001-the-plan-as-adopted.md) | The plan as adopted | 2026-09-08 | accepted |
 | [0002](ADR-0002-day-zero-and-the-authoring-repo.md) | Day zero, and the authoring repository | 2026-09-08 | accepted |
+| [0003](ADR-0003-days-grouped-by-project.md) | Day folders grouped by the project that owns them | 2026-09-09 | accepted |

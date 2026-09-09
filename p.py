@@ -306,18 +306,51 @@ def phase_of(day: int, phases: list[Phase]) -> Phase | None:
                  if p.first is not None and p.last is not None and p.first <= day <= p.last), None)
 
 
+def group_dir_name(phase: Phase | None) -> str:
+    """The folder a phase's days live in, derived from the plan's phase table.
+
+    A phase is a project, so the project owns a folder: `P00 | Foundry - reference only ...`
+    becomes `00-foundry`. Deriving it here rather than storing it means a phase renamed in the
+    plan is renamed everywhere, and no second list can drift from the first. Phase 0 is the
+    authoring repository and not a project, so it takes a name that cannot collide with a
+    numbered one.
+    """
+    if phase is None:
+        return "_unplaced"
+    if not phase.number.upper().startswith("P"):
+        return "_authoring"
+    digits = re.sub(r"\D", "", phase.number)
+    slug = slugify(phase.theme)
+    return f"{int(digits):02d}-{slug}" if digits else f"_{slug}"
+
+
+def day_group(cfg: Config, day: int) -> str:
+    return group_dir_name(phase_of(day, plan_phases(cfg)))
+
+
 def day_dirs(cfg: Config) -> dict[int, Path]:
-    """Every days/day-NN-<slug>/ keyed by number.
+    """Every days/<project>/day-NN-<slug>/ keyed by number.
 
     The number is the identity and the slug a label on it, so a folder can be renamed to a better
-    slug at any time without breaking a single tool.
+    slug at any time without breaking a single tool. The project folder above it is grouping and
+    nothing more: a day is found by its number wherever it sits, so moving one between groups
+    breaks nothing either. A day left directly under days/ is still found, because a repository
+    part-way through the move must not go dark.
     """
     found: dict[int, Path] = {}
-    if cfg.days.exists():
-        for entry in sorted(cfg.days.iterdir()):
-            m = ANY_DAY_DIR_RE.match(entry.name) if entry.is_dir() else None
+    if not cfg.days.exists():
+        return found
+    for entry in sorted(cfg.days.iterdir()):
+        if not entry.is_dir():
+            continue
+        m = ANY_DAY_DIR_RE.match(entry.name)
+        if m:
+            found[int(m.group(1))] = entry
+            continue
+        for child in sorted(entry.iterdir()):
+            m = ANY_DAY_DIR_RE.match(child.name) if child.is_dir() else None
             if m:
-                found[int(m.group(1))] = entry
+                found[int(m.group(1))] = child
     return found
 
 
@@ -844,10 +877,13 @@ class DayFacts:
         return (float(bits[0]) if bits else 0.0, float(bits[1]) if len(bits) > 1 else 0.0)
 
 
-def day_link(cfg: Config, number: int, facts: dict[int, DayFacts]) -> str:
+def day_link(cfg: Config, number: int, facts: dict[int, DayFacts], phases: list[Phase]) -> str:
     """A link that still points somewhere sensible before the day exists."""
-    name = facts[number].folder.name if number in facts else f"day-{number:02d}"
-    return f"../days/{name}/LESSON.md"
+    if number in facts:
+        rel = facts[number].folder.relative_to(cfg.days).as_posix()
+    else:
+        rel = f"{group_dir_name(phase_of(number, phases))}/day-{number:02d}"
+    return f"../days/{rel}/LESSON.md"
 
 
 def build_all(cfg: Config) -> dict[Path, str]:
@@ -894,7 +930,7 @@ def build_all(cfg: Config) -> dict[Path, str]:
         seen.update(owned)
         lines += [f"## {track.name} (`{track.prefix}-`) — {len(owned) or 'no'} IDs", "",
                   "| ID | Day | Day title |", "| --- | --- | --- |"]
-        lines += [f"| `{i}` | [{where[i][0]}]({day_link(cfg, where[i][0], facts)}) "
+        lines += [f"| `{i}` | [{where[i][0]}]({day_link(cfg, where[i][0], facts, phases)}) "
                   f"| {truncate(where[i][1], 96)} |" for i in owned]
         lines.append("")
         if track.count is not None and owned and len(owned) != track.count:
@@ -927,7 +963,7 @@ def build_all(cfg: Config) -> dict[Path, str]:
         status = ("complete" if number in complete and f_ and f_.written
                   else "written" if f_ and f_.written else "hub only" if f_ else "not started")
         title = truncate(f_.title if f_ and f_.title else day.title, 72)
-        cell = f"[{title}]({day_link(cfg, number, facts)})" if f_ else title
+        cell = f"[{title}]({day_link(cfg, number, facts, phases)})" if f_ else title
         lines.append(f"| {number} | {ph.number if ph else '-'} | {cell} | {status} "
                      f"| {len(f_.parts) if f_ else 0} | {len(f_.sources) if f_ else 0} "
                      f"| {', '.join(f'`{i}`' for i in day.ids) or '—'} |")
@@ -959,7 +995,7 @@ def build_all(cfg: Config) -> dict[Path, str]:
 
     # --- one page per day, plus the entity index ---------------------------------------------
     for number, f_ in facts.items():
-        rel = f"../../days/{f_.folder.name}"
+        rel = f"../../days/{f_.folder.relative_to(cfg.days).as_posix()}"
         lines = [f"# Day {number:02d} — {f_.title}", "", *head,
                  f"Hub: [`LESSON.md`]({rel}/LESSON.md) — IDs closed: {', '.join(f_.ids) or 'none'}",
                  "", "| Part | Title | Level | One-line answer |", "| --- | --- | --- | --- |"]
@@ -1185,7 +1221,7 @@ def cmd_new(cfg: Config, args: list[str]) -> int:
         print(f"no templates at {cfg.rel(templates)} — nothing to scaffold from.")
         return 1
     slug = slugify(args[1]) if len(args) > 1 else slugify(plan[day].title)
-    folder = cfg.days / f"day-{day:02d}-{slug}"
+    folder = cfg.days / day_group(cfg, day) / f"day-{day:02d}-{slug}"
     (folder / cfg.parts_dir / "01-rename-me").mkdir(parents=True, exist_ok=True)
     (folder / "lab").mkdir(exist_ok=True)
     for name in ("LESSON.md", "CHECKLIST.md"):
