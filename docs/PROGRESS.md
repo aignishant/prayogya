@@ -13,6 +13,10 @@ went wrong — a ledger that only records successes is a ledger nobody can learn
 | 1 | 2026-09-08 | FN-01 | 4 | <hash> | yes |
 | 2 | 2026-09-09 | FN-02 | 4 | <hash> | yes |
 | 3 | 2026-09-09 | FN-03 | 4 | <hash> | yes |
+| 4 | 2026-09-09 | AG-01 | 5 | <hash> | yes |
+| 5 | 2026-09-09 | TL-01 | 4 | <hash> | yes |
+| 6 | 2026-09-09 | AG-02 | 4 | <hash> | yes |
+| 7 | 2026-09-09 | TL-02 | 4 | <hash> | yes |
 
 
 > **Note on day 0.** Every check, build rep and deliberate break in `CHECKLIST.md` was run and its
@@ -60,3 +64,26 @@ went wrong — a ledger that only records successes is a ledger nobody can learn
 > in §5 and the four *Say out loud* questions were not performed; this row was appended when the
 > day was written, as days 1 and 2 were, and its `CHECKLIST.md` boxes are unticked at the time of
 > writing.
+
+> **Note on days 4 to 7 — P01 Ask Desk.** These four were written in one sitting, in parallel, and
+> that is a deviation from the one-day-at-a-time rhythm worth recording rather than smoothing over.
+> What made it safe: the project's whole reference implementation was built and run **first**, so
+> the four documents describe code that already existed and already passed `python run.py check`,
+> and every day's printed code was afterwards checked byte-for-byte against the files on disk.
+> Day 4's printed files were additionally lifted verbatim out of the document into a clean tree and
+> run there — five checks green, exit `0` — which is what plan §5.1 rule 4 means by "runnable as
+> printed". `python p.py depth` is green on all four, and `python p.py check` is green across the
+> repository.
+>
+> **What was NOT observed, and it is a real gap.** There is no working provider key on this
+> machine. Every transcript in these four days is either offline — request construction, tool
+> dispatch, `FunctionTool` introspection, the model registry — or a genuine provider rejection
+> (`400 INVALID_ARGUMENT`, "API key not valid"). **No model answer appears anywhere in these
+> documents**, and every place one would go carries `TODO(me)` naming the exact command. That
+> includes: what the model does when handed two consecutive `user` turns (day 4), the `role` the
+> tool-result turn must actually carry and the `finishReason` of a successful function call (day
+> 5), and what a model does when told a tool's purpose is "Call self as a function." (day 7).
+> The days are complete as teaching; the live half is owed and is marked as owed.
+>
+> As with days 0 to 3, these rows were appended when the days were written, and their
+> `CHECKLIST.md` boxes are unticked at the time of writing.

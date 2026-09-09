@@ -67,8 +67,8 @@ bug.
 
 | ID | Day | Day title |
 | --- | --- | --- |
-| `AG-01` | [4](../days/01-ask-desk/day-04/LESSON.md) | P01 Ask Desk · 1 — The loop by hand: think, act, observe, no framework |
-| `AG-02` | [6](../days/01-ask-desk/day-06/LESSON.md) | P01 Ask Desk · 3 — The first ADK agent: `Agent` plus runner, model pinned explicitly |
+| `AG-01` | [4](../days/01-ask-desk/day-04-loop-hand/LESSON.md) | P01 Ask Desk · 1 — The loop by hand: think, act, observe, no framework |
+| `AG-02` | [6](../days/01-ask-desk/day-06-first-adk-agent/LESSON.md) | P01 Ask Desk · 3 — The first ADK agent: `Agent` plus runner, model pinned explicitly |
 | `AG-03` | [8](../days/01-ask-desk/day-08/LESSON.md) | P01 Ask Desk · 5 — Events and streaming: the 2.x event model |
 | `AG-04` | [9](../days/01-ask-desk/day-09/LESSON.md) | P01 Ask Desk · 6 — Sessions, runs, and errors that surface instead of hiding |
 | `AG-05` | [21](../days/03-triage-room/day-21/LESSON.md) | P03 Triage Room · 3 — One agent is a function; two is an architecture |
@@ -111,8 +111,8 @@ bug.
 
 | ID | Day | Day title |
 | --- | --- | --- |
-| `TL-01` | [5](../days/01-ask-desk/day-05/LESSON.md) | P01 Ask Desk · 2 — Tools by hand: JSON schemas and the tool-result turn |
-| `TL-02` | [7](../days/01-ask-desk/day-07/LESSON.md) | P01 Ask Desk · 4 — `FunctionTool`, and what ADK does that you just did yourself |
+| `TL-01` | [5](../days/01-ask-desk/day-05-tools-hand/LESSON.md) | P01 Ask Desk · 2 — Tools by hand: JSON schemas and the tool-result turn |
+| `TL-02` | [7](../days/01-ask-desk/day-07-functiontool-what-adk-does/LESSON.md) | P01 Ask Desk · 4 — `FunctionTool`, and what ADK does that you just did yourself |
 | `TL-03` | [30](../days/04-trip-ledger/day-30/LESSON.md) | P04 Trip Ledger · 4 — Callbacks before and after the tool; plugins |
 | `TL-04` | [43](../days/06-field-inspector/day-43/LESSON.md) | P06 Field Inspector · 3 — Tool context, and state inside a tool |
 | `TL-05` | [44](../days/06-field-inspector/day-44/LESSON.md) | P06 Field Inspector · 4 — Long-running tools: the turn that does not return yet |

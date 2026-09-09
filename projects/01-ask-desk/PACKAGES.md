@@ -25,7 +25,7 @@ live with it for seven sittings.
 | Package | Version | Date observed | Day | Why, and how it was observed |
 | ---- | ----- | ------------- | --- | ---------------------------- |
 | Python | 3.12.12 | 2026-09-09 | 4 | Written into `.python-version`, not left to `requires-python = ">=3.12"` to resolve. `uv python pin 3.12.12`, then confirmed by `run.py check`'s `interpreter` check comparing `sys.version_info` against the file. |
-| google-adk | 2.8.0 | 2026-09-09 | 4 | The framework this project adopts on day 3. Latest release on PyPI, uploaded 2026-08-26T23:26:17Z, `requires_python >=3.10`. Read from `https://pypi.org/pypi/google-adk/json`; confirmed installed by `import google.adk; google.adk.__version__`. |
+| google-adk | 2.8.0 | 2026-09-09 | 4 | The version chosen by this project's freshness check, recorded on day 4 and **added to `pyproject.toml` on day 6**, which is the day the first code that imports it is written. Days 4 and 5 are standard library only, so until then `dependencies = []` and this row is a decision rather than an installed package. Latest release on PyPI, uploaded 2026-08-26T23:26:17Z, `requires_python >=3.10`. Read from `https://pypi.org/pypi/google-adk/json`; confirmed installed by `import google.adk; google.adk.__version__` after day 6's `uv add "google-adk==2.8.0"`. |
 | uv | 0.12.3 | 2026-09-09 | 4 | The one binary that owns this project's environment. `uv --version`. |
 
 ## Model pins

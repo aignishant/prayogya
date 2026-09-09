@@ -12,3 +12,7 @@ it. Cross-day lookups live in `wiki/ENTITIES.md`.
 | [01](wiki/day-01.md) | P00 Foundry · 1 — The machine: uv, Python 3.12, and the four Pythons that ruin a Mo… | FN-01 | 4 | — |
 | [02](wiki/day-02.md) | P00 Foundry · 2 — The skeleton: `.gitignore` before `.env` exists, and why that ord… | FN-02 | 4 | — |
 | [03](wiki/day-03.md) | P00 Foundry · 3 — Keys, pinning, and the check that refuses a half-finished day | FN-03 | 4 | — |
+| [04](wiki/day-04.md) | P01 Ask Desk · 1 — The loop by hand: think, act, observe, no framework | AG-01 | 5 | — |
+| [05](wiki/day-05.md) | P01 Ask Desk · 2 — Tools by hand: JSON schemas and the tool-result turn | TL-01 | 4 | — |
+| [06](wiki/day-06.md) | P01 Ask Desk · 3 — The first ADK agent: `Agent` plus runner, model pinned explicitly | AG-02 | 4 | — |
+| [07](wiki/day-07.md) | P01 Ask Desk · 4 — `FunctionTool`, and what ADK does that you just did yourself | TL-02 | 4 | — |

@@ -7,7 +7,7 @@ An ID counts as **closed** only when its day has a row in `docs/PROGRESS.md` *an
 hub's frontmatter claims the ID. **An open ID from a completed phase is a bug**, not a
 backlog item.
 
-**6 of 310 closed.**
+**10 of 310 closed.**
 
 | ID | Track | Phase | Planned day | Status |
 | --- | --- | --- | --- | --- |
@@ -17,10 +17,10 @@ backlog item.
 | `FN-01` | Foundations & the kit | P00 | 1 | [x] closed day 1 |
 | `FN-02` | Foundations & the kit | P00 | 2 | [x] closed day 2 |
 | `FN-03` | Foundations & the kit | P00 | 3 | [x] closed day 3 |
-| `AG-01` | Agents, casts & workflows | P01 | 4 | [ ] open |
-| `TL-01` | Tools, schemas & skills | P01 | 5 | [ ] open |
-| `AG-02` | Agents, casts & workflows | P01 | 6 | [ ] open |
-| `TL-02` | Tools, schemas & skills | P01 | 7 | [ ] open |
+| `AG-01` | Agents, casts & workflows | P01 | 4 | [x] closed day 4 |
+| `TL-01` | Tools, schemas & skills | P01 | 5 | [x] closed day 5 |
+| `AG-02` | Agents, casts & workflows | P01 | 6 | [x] closed day 6 |
+| `TL-02` | Tools, schemas & skills | P01 | 7 | [x] closed day 7 |
 | `AG-03` | Agents, casts & workflows | P01 | 8 | [ ] open |
 | `AG-04` | Agents, casts & workflows | P01 | 9 | [ ] open |
 | `RS-01` | Reliability & durability | P01 | 9 | [ ] open |

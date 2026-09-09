@@ -9,9 +9,9 @@ only when it also has a ledger row. A thin day is visible from the parts column.
 | | Count | Of plan |
 | --- | --- | --- |
 | Days in the plan | **297** | 100% |
-| Days written | **4** | 1.3% |
-| Days complete | **4** | 1.3% |
-| Subtopic documents | **16** | — |
+| Days written | **8** | 2.7% |
+| Days complete | **8** | 2.7% |
+| Subtopic documents | **33** | — |
 | Source documents | **0** | — |
 
 ## Every day
@@ -22,10 +22,10 @@ only when it also has a ledger row. A thin day is visible from the parts column.
 | 1 | P00 | [P00 Foundry · 1 — The machine: uv, Python 3.12, and the four Pythons th…](../days/00-foundry/day-01-machine-four-pythons/LESSON.md) | complete | 4 | 0 | `FN-01` |
 | 2 | P00 | [P00 Foundry · 2 — The skeleton: `.gitignore` before `.env` exists, and…](../days/00-foundry/day-02-skeleton-gitignore-before-env/LESSON.md) | complete | 4 | 0 | `FN-02` |
 | 3 | P00 | [P00 Foundry · 3 — Keys, pinning, and the check that refuses a half-fini…](../days/00-foundry/day-03-keys-pinning-refusing-check/LESSON.md) | complete | 4 | 0 | `FN-03` |
-| 4 | P01 | P01 Ask Desk · 1 — The loop by hand: think, act, observe, no framework | not started | 0 | 0 | `AG-01` |
-| 5 | P01 | P01 Ask Desk · 2 — Tools by hand: JSON schemas and the tool-result turn | not started | 0 | 0 | `TL-01` |
-| 6 | P01 | P01 Ask Desk · 3 — The first ADK agent: `Agent` plus runner, model pinn… | not started | 0 | 0 | `AG-02` |
-| 7 | P01 | P01 Ask Desk · 4 — `FunctionTool`, and what ADK does that you just did… | not started | 0 | 0 | `TL-02` |
+| 4 | P01 | [P01 Ask Desk · 1 — The loop by hand: think, act, observe, no framework](../days/01-ask-desk/day-04-loop-hand/LESSON.md) | complete | 5 | 0 | `AG-01` |
+| 5 | P01 | [P01 Ask Desk · 2 — Tools by hand: JSON schemas and the tool-result turn](../days/01-ask-desk/day-05-tools-hand/LESSON.md) | complete | 4 | 0 | `TL-01` |
+| 6 | P01 | [P01 Ask Desk · 3 — The first ADK agent: `Agent` plus runner, model pinn…](../days/01-ask-desk/day-06-first-adk-agent/LESSON.md) | complete | 4 | 0 | `AG-02` |
+| 7 | P01 | [P01 Ask Desk · 4 — `FunctionTool`, and what ADK does that you just did…](../days/01-ask-desk/day-07-functiontool-what-adk-does/LESSON.md) | complete | 4 | 0 | `TL-02` |
 | 8 | P01 | P01 Ask Desk · 5 — Events and streaming: the 2.x event model | not started | 0 | 0 | `AG-03` |
 | 9 | P01 | P01 Ask Desk · 6 — Sessions, runs, and errors that surface instead of h… | not started | 0 | 0 | `AG-04`, `RS-01` |
 | 10 | P01 | P01 Ask Desk · 7 — Ship D1: `api_server`, `/healthz`, the first eval th… | not started | 0 | 0 | `DP-01`, `EV-01` |
@@ -322,7 +322,7 @@ only when it also has a ledger row. A thin day is visible from the parts column.
 | --- | --- | --- | --- | --- | --- |
 | 0 | 0 | The authoring repository — the plan, the ledger… | 1/1 | 1/1 | `python p.py doctor` and `python p.py check` both green… |
 | P00 | 1–3 | Foundry — reference only; no project depends on… | 3/3 | 3/3 | A bare machine reaches a green check, and the check ref… |
-| P01 | 4–10 | Ask Desk — the loop, tools, the ADK agent, even… | 0/7 | 0/7 | D1: `api_server` answers `/healthz`, and the first eval… |
+| P01 | 4–10 | Ask Desk — the loop, tools, the ADK agent, even… | 4/7 | 4/7 | D1: `api_server` answers `/healthz`, and the first eval… |
 | P02 | 11–18 | Parts Counter — the MCP boundary, taught deeply | 0/8 | 0/8 | D2: a stateless container, secrets injected and not bak… |
 | P03 | 19–26 | Triage Room — the cast, taught deeply | 0/8 | 0/8 | D3: compose runs agents and boundary as separate contai… |
 | P04 | 27–33 | Trip Ledger — callbacks, plugins, and what a th… | 0/7 | 0/7 | The budget guard refuses a turn that would exceed the w… |
