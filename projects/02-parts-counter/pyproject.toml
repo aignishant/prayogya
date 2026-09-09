@@ -3,7 +3,8 @@ name = "parts-counter"
 version = "0.1.0"
 requires-python = ">=3.12"
 dependencies = [
-    "google-adk==2.8.0",
+    "google-adk[mcp]==2.8.0",
+    "mcp==1.30.0",
 ]
 
 [dependency-groups]

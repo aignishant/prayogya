@@ -1,29 +1,36 @@
-# parts_counter/tools.py
-"""The four things the counter can do — and one of them writes.
+# parts_mcp/server.py
+"""This project's data boundary. It owns the inventory; nothing else opens the file.
 
-Three reads and a write, and the write is why this project has a boundary day. A tool that only
-answers questions is a tool whose worst failure is a wrong answer. A tool that changes the
-inventory can be wrong in a way that outlives the conversation, and there is nothing in this file
-to stop it: no record of who asked, no second opinion, and no way for anything outside this process
-to know it happened.
+Four tools, three of which read and one of which writes, and the write is the reason this process
+exists as a separate thing at all.
 
-Nothing here is a mistake. Every function is short, typed and documented, and the whole file would
-pass review. Day 2 is about what is missing rather than what is wrong.
+`stateless_http=True` is the shape this curriculum builds towards and the reason day 3 spends a
+sitting on the reframe. It means every request carries everything needed to answer it, so a second
+replica can answer a call the first one never saw, and a container can be killed between two calls
+without losing anything. The alternative — a session established once and referred to afterwards —
+is the phone call, and it is what makes a server a thing you cannot scale by adding another.
 
-ADK derives each declaration from the signature and the docstring (P01 day 4), so the docstrings
-below are written for the model and not for us.
+The tool docstrings are written for a model, because they are what a model is shown: the MCP tool
+declaration takes its `description` from the docstring and its `inputSchema` from the type hints,
+the same derivation P01 day 4 taught for ADK's own `FunctionTool`.
 
 All data is synthetic.
+
+Verified against mcp 1.30.0 on 2026-09-10.
 """
 
 from __future__ import annotations
 
 from typing import Any
 
-from parts_counter import store
-from parts_counter.util.logging import log
+from mcp.server.fastmcp import FastMCP
+
+from parts_mcp import store
+
+mcp = FastMCP("parts-mcp", stateless_http=True)
 
 
+@mcp.tool()
 def find_part(query: str) -> dict[str, Any]:
     """Find parts whose number or name matches a query. An empty list is a valid answer."""
     hits = store.find(query)
@@ -31,6 +38,7 @@ def find_part(query: str) -> dict[str, Any]:
             "hits": [{"part_no": p["part_no"], "name": p["name"]} for p in hits]}
 
 
+@mcp.tool()
 def stock_level(part_no: str) -> dict[str, Any]:
     """Return how many of one part are on hand, and whether that is below its reorder point."""
     try:
@@ -42,6 +50,7 @@ def stock_level(part_no: str) -> dict[str, Any]:
             "reorder_at": part["reorder_at"], "below_reorder": part["on_hand"] <= part["reorder_at"]}
 
 
+@mcp.tool()
 def bin_location(part_no: str) -> dict[str, Any]:
     """Return the bin a part is stored in, so somebody can walk to it."""
     try:
@@ -52,6 +61,7 @@ def bin_location(part_no: str) -> dict[str, Any]:
     return {"part_no": part["part_no"], "bin": part["bin"], "name": part["name"]}
 
 
+@mcp.tool()
 def adjust_stock(part_no: str, delta: int) -> dict[str, Any]:
     """Change the on-hand count of a part by delta. Use a negative delta to issue stock.
 
@@ -64,12 +74,12 @@ def adjust_stock(part_no: str, delta: int) -> dict[str, Any]:
     except store.PartNotFound:
         return {"error": f"no part numbered {part_no!r}",
                 "known": [p["part_no"] for p in store.all_parts()]}
-    # The only trace this write leaves anywhere, and it goes to this process's stderr. Day 2 is
-    # about who else needed to know and had no way of finding out.
-    log("stock.adjusted", part_no=part["part_no"], delta=delta,
-        before=before, after=part["on_hand"])
     return {"part_no": part["part_no"], "before": before, "after": part["on_hand"],
             "unit": part["unit"]}
 
 
-REGISTRY = {f.__name__: f for f in (find_part, stock_level, bin_location, adjust_stock)}
+if __name__ == "__main__":
+    # stdio is the default and the one a local client launches as a subprocess. Day 6 runs the
+    # same server over Streamable HTTP without changing a line above this one, which is the
+    # argument for transports being a property of how you serve rather than of what you wrote.
+    mcp.run(transport="stdio")

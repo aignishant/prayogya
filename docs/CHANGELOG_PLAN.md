@@ -86,3 +86,17 @@ Anything structural also gets an ADR in `docs/adr/`, and the entry here links it
   supported model, not a preview one. P01 pins `gemini-3.8-flash`; no `-latest` alias is used
   anywhere, since the models page documents those as hot-swapped on every release. *What it costs:*
   nothing. The rule is unchanged and now has a citation instead of an assertion behind it.
+
+- 2026-09-10 — **v3.1.0, P02 teaches the MCP handshake era and names the revision that deleted
+  it. No section amended.** *What moved:* the specification. The current revision is `2026-07-28`,
+  which removed the `initialize`/`notifications/initialized` handshake, removed protocol-level
+  sessions and the `Mcp-Session-Id` header, and made every request carry its own version and
+  capabilities. Checked live 2026-09-10. *What the plan says:* unchanged, and it reads correctly —
+  §12 already gives P02 day 3 as "the stateless core; the phone-call → web reframe" and day 5 as
+  "Lifecycle, stateless-first — the old handshake as history", which is what the specification has
+  now done. §5.1's `FastMCP(..., stateless_http=True)` worked example also stands, because it is
+  correct for the SDK line the toolchain pins. *What it costs:* `google-adk` 2.8.0 declares
+  `mcp<2,>=1.24`, so P02 runs a legacy-era stack and cannot execute the modern shapes. Days 13 to
+  17 therefore teach the era they can run, and every day that teaches a legacy mechanism quotes,
+  in its body, the specification line that removed it. See
+  `docs/adr/ADR-0005-mcp-era-gap-and-the-1x-pin.md`.

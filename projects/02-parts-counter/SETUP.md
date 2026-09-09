@@ -55,10 +55,17 @@ the `lock` check then reports on a repository the invocation just repaired.
 ```bash
 uv run --frozen python run.py parts filter   # find parts, no model in the way
 uv run --frozen python run.py race           # day 2's concurrent-write demonstration
+uv run --frozen python run.py mcp            # the boundary server on stdio
+uv run --frozen python run.py mcp --http     # the same server on Streamable HTTP at :8090/mcp
+uv run --frozen python run.py probe          # list and call its tools across a process boundary
 ```
 
-`race` deliberately corrupts and then restores the synthetic inventory. It is safe to run and its
-numbers differ every time — that is the bug it demonstrates.
+None of those needs a key. `probe` starts the server itself as a subprocess, so it is the quickest
+way to confirm the boundary works after a fresh clone.
+
+`race` writes to the synthetic inventory and restores it. From day 3 onward it should report
+`parts unaccounted : 0` and no crashed reads; on days 1 and 2 it did neither, and that difference is
+what the boundary bought.
 
 ## What you do not need
 

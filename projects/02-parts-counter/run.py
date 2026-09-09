@@ -2,8 +2,12 @@
 """This project's own driver. It depends on nothing above this folder.
 
     python run.py check          the gate: config, pins, the registry, and the tests
-    python run.py parts <query>  find parts, straight through the tools
-    python run.py race           the concurrent-write demonstration from day 2
+    python run.py parts <query>  find parts, through the boundary's own tool
+    python run.py race           day 2's concurrent-write demonstration, re-run against the
+                                 store the boundary owns
+    python run.py mcp            run the boundary server on stdio
+    python run.py mcp --http     run the same server on Streamable HTTP at :8090/mcp
+    python run.py probe          list and call the boundary's tools across a real process line
 """
 
 from __future__ import annotations
@@ -111,20 +115,21 @@ def parts(query: str) -> int:
     """Find parts. Straight through the tools, with no model in the way."""
     import json
 
-    from parts_counter import tools
+    from parts_mcp import server
 
-    print(json.dumps(tools.find_part(query), indent=2))
+    print(json.dumps(server.find_part(query), indent=2))
     return 0
 
 
 def race(part_no: str = "SPK-0055", each: int = 10) -> int:
     """Two threads issuing stock at once, against a store with no boundary in front of it.
 
-    This is day 2's demonstration and it is deliberately runnable. The numbers differ every time,
-    which is the point: a bug that produces a different wrong answer on each run is one nobody can
-    reproduce from a bug report.
+    Day 2 ran this against a store with nothing in front of it and lost parts every time. It now
+    runs against `parts_mcp/store.py`, which is the same twenty lines with a lock around the
+    read-modify-write and an atomic rename instead of a truncating write. Nothing about the threads
+    changed; the ownership did.
     """
-    from parts_counter import store
+    from parts_mcp import store
 
     start = store.get(part_no)["on_hand"]
     errors: list[str] = []
@@ -152,6 +157,44 @@ def race(part_no: str = "SPK-0055", each: int = 10) -> int:
     return 0
 
 
+def serve_mcp(http: bool = False) -> int:
+    """Run the boundary server. Same server, same tools; only the transport differs."""
+    from parts_mcp.server import mcp
+
+    if http:
+        mcp.settings.host, mcp.settings.port = "127.0.0.1", 8090
+        mcp.run(transport="streamable-http")
+    else:
+        mcp.run(transport="stdio")
+    return 0
+
+
+def probe() -> int:
+    """List and call the boundary's tools over stdio. Proves the line is real, needs no key."""
+    import asyncio
+
+    from parts_counter.util import mcp as client
+
+    async def go() -> None:
+        toolset = client.over_stdio()
+        try:
+            tools = await toolset.get_tools()
+            print(f"{len(tools)} tool(s) fetched from the server:")
+            for tool in sorted(tools, key=lambda t: t.name):
+                print(f"  {tool.name}")
+            print()
+            result = await tools[0].run_async(
+                args={"part_no": "BRK-0143"} if tools[0].name == "stock_level" else {},
+                tool_context=None)
+            print("one call, returned across the boundary:")
+            print(" ", json.dumps(result)[:200])
+        finally:
+            await toolset.close()
+
+    asyncio.run(go())
+    return 0
+
+
 def main(argv: list[str]) -> int:
     match argv[1:]:
         case ["check"]:
@@ -160,6 +203,12 @@ def main(argv: list[str]) -> int:
             return parts(query)
         case ["race"]:
             return race()
+        case ["mcp"]:
+            return serve_mcp()
+        case ["mcp", "--http"]:
+            return serve_mcp(http=True)
+        case ["probe"]:
+            return probe()
         case _:
             print(__doc__, file=sys.stderr)
             return 2
