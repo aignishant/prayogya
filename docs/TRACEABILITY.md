@@ -7,7 +7,7 @@ An ID counts as **closed** only when its day has a row in `docs/PROGRESS.md` *an
 hub's frontmatter claims the ID. **An open ID from a completed phase is a bug**, not a
 backlog item.
 
-**10 of 310 closed.**
+**17 of 310 closed.**
 
 | ID | Track | Phase | Planned day | Status |
 | --- | --- | --- | --- | --- |
@@ -21,13 +21,13 @@ backlog item.
 | `TL-01` | Tools, schemas & skills | P01 | 5 | [x] closed day 5 |
 | `AG-02` | Agents, casts & workflows | P01 | 6 | [x] closed day 6 |
 | `TL-02` | Tools, schemas & skills | P01 | 7 | [x] closed day 7 |
-| `AG-03` | Agents, casts & workflows | P01 | 8 | [ ] open |
-| `AG-04` | Agents, casts & workflows | P01 | 9 | [ ] open |
-| `RS-01` | Reliability & durability | P01 | 9 | [ ] open |
-| `DP-01` | Deploy, ops & interop | P01 | 10 | [ ] open |
-| `EV-01` | Evals & observability | P01 | 10 | [ ] open |
-| `FN-04` | Foundations & the kit | P02 | 11 | [ ] open |
-| `MC-01` | The MCP boundary | P02 | 12 | [ ] open |
+| `AG-03` | Agents, casts & workflows | P01 | 8 | [x] closed day 8 |
+| `AG-04` | Agents, casts & workflows | P01 | 9 | [x] closed day 9 |
+| `RS-01` | Reliability & durability | P01 | 9 | [x] closed day 9 |
+| `DP-01` | Deploy, ops & interop | P01 | 10 | [x] closed day 10 |
+| `EV-01` | Evals & observability | P01 | 10 | [x] closed day 10 |
+| `FN-04` | Foundations & the kit | P02 | 11 | [x] closed day 11 |
+| `MC-01` | The MCP boundary | P02 | 12 | [x] closed day 12 |
 | `MC-02` | The MCP boundary | P02 | 13 | [ ] open |
 | `MC-03` | The MCP boundary | P02 | 14 | [ ] open |
 | `MC-04` | The MCP boundary | P02 | 15 | [ ] open |

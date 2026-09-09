@@ -31,17 +31,19 @@ project's own day 1 is sitting 4.
 | `run.py` | day 04 part 2.1, whole · the `adk` subcommand added as a marked diff on day 06 part 2.1 |
 | `ask_desk/tools.py` | day 05 part 1.2, whole |
 | `ask_desk/data/notes.json` | day 05 part 1.2, whole — synthetic |
-| `ask_desk/agent.py` | day 06 part 1.1, whole |
+| `ask_desk/agent.py` | day 06 part 1.1, whole · `build_desk` and `build_runner`'s `agent` parameter added as a marked diff on day 08 part 1.1 · `run_config()` on day 08 part 2.1 · `export_key()` on day 09 part 2.1 |
+| `ask_desk/scripted.py` | day 08 part 1.1, whole · the `Fail` step and `FAILS_AFTER_A_TOOL` added as a marked diff on day 09 part 2.1 |
+| `ask_desk/api.py` | day 10 part 1.1, whole |
+| `evals/__init__.py` · `evals/harness.py` · `evals/cases.json` | day 10 part 2.1, whole |
 
-## Files this project does not have yet
+## Files this project does not have, and why
 
 Listed so their absence is a decision on the record rather than an oversight. Each is owed by a day
 that has not been written.
 
 | File | Owed by |
 | --- | --- |
-| `evals/` | day 10 — Ship D1, the first eval that can go red |
-| `tests/` | day 10 |
+| `tests/` | **not owed, and that is a decision.** P01 ships no unit tests: the gate's five configuration checks plus the evalset answer the questions this project has, and a test suite added before there is something worth asserting is scaffolding. `pytest` arrives in P02, with `tests/test_kit.py`. |
 | `Dockerfile` | not owed. P01 is deploy tier D1: `api_server` run locally. The container arrives with P02 at D2. |
 
 ## Day 07 prints nothing

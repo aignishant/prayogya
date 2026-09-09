@@ -17,6 +17,11 @@ went wrong — a ledger that only records successes is a ledger nobody can learn
 | 5 | 2026-09-09 | TL-01 | 4 | <hash> | yes |
 | 6 | 2026-09-09 | AG-02 | 4 | <hash> | yes |
 | 7 | 2026-09-09 | TL-02 | 4 | <hash> | yes |
+| 8 | 2026-09-10 | AG-03 | 5 | <hash> | yes |
+| 9 | 2026-09-10 | AG-04, RS-01 | 4 | <hash> | yes |
+| 10 | 2026-09-10 | DP-01, EV-01 | 5 | <hash> | yes |
+| 11 | 2026-09-10 | FN-04 | 4 | <hash> | yes |
+| 12 | 2026-09-10 | MC-01 | 4 | <hash> | yes |
 
 
 > **Note on day 0.** Every check, build rep and deliberate break in `CHECKLIST.md` was run and its
@@ -106,3 +111,35 @@ went wrong — a ledger that only records successes is a ledger nobody can learn
 > the exception on purpose. The error was found by probing `RunConfig` while building day 8's
 > material — which is the argument for building the code before writing the document, and also
 > the argument for not trusting a day that has only been read.
+
+> **Note on days 8 to 12.** Written in one sitting, in parallel, against implementations built and
+> verified first — the same arrangement as days 4 to 7, recorded again because it is a deviation
+> from the one-day rhythm and not a thing to get used to silently. Every printed block was checked
+> byte-for-byte against the files on disk afterwards, and both projects' gates are green: P01 six
+> checks, P02 six checks, `python p.py check` green across thirteen days.
+>
+> **What made these days unusually verifiable.** P01 gained `ask_desk/scripted.py`, a stand-in
+> model subclassing ADK's `BaseLlm`. It replays a fixed script, so days 8 to 10 produce **real ADK
+> events** — real streaming, real tool dispatch, a real bound firing, a real error propagating —
+> with no key, no cost and exact reproducibility. It is labelled a test double in its own docstring
+> and names itself `scripted/...` in every transcript it produces, so nothing it emits can be
+> mistaken for a provider response. The still-missing half is unchanged: **no model answer appears
+> anywhere in these five days**, and every place one would go carries `TODO(me)` with the exact
+> command.
+>
+> **Five defects in the project code were found by writing the days, and that is the argument for
+> this order.** Days 8 and 10 caught them; they are recorded here because a ledger that only lists
+> what went well teaches nothing. (1) `run.py` had grown a module-scope `google.adk` import, undoing
+> day 6's rule that `run.py check` must not load the framework — fixed, and day 8 now teaches the
+> lazy import as the rule rather than the regression as a trap. (2) `api.py` imported `pydantic`
+> and `google.genai` while `pyproject.toml` declared neither, both arriving transitively through
+> `google-adk` — both now declared, and day 10 gained the lesson: if a file writes `import x`, `x`
+> is in `pyproject.toml`. (3) `SETUP.md` said five checks and (4) `README.md` said four commands;
+> both stale, both corrected. (5) `CODEMAP.md` still listed `evals/` as owed. A sixth was found in
+> P02 and deliberately **left in place**: `parts_counter/util/keys.py` points at `PRIMER.md` §1,
+> which is the right section in P01, where the file was copied from, and the wrong one here. Day 11
+> prints the file with the stale pointer, names it on the same page, and makes correcting it a rep
+> — because it is the exact drift that day's opening part argues the independence rule will cause.
+>
+> As with every day so far, these rows were appended when the days were written and their
+> `CHECKLIST.md` boxes are unticked at the time of writing.

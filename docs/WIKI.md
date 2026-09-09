@@ -16,3 +16,8 @@ it. Cross-day lookups live in `wiki/ENTITIES.md`.
 | [05](wiki/day-05.md) | P01 Ask Desk · 2 — Tools by hand: JSON schemas and the tool-result turn | TL-01 | 4 | — |
 | [06](wiki/day-06.md) | P01 Ask Desk · 3 — The first ADK agent: `Agent` plus runner, model pinned explicitly | AG-02 | 4 | — |
 | [07](wiki/day-07.md) | P01 Ask Desk · 4 — `FunctionTool`, and what ADK does that you just did yourself | TL-02 | 4 | — |
+| [08](wiki/day-08.md) | P01 Ask Desk · 5 — Events and streaming: the 2.x event model | AG-03 | 5 | — |
+| [09](wiki/day-09.md) | P01 Ask Desk · 6 — Sessions, runs, and errors that surface instead of hiding | AG-04, RS-01 | 4 | — |
+| [10](wiki/day-10.md) | P01 Ask Desk · 7 — Ship D1: `api_server`, `/healthz`, the first eval that can go re… | DP-01, EV-01 | 5 | — |
+| [11](wiki/day-11.md) | P02 Parts Counter · 1 — The kit: this project's own utils, in full | FN-04 | 4 | — |
+| [12](wiki/day-12.md) | P02 Parts Counter · 2 — Why the data goes behind a boundary, and what breaks when i… | MC-01 | 4 | — |

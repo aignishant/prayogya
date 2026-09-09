@@ -46,7 +46,9 @@ uv run --frozen python run.py check
 echo $?                   # 0 green, 1 red, 2 you typed the command wrong
 ```
 
-Five checks, all of which must be green: `keys`, `interpreter`, `pins`, `lock`, `model`.
+Six checks, all of which must be green: `keys`, `interpreter`, `pins`, `lock`, `model`, `evals`.
+The last one runs this project's evalset against a scripted model, so it needs no key and contacts
+nothing — and it is the only check here whose subject is the desk's behaviour rather than its config.
 
 `--frozen` is not optional. Without it `uv run` updates the lockfile before your command starts,
 and the `lock` check then reports on a repository the invocation just repaired.
@@ -55,11 +57,18 @@ and the `lock` check then reports on a repository the invocation just repaired.
 
 ```bash
 uv run --frozen python run.py plan "Is the VPN down?"   # prints the request, sends nothing
+uv run --frozen python run.py events                    # every event one question produces
+uv run --frozen python run.py events --stream           # the same, streaming
+uv run --frozen python run.py session                   # what a second question in a session sees
+uv run --frozen python run.py eval                      # the evalset
+uv run --frozen python run.py serve                     # the D1 API on :8080
 uv run --frozen python run.py ask  "Is the VPN down?"   # the hand-rolled desk  (days 1-2)
 uv run --frozen python run.py adk  "Is the VPN down?"   # the ADK agent        (days 3-4)
 ```
 
-`plan` needs no key and no network. The other two need a working key.
+Only the last two need a working key. Everything above them runs against a scripted stand-in model
+(`ask_desk/scripted.py`) or contacts nothing at all, which is why a reader with no key can still
+follow days 5 to 7 in full.
 
 ## What you do not need
 

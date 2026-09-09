@@ -14,14 +14,20 @@ notes do not cover it. It never guesses.
 `uv`, and a free Google AI Studio API key. Nothing else — no database, no Docker, no cloud project.
 Full steps in `SETUP.md`.
 
-## The four commands
+## The commands
 
 ```bash
-uv run --frozen python run.py check                     # the gate
+uv run --frozen python run.py check                     # the gate: config, pins, and the evalset
 uv run --frozen python run.py plan "Is the VPN down?"   # the request, without sending it
+uv run --frozen python run.py events [--stream]         # every event one question produces
+uv run --frozen python run.py session                   # what a second question in a session sees
+uv run --frozen python run.py eval                      # the evalset; non-zero when a case fails
+uv run --frozen python run.py serve                     # the D1 API on :8080
 uv run --frozen python run.py ask  "Is the VPN down?"   # the hand-rolled desk
 uv run --frozen python run.py adk  "Is the VPN down?"   # the same desk, as an ADK agent
 ```
+
+Only the last two need a working API key.
 
 ## The architecture
 

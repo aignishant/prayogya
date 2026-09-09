@@ -20,8 +20,6 @@ import sys
 import tomllib
 from pathlib import Path
 
-from google.adk.sessions import InMemorySessionService
-
 from ask_desk import loop, provider
 from ask_desk.util import keys, models
 
@@ -152,6 +150,7 @@ def events(stream: bool) -> int:
     """Print every event one question produces, against a scripted model. No key, no network."""
     import asyncio
 
+    from google.adk.sessions import InMemorySessionService
     from google.genai import types
 
     from ask_desk import agent, scripted
@@ -193,6 +192,7 @@ def session() -> int:
     """Two questions down one session, and the same two down two sessions. No key, no network."""
     import asyncio
 
+    from google.adk.sessions import InMemorySessionService
     from google.genai import types
 
     from ask_desk import agent, scripted

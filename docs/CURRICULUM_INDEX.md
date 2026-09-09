@@ -23,7 +23,7 @@ bug.
 | `FN-01` | [1](../days/00-foundry/day-01-machine-four-pythons/LESSON.md) | P00 Foundry · 1 — The machine: uv, Python 3.12, and the four Pythons that ruin a Monday |
 | `FN-02` | [2](../days/00-foundry/day-02-skeleton-gitignore-before-env/LESSON.md) | P00 Foundry · 2 — The skeleton: `.gitignore` before `.env` exists, and why that order |
 | `FN-03` | [3](../days/00-foundry/day-03-keys-pinning-refusing-check/LESSON.md) | P00 Foundry · 3 — Keys, pinning, and the check that refuses a half-finished day |
-| `FN-04` | [11](../days/02-parts-counter/day-11/LESSON.md) | P02 Parts Counter · 1 — The kit: this project's own utils, in full |
+| `FN-04` | [11](../days/02-parts-counter/day-11-kit/LESSON.md) | P02 Parts Counter · 1 — The kit: this project's own utils, in full |
 | `FN-05` | [19](../days/03-triage-room/day-19/LESSON.md) | P03 Triage Room · 1 — The kit |
 | `FN-06` | [27](../days/04-trip-ledger/day-27/LESSON.md) | P04 Trip Ledger · 1 — The kit |
 | `FN-07` | [34](../days/05-bench-runner/day-34/LESSON.md) | P05 Bench Runner · 1 — The kit |
@@ -69,8 +69,8 @@ bug.
 | --- | --- | --- |
 | `AG-01` | [4](../days/01-ask-desk/day-04-loop-hand/LESSON.md) | P01 Ask Desk · 1 — The loop by hand: think, act, observe, no framework |
 | `AG-02` | [6](../days/01-ask-desk/day-06-first-adk-agent/LESSON.md) | P01 Ask Desk · 3 — The first ADK agent: `Agent` plus runner, model pinned explicitly |
-| `AG-03` | [8](../days/01-ask-desk/day-08/LESSON.md) | P01 Ask Desk · 5 — Events and streaming: the 2.x event model |
-| `AG-04` | [9](../days/01-ask-desk/day-09/LESSON.md) | P01 Ask Desk · 6 — Sessions, runs, and errors that surface instead of hiding |
+| `AG-03` | [8](../days/01-ask-desk/day-08-events-streaming/LESSON.md) | P01 Ask Desk · 5 — Events and streaming: the 2.x event model |
+| `AG-04` | [9](../days/01-ask-desk/day-09-sessions-errors-surface/LESSON.md) | P01 Ask Desk · 6 — Sessions, runs, and errors that surface instead of hiding |
 | `AG-05` | [21](../days/03-triage-room/day-21/LESSON.md) | P03 Triage Room · 3 — One agent is a function; two is an architecture |
 | `AG-06` | [22](../days/03-triage-room/day-22/LESSON.md) | P03 Triage Room · 4 — The Workflow Runtime: nodes and edges |
 | `AG-07` | [23](../days/03-triage-room/day-23/LESSON.md) | P03 Triage Room · 5 — The classifier: a specialist with three tools and no opinions |
@@ -134,7 +134,7 @@ bug.
 
 | ID | Day | Day title |
 | --- | --- | --- |
-| `MC-01` | [12](../days/02-parts-counter/day-12/LESSON.md) | P02 Parts Counter · 2 — Why the data goes behind a boundary, and what breaks when it does not |
+| `MC-01` | [12](../days/02-parts-counter/day-12-why-data-behind-boundary/LESSON.md) | P02 Parts Counter · 2 — Why the data goes behind a boundary, and what breaks when it does not |
 | `MC-02` | [13](../days/02-parts-counter/day-13/LESSON.md) | P02 Parts Counter · 3 — MCP 2026: the stateless core, and the phone-call to web reframe |
 | `MC-03` | [14](../days/02-parts-counter/day-14/LESSON.md) | P02 Parts Counter · 4 — The server skeleton and its first tool |
 | `MC-04` | [15](../days/02-parts-counter/day-15/LESSON.md) | P02 Parts Counter · 5 — Lifecycle, stateless-first: the old handshake as history |
@@ -216,7 +216,7 @@ bug.
 
 | ID | Day | Day title |
 | --- | --- | --- |
-| `RS-01` | [9](../days/01-ask-desk/day-09/LESSON.md) | P01 Ask Desk · 6 — Sessions, runs, and errors that surface instead of hiding |
+| `RS-01` | [9](../days/01-ask-desk/day-09-sessions-errors-surface/LESSON.md) | P01 Ask Desk · 6 — Sessions, runs, and errors that surface instead of hiding |
 | `RS-02` | [32](../days/04-trip-ledger/day-32/LESSON.md) | P04 Trip Ledger · 6 — Token and quota accounting: a three-agent turn costs three |
 | `RS-03` | [33](../days/04-trip-ledger/day-33/LESSON.md) | P04 Trip Ledger · 7 — Ship D3: the budget guard that refuses |
 | `RS-04` | [37](../days/05-bench-runner/day-37/LESSON.md) | P05 Bench Runner · 4 — Honest 429: `Retry-After`, 1/2/4/8, escalate |
@@ -286,7 +286,7 @@ bug.
 
 | ID | Day | Day title |
 | --- | --- | --- |
-| `EV-01` | [10](../days/01-ask-desk/day-10/LESSON.md) | P01 Ask Desk · 7 — Ship D1: `api_server`, `/healthz`, the first eval that can go red; cold clone |
+| `EV-01` | [10](../days/01-ask-desk/day-10-ship-d1-healthz-eval/LESSON.md) | P01 Ask Desk · 7 — Ship D1: `api_server`, `/healthz`, the first eval that can go red; cold clone |
 | `EV-02` | [31](../days/04-trip-ledger/day-31/LESSON.md) | P04 Trip Ledger · 5 — Structured logging, three agents deep |
 | `EV-03` | [54](../days/07-form-filler/day-54/LESSON.md) | P07 Form Filler · 7 — Ship D3: the validator that rejects the filler's confident guess |
 | `EV-04` | [84](../days/11-skill-forge/day-84/LESSON.md) | P11 Skill Forge · 7 — Testing and versioning; the skill that fires on the wrong request |
@@ -315,7 +315,7 @@ bug.
 
 | ID | Day | Day title |
 | --- | --- | --- |
-| `DP-01` | [10](../days/01-ask-desk/day-10/LESSON.md) | P01 Ask Desk · 7 — Ship D1: `api_server`, `/healthz`, the first eval that can go red; cold clone |
+| `DP-01` | [10](../days/01-ask-desk/day-10-ship-d1-healthz-eval/LESSON.md) | P01 Ask Desk · 7 — Ship D1: `api_server`, `/healthz`, the first eval that can go red; cold clone |
 | `DP-02` | [18](../days/02-parts-counter/day-18/LESSON.md) | P02 Parts Counter · 8 — Ship D2: stateless container, secrets injected not baked; cold clone |
 | `DP-03` | [26](../days/03-triage-room/day-26/LESSON.md) | P03 Triage Room · 8 — Ship D3: compose, agents and boundary as separate containers; cold clone |
 | `DP-04` | [33](../days/04-trip-ledger/day-33/LESSON.md) | P04 Trip Ledger · 7 — Ship D3: the budget guard that refuses |

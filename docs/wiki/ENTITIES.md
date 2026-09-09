@@ -18,11 +18,18 @@ questions a long curriculum makes expensive to answer by reading.
 | --- | --- |
 | `AG-01` | [day 4](day-04.md) |
 | `AG-02` | [day 6](day-06.md) |
+| `AG-03` | [day 8](day-08.md) |
+| `AG-04` | [day 9](day-09.md) |
+| `DP-01` | [day 10](day-10.md) |
+| `EV-01` | [day 10](day-10.md) |
 | `FN-01` | [day 1](day-01.md) |
 | `FN-02` | [day 2](day-02.md) |
 | `FN-03` | [day 3](day-03.md) |
+| `FN-04` | [day 11](day-11.md) |
+| `MC-01` | [day 12](day-12.md) |
 | `RB-01` | [day 0](day-00.md) |
 | `RB-02` | [day 0](day-00.md) |
 | `RB-03` | [day 0](day-00.md) |
+| `RS-01` | [day 9](day-09.md) |
 | `TL-01` | [day 5](day-05.md) |
 | `TL-02` | [day 7](day-07.md) |

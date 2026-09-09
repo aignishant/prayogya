@@ -9,9 +9,9 @@ only when it also has a ledger row. A thin day is visible from the parts column.
 | | Count | Of plan |
 | --- | --- | --- |
 | Days in the plan | **297** | 100% |
-| Days written | **8** | 2.7% |
-| Days complete | **8** | 2.7% |
-| Subtopic documents | **33** | — |
+| Days written | **13** | 4.4% |
+| Days complete | **13** | 4.4% |
+| Subtopic documents | **55** | — |
 | Source documents | **0** | — |
 
 ## Every day
@@ -26,11 +26,11 @@ only when it also has a ledger row. A thin day is visible from the parts column.
 | 5 | P01 | [P01 Ask Desk · 2 — Tools by hand: JSON schemas and the tool-result turn](../days/01-ask-desk/day-05-tools-hand/LESSON.md) | complete | 4 | 0 | `TL-01` |
 | 6 | P01 | [P01 Ask Desk · 3 — The first ADK agent: `Agent` plus runner, model pinn…](../days/01-ask-desk/day-06-first-adk-agent/LESSON.md) | complete | 4 | 0 | `AG-02` |
 | 7 | P01 | [P01 Ask Desk · 4 — `FunctionTool`, and what ADK does that you just did…](../days/01-ask-desk/day-07-functiontool-what-adk-does/LESSON.md) | complete | 4 | 0 | `TL-02` |
-| 8 | P01 | P01 Ask Desk · 5 — Events and streaming: the 2.x event model | not started | 0 | 0 | `AG-03` |
-| 9 | P01 | P01 Ask Desk · 6 — Sessions, runs, and errors that surface instead of h… | not started | 0 | 0 | `AG-04`, `RS-01` |
-| 10 | P01 | P01 Ask Desk · 7 — Ship D1: `api_server`, `/healthz`, the first eval th… | not started | 0 | 0 | `DP-01`, `EV-01` |
-| 11 | P02 | P02 Parts Counter · 1 — The kit: this project's own utils, in full | not started | 0 | 0 | `FN-04` |
-| 12 | P02 | P02 Parts Counter · 2 — Why the data goes behind a boundary, and what b… | not started | 0 | 0 | `MC-01` |
+| 8 | P01 | [P01 Ask Desk · 5 — Events and streaming: the 2.x event model](../days/01-ask-desk/day-08-events-streaming/LESSON.md) | complete | 5 | 0 | `AG-03` |
+| 9 | P01 | [P01 Ask Desk · 6 — Sessions, runs, and errors that surface instead of h…](../days/01-ask-desk/day-09-sessions-errors-surface/LESSON.md) | complete | 4 | 0 | `AG-04`, `RS-01` |
+| 10 | P01 | [P01 Ask Desk · 7 — Ship D1: `api_server`, `/healthz`, the first eval th…](../days/01-ask-desk/day-10-ship-d1-healthz-eval/LESSON.md) | complete | 5 | 0 | `DP-01`, `EV-01` |
+| 11 | P02 | [P02 Parts Counter · 1 — The kit: this project's own utils, in full](../days/02-parts-counter/day-11-kit/LESSON.md) | complete | 4 | 0 | `FN-04` |
+| 12 | P02 | [P02 Parts Counter · 2 — Why the data goes behind a boundary, and what b…](../days/02-parts-counter/day-12-why-data-behind-boundary/LESSON.md) | complete | 4 | 0 | `MC-01` |
 | 13 | P02 | P02 Parts Counter · 3 — MCP 2026: the stateless core, and the phone-cal… | not started | 0 | 0 | `MC-02` |
 | 14 | P02 | P02 Parts Counter · 4 — The server skeleton and its first tool | not started | 0 | 0 | `MC-03` |
 | 15 | P02 | P02 Parts Counter · 5 — Lifecycle, stateless-first: the old handshake a… | not started | 0 | 0 | `MC-04` |
@@ -322,8 +322,8 @@ only when it also has a ledger row. A thin day is visible from the parts column.
 | --- | --- | --- | --- | --- | --- |
 | 0 | 0 | The authoring repository — the plan, the ledger… | 1/1 | 1/1 | `python p.py doctor` and `python p.py check` both green… |
 | P00 | 1–3 | Foundry — reference only; no project depends on… | 3/3 | 3/3 | A bare machine reaches a green check, and the check ref… |
-| P01 | 4–10 | Ask Desk — the loop, tools, the ADK agent, even… | 4/7 | 4/7 | D1: `api_server` answers `/healthz`, and the first eval… |
-| P02 | 11–18 | Parts Counter — the MCP boundary, taught deeply | 0/8 | 0/8 | D2: a stateless container, secrets injected and not bak… |
+| P01 | 4–10 | Ask Desk — the loop, tools, the ADK agent, even… | 7/7 | 7/7 | D1: `api_server` answers `/healthz`, and the first eval… |
+| P02 | 11–18 | Parts Counter — the MCP boundary, taught deeply | 2/8 | 2/8 | D2: a stateless container, secrets injected and not bak… |
 | P03 | 19–26 | Triage Room — the cast, taught deeply | 0/8 | 0/8 | D3: compose runs agents and boundary as separate contai… |
 | P04 | 27–33 | Trip Ledger — callbacks, plugins, and what a th… | 0/7 | 0/7 | The budget guard refuses a turn that would exceed the w… |
 | P05 | 34–40 | Bench Runner — providers, honest 429s, the chea… | 0/7 | 0/7 | Four providers benchmarked, and no fabricated answer co… |
