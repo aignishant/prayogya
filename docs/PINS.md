@@ -20,3 +20,5 @@ is not an amendment, it is the ledger doing its job. Say so in the Why column.
 | Python | 3.12.10 | 2026-09-08 | 0 | The interpreter `p.py` runs under. `python --version`. Needs 3.11 or newer for `tomllib`. |
 | uv | 0.12.3 | 2026-09-08 | 0 | The one binary that owns every project environment. `uv --version`. |
 | git | 2.54.0.windows.1 | 2026-09-08 | 0 | The history is the memory; one day, one commit. `git --version`. |
+| CPython (uv-managed) | 3.12.12 | 2026-09-08 | 1 | The interpreter `uv sync` and `uv run` select inside a project, and **not** the 3.12.10 the bare name `python` resolves to on this machine. `uv python find` / `uv python list`. Does not supersede the day-0 Python row: that one is the interpreter `p.py` runs under, and the two are different files. |
+| platformdirs | 4.11.7 | 2026-09-08 | 1 | P00 Foundry's one dependency, added to make the wrong command fail visibly. `uv add platformdirs`. Recorded here rather than in a project `PACKAGES.md` because P00 is reference-only and has none yet; from P01 every project pins in its own. |

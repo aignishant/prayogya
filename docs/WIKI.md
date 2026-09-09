@@ -9,3 +9,4 @@ it. Cross-day lookups live in `wiki/ENTITIES.md`.
 | Day | Subject | IDs closed | Parts | Sources |
 | --- | --- | --- | --- | --- |
 | [00](wiki/day-00.md) | Day zero — the toolchain, the skeleton, and the ./p driver | RB-01, RB-02, RB-03 | 4 | — |
+| [01](wiki/day-01.md) | P00 Foundry · 1 — The machine: uv, Python 3.12, and the four Pythons that ruin a Mo… | FN-01 | 4 | — |

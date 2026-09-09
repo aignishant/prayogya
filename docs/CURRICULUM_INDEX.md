@@ -20,7 +20,7 @@ bug.
 
 | ID | Day | Day title |
 | --- | --- | --- |
-| `FN-01` | [1](../days/day-01/LESSON.md) | P00 Foundry · 1 — The machine: uv, Python 3.12, and the four Pythons that ruin a Monday |
+| `FN-01` | [1](../days/day-01-machine-four-pythons/LESSON.md) | P00 Foundry · 1 — The machine: uv, Python 3.12, and the four Pythons that ruin a Monday |
 | `FN-02` | [2](../days/day-02/LESSON.md) | P00 Foundry · 2 — The skeleton: `.gitignore` before `.env` exists, and why that order |
 | `FN-03` | [3](../days/day-03/LESSON.md) | P00 Foundry · 3 — Keys, pinning, and the check that refuses a half-finished day |
 | `FN-04` | [11](../days/day-11/LESSON.md) | P02 Parts Counter · 1 — The kit: this project's own utils, in full |

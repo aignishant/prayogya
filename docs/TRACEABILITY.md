@@ -14,7 +14,7 @@ backlog item.
 | `RB-01` | Repository & authoring | 0 | 0 | [x] closed day 0 |
 | `RB-02` | Repository & authoring | 0 | 0 | [x] closed day 0 |
 | `RB-03` | Repository & authoring | 0 | 0 | [x] closed day 0 |
-| `FN-01` | Foundations & the kit | P00 | 1 | [ ] open |
+| `FN-01` | Foundations & the kit | P00 | 1 | [~] written day 1, not in the ledger |
 | `FN-02` | Foundations & the kit | P00 | 2 | [ ] open |
 | `FN-03` | Foundations & the kit | P00 | 3 | [ ] open |
 | `AG-01` | Agents, casts & workflows | P01 | 4 | [ ] open |

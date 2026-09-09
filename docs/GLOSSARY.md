@@ -18,3 +18,9 @@ introduced it instead of redefining it.
 | Depth contract | The plan section 5 rules on what a part document must contain, and the half of them `python p.py depth` can check by machine. | day 0 part 3.3 | the contract |
 | Generated document | A file under `docs/` rebuilt from the days by `python p.py index`. Editing one only means the next run silently overwrites you. | day 0 part 3.4 | an index |
 | Marker block | An HTML comment pair in the plan fencing a table `./p` parses. A heading can be reworded by accident; a marker cannot. | day 0 part 2.4 | the markers |
+| Interpreter | The program that runs your code — one `python` executable at a real path, of one exact version. | day 0 part 1.1 | the interpreter |
+| Environment | An interpreter together with a particular set of installed packages. Two environments on one machine can hold the same package at different versions and never see each other. | day 0 part 1.1 | — |
+| Pin | A written-down exact version, recorded in a file so that a machine and not a memory decides what gets used. | day 0 part 1.1 | the pin |
+| Search order | The list of places a machine walks to turn a name like `python` into one program on disk. First match wins, and nothing announces that there was a choice. | day 1 part 1.1 | discovery order |
+| Virtual environment | A directory holding a link back to a real interpreter and its own installed packages, marked as one by a `pyvenv.cfg` beside the executable. Not a shell mode and not a variable. | day 1 part 1.2 | venv, the environment |
+| Lockfile | The tool-written record of what a resolution actually produced — exact versions and content hashes — as against `pyproject.toml`, which records what was asked for. | day 1 part 2.1 | the lock, `uv.lock` |

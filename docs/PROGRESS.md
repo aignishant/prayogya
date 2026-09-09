@@ -10,6 +10,8 @@ went wrong — a ledger that only records successes is a ledger nobody can learn
 | Day | Date | IDs closed | Parts | Commit | Gates green? |
 | --- | ---- | ---------- | ----- | ------ | ------------ |
 | 0 | 2026-09-08 | RB-01, RB-02, RB-03 | 4 | <hash> | yes |
+| 1 | 2026-09-08 | FN-01 | 4 | <hash> | yes |
+
 
 > **Note on day 0.** Every check, build rep and deliberate break in `CHECKLIST.md` was run and its
 > real output observed: `doctor`, `depth 0`, `index`, `index --check`, `check`, `brief 5`, the
