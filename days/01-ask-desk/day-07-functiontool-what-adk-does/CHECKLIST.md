@@ -24,6 +24,8 @@ No box here carries a time estimate, and none ever will.
 - [ ] I can recite the last column of part 2.2's arc table — the three things the framework did not take over — without looking
 
 ## Check
+- [ ] I found `RunConfig.max_llm_calls` myself, read its default back as `500`, and can say why that is a runaway ceiling rather than a budget
+- [ ] I can say what `max_llm_calls=0` does, and why that is the wrong way round from how it reads
 
 - [ ] The day's check is green: `cd projects/01-ask-desk && uv run --frozen python run.py check` — five green, `0 problem(s)`
 - [ ] `echo $?` after it prints `0`, and I ran it rather than assuming it

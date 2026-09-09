@@ -19,7 +19,7 @@ commit: ""
 > **Today:** open the declarations that list produced, hold them against the ones you typed by hand
 > on day 5, and find out which of the two is better and at what.
 > **Tomorrow:** the event stream — where the tool call and the tool result actually go past, and
-> where a bound can be counted.
+> where the bound this day found can be watched hitting its limit.
 
 ## §1 The scene
 
@@ -153,7 +153,8 @@ them is the check this project does not yet have.
 | the declaration audit | `TODO(me)`: write a command that walks `desk.canonical_tools()`, derives each declaration, and prints `RED` plus a message for any tool whose description is empty or equal to `'Call self as a function.'`, and for any schema property with no `type` key. It must exit non-zero when it finds one — day 3 part 2.2 is why that sentence is not optional. This project has no such check today, which is why §6's failure is invisible. |
 | the failure rep | `TODO(me)`: delete the one-line docstring from `check_service_status` in `ask_desk/tools.py`, derive all three descriptions, and watch `'Call self as a function.'` appear in the third row. Run `uv run --frozen python run.py check` and `echo $?` with the break still in place. Then run your audit against it. Put the docstring back and run all three again. |
 | the behavioural half | `TODO(me): run uv run --frozen python run.py adk "Is the VPN down?"` with a working `GOOGLE_API_KEY`, once with the docstring deleted and once restored, and record what the model actually does. There is no valid key on this machine, so nothing in this day's documents claims an answer. |
-| the arc | `TODO(me)`: from part 2.2's table, recite the three things in the last column without looking, and for each say what would happen on the day somebody assumed the framework had taken it over. |
+| the bound | `TODO(me)`: find `max_llm_calls` on `RunConfig` yourself and read its default back. Then say, out loud, why 500 is the right number for the job ADK is doing and the wrong number for the job `MAX_CALLS_PER_QUESTION` was doing. Then change `ask_desk/agent.py` so `ask()` passes `run_config=RunConfig(max_llm_calls=loop.MAX_CALLS_PER_QUESTION)`, and say what you would have to add to `run.py check` for the day somebody deletes that argument to be a day something goes red. Do **not** look up what `max_llm_calls=0` does until you have guessed. |
+| the arc | `TODO(me)`: from part 2.2's table, recite the last column without looking — which pieces the framework took, which it did not, and the one it took at a default you would not have chosen — and for each say what would happen on the day somebody assumed the framework had it covered. |
 
 ## §6 The check that must be able to fail
 
@@ -241,9 +242,15 @@ fact about this project's own code, and no number for the ceiling, which is not.
 - **`tools=['search_notes']` is a pydantic `ValidationError`, three errors for one mistake.** The
   first line is the one that matters: *Input should be callable*. There is no registry to look a name
   up in any more.
-- **The runner takes no bound.** `run_async(..., max_calls=6)` is a `TypeError`. ADK runs the loop; it
-  does not cap it. `MAX_CALLS_PER_QUESTION` is still this project's own code and still the only
-  ceiling that exists.
+- **The bound is not where you first look, and not absent.** `run_async(..., max_calls=6)` is a
+  `TypeError`, and the wrong conclusion to draw is that ADK has no ceiling. It is
+  `RunConfig.max_llm_calls`, passed as `run_config=`, **defaulted to 500**, and overridable outside
+  the repository by the `ADK_MAX_LLM_CALLS` environment variable.
+- **500 is a runaway ceiling, not a budget.** It is sized so no legitimate run trips it, which is the
+  opposite job from bounding what one question may cost. Inheriting it silently replaces this
+  project's six with a number eighty-three times larger.
+- **`max_llm_calls=0` disables the bound.** The enforcement reads `run_config.max_llm_calls > 0`, so
+  a value that reads like "no calls permitted" means "no limit at all".
 
 ## §9 Verified today
 
@@ -262,7 +269,10 @@ fact about this project's own code, and no number for the ceiling, which is not.
 | The same failure on this project's real tools | the one-line docstring deleted from `check_service_status` in `ask_desk/tools.py`, three descriptions derived together | 2026-09-09 | two correct rows and `check_service_status   'Call self as a function.'`; restoring the line brought the description straight back |
 | No check in this project can see it | `uv run --frozen python run.py check` with the docstring still deleted | 2026-09-09 | `green keys / interpreter / pins / lock / model`, `0 problem(s)`, `echo $?` → `0` |
 | Every per-parameter description is lost in derivation | hand-written `description` against the derived property keys, all three tools | 2026-09-09 | four parameters, four `description` strings, and `['title', 'type']` (plus `default` on `limit`) derived — the key `description` appears zero times |
-| The runner accepts no bound | `run_async(..., max_calls=6)` on the runner `agent.py` builds | 2026-09-09 | `TypeError: Runner.run_async() got an unexpected keyword argument 'max_calls'` — part 2.2 |
+| `max_calls` is not a `run_async` keyword | `run_async(..., max_calls=6)` on the runner `agent.py` builds | 2026-09-09 | `TypeError: Runner.run_async() got an unexpected keyword argument 'max_calls'` — part 2.2 |
+| ADK does bound the loop, and the default is 500 | `RunConfig.model_fields['max_llm_calls']` and `RunConfig().max_llm_calls` | 2026-09-10 | `int`, not required, default **500**, described as "A limit on the total number of llm calls for a given run. Can be overridden by ADK_MAX_LLM_CALLS environment variable." — corrects the first draft of part 2.2, which claimed no bound existed |
+| The environment can move the bound | `ADK_MAX_LLM_CALLS=2` with no code change | 2026-09-10 | `RunConfig().max_llm_calls` → `2` |
+| A non-positive bound disables enforcement | source of `_InvocationCostManager.increment_and_enforce_llm_calls_limit` | 2026-09-10 | guarded by `run_config.max_llm_calls > 0`, with the comment "We only enforce the limit if the limit is a positive number"; raises `LlmCallsLimitExceededError` otherwise |
 | `FunctionTool`'s documented signature and purpose | `https://adk.dev/api-reference/python/google-adk.html` | 2026-09-09 | `class google.adk.tools.FunctionTool(func, *, require_confirmation=False)` — "A tool that wraps a user-defined Python function." |
 | The framework wraps plain functions for you | `https://adk.dev/tools-custom/function-tools/` | 2026-09-09 | "When you assign a function to an agent's `tools` list, the framework automatically wraps it as a `FunctionTool`." |
 | The provider's constraint on a tool name | `https://ai.google.dev/api/generate-content` | 2026-09-09 | "Must be a-z, A-Z, 0-9, or contain underscores and dashes, with a maximum length of 128." |
