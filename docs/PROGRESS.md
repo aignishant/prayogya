@@ -87,3 +87,22 @@ went wrong — a ledger that only records successes is a ledger nobody can learn
 >
 > As with days 0 to 3, these rows were appended when the days were written, and their
 > `CHECKLIST.md` boxes are unticked at the time of writing.
+
+> **Note on ticking days 4 to 7.** On 2026-09-10, before day 8 was written, the learner confirmed
+> the standing policy set on 2026-09-09 — tick on instruction, and record that it was on
+> instruction — and the 118 boxes across those four checklists were ticked on that basis rather
+> than observed one by one. The same caveat as days 0 to 3 applies, and the distinction is the one
+> those notes already draw: **the documents' own transcripts were run and observed** when the days
+> were written, and are dated in each hub's §9; the *learner's* `TODO(me)` reps in §5 and the
+> *Say out loud* questions were not separately witnessed.
+>
+> **One correction was made after the fact, and it is the reason this note is worth reading.** Day
+> 7 closed by stating that ADK never took the loop's bound over. That was wrong. `RunConfig` has
+> `max_llm_calls`, defaulting to **500**, overridable by the `ADK_MAX_LLM_CALLS` environment
+> variable, enforced by raising `LlmCallsLimitExceededError`, and disabled entirely by a
+> non-positive value. The day was corrected on 2026-09-10 in commit `329653e` rather than patched,
+> and the corrected lesson is sharper than the original: the framework owns a bound, sized to stop
+> an infinite loop rather than to budget a question, and setting it is still yours. Day 8 causes
+> the exception on purpose. The error was found by probing `RunConfig` while building day 8's
+> material — which is the argument for building the code before writing the document, and also
+> the argument for not trusting a day that has only been read.
