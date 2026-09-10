@@ -21,8 +21,8 @@ it. Cross-day lookups live in `wiki/ENTITIES.md`.
 | [10](wiki/day-10.md) | P01 Ask Desk · 7 — Ship D1: `api_server`, `/healthz`, the first eval that can go re… | DP-01, EV-01 | 5 | — |
 | [11](wiki/day-11.md) | P02 Parts Counter · 1 — The kit: this project's own utils, in full | FN-04 | 4 | — |
 | [12](wiki/day-12.md) | P02 Parts Counter · 2 — Why the data goes behind a boundary, and what breaks when i… | MC-01 | 4 | — |
-| [13](wiki/day-13.md) | <the day's subject as a phrase — this is where the folder slug comes from> | XX-00, XX-01 | 1 | — |
-| [14](wiki/day-14.md) | <the day's subject as a phrase — this is where the folder slug comes from> | XX-00, XX-01 | 1 | — |
-| [15](wiki/day-15.md) | <the day's subject as a phrase — this is where the folder slug comes from> | XX-00, XX-01 | 1 | — |
-| [16](wiki/day-16.md) | <the day's subject as a phrase — this is where the folder slug comes from> | XX-00, XX-01 | 1 | — |
-| [17](wiki/day-17.md) | <the day's subject as a phrase — this is where the folder slug comes from> | XX-00, XX-01 | 1 | — |
+| [13](wiki/day-13.md) | P02 Parts Counter · 3 — MCP 2026: the stateless core, and the phone-call to web ref… | MC-02 | 4 | — |
+| [14](wiki/day-14.md) | P02 Parts Counter · 4 — The server skeleton and its first tool | MC-03 | 4 | — |
+| [15](wiki/day-15.md) | P02 Parts Counter · 5 — Lifecycle, stateless-first: the old handshake as history | MC-04 | 4 | — |
+| [16](wiki/day-16.md) | P02 Parts Counter · 6 — Transports: stdio and Streamable HTTP | MC-05 | 4 | — |
+| [17](wiki/day-17.md) | P02 Parts Counter · 7 — The client side: connecting the agent to a tool that now li… | MC-06 | 4 | — |

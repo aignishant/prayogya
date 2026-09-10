@@ -7,7 +7,7 @@ An ID counts as **closed** only when its day has a row in `docs/PROGRESS.md` *an
 hub's frontmatter claims the ID. **An open ID from a completed phase is a bug**, not a
 backlog item.
 
-**17 of 310 closed.**
+**22 of 310 closed.**
 
 | ID | Track | Phase | Planned day | Status |
 | --- | --- | --- | --- | --- |
@@ -28,11 +28,11 @@ backlog item.
 | `EV-01` | Evals & observability | P01 | 10 | [x] closed day 10 |
 | `FN-04` | Foundations & the kit | P02 | 11 | [x] closed day 11 |
 | `MC-01` | The MCP boundary | P02 | 12 | [x] closed day 12 |
-| `MC-02` | The MCP boundary | P02 | 13 | [ ] open |
-| `MC-03` | The MCP boundary | P02 | 14 | [ ] open |
-| `MC-04` | The MCP boundary | P02 | 15 | [ ] open |
-| `MC-05` | The MCP boundary | P02 | 16 | [ ] open |
-| `MC-06` | The MCP boundary | P02 | 17 | [ ] open |
+| `MC-02` | The MCP boundary | P02 | 13 | [x] closed day 13 |
+| `MC-03` | The MCP boundary | P02 | 14 | [x] closed day 14 |
+| `MC-04` | The MCP boundary | P02 | 15 | [x] closed day 15 |
+| `MC-05` | The MCP boundary | P02 | 16 | [x] closed day 16 |
+| `MC-06` | The MCP boundary | P02 | 17 | [x] closed day 17 |
 | `DP-02` | Deploy, ops & interop | P02 | 18 | [ ] open |
 | `FN-05` | Foundations & the kit | P03 | 19 | [ ] open |
 | `MC-07` | The MCP boundary | P03 | 20 | [ ] open |

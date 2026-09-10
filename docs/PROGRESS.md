@@ -22,6 +22,11 @@ went wrong — a ledger that only records successes is a ledger nobody can learn
 | 10 | 2026-09-10 | DP-01, EV-01 | 5 | <hash> | yes |
 | 11 | 2026-09-10 | FN-04 | 4 | <hash> | yes |
 | 12 | 2026-09-10 | MC-01 | 4 | <hash> | yes |
+| 13 | 2026-09-10 | MC-02 | 4 | <hash> | yes |
+| 14 | 2026-09-10 | MC-03 | 4 | <hash> | yes |
+| 15 | 2026-09-10 | MC-04 | 4 | <hash> | yes |
+| 16 | 2026-09-10 | MC-05 | 4 | <hash> | yes |
+| 17 | 2026-09-10 | MC-06 | 4 | <hash> | yes |
 
 
 > **Note on day 0.** Every check, build rep and deliberate break in `CHECKLIST.md` was run and its
@@ -155,3 +160,35 @@ went wrong — a ledger that only records successes is a ledger nobody can learn
 > with no key and reproduces exactly — the event stream, the streaming duplication, the bound
 > firing, the error propagating, the evalset going red. The part still owed is unchanged and small:
 > what a **real model** does. That remains `TODO(me)` in 84 places across days 4 to 12.
+
+> **Note on days 13 to 17 — the MCP boundary.** Written in one sitting, in parallel, against an
+> implementation built and verified first. Every printed block was afterwards checked byte-for-byte
+> against the files on disk, both project gates are green, and `python p.py check` is green across
+> eighteen days.
+>
+> **These five days need no provider key at all**, which is new. Everything they teach runs against
+> the boundary: the handshake driven by hand over stdio, the stateless and stateful servers
+> answering four `curl`s, the transports, the tool declarations, and the client fetching tools
+> across a real process line. The only path in P02 that would contact a provider is
+> `parts_counter.agent.ask`, and no day runs it. **No model answer appears anywhere in P02.**
+>
+> **The era gap is the thing to remember about this phase.** The freshness check found that the
+> current MCP specification revision is `2026-07-28`, which removed the `initialize` handshake,
+> removed protocol-level sessions and the `Mcp-Session-Id` header, and made every request carry its
+> own version and capabilities. The stack this curriculum can run cannot speak it: `google-adk`
+> 2.8.0 declares `mcp<2`, and the 1.x line performs a handshake. So these days teach the era they
+> can execute and quote, in the body of each day, the specification line that removed the mechanism
+> being taught. That decision, its cost and what it owes are `docs/adr/ADR-0005-mcp-era-gap-and-the-1x-pin.md`.
+> **The plan needed no amendment** — §12 already gives day 15 the title "the old handshake as
+> history", which is exactly what happened.
+>
+> **Three of the five writing sessions were cut off by a rate limit** partway through, on
+> 2026-09-10. Days 13 and 15 finished; days 14 and 16 had all four parts written but their
+> `CHECKLIST.md` files were still templates; day 17 was missing its last part and its hub. Those
+> gaps were finished by hand afterwards and are not a different standard of work — but the day-17
+> part 2.2 transcripts were re-run from scratch rather than inherited, and the two checklists were
+> written against each day's own §5 and §6 rather than reconstructed from memory. The interrupted
+> agents left `projects/` clean, which was checked before anything else.
+>
+> As with every day so far, these rows were appended when the days were written, and their
+> `CHECKLIST.md` boxes are unticked at the time of writing.
