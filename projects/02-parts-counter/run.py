@@ -8,10 +8,13 @@
     python run.py mcp            run the boundary server on stdio
     python run.py mcp --http     run the same server on Streamable HTTP at :8090/mcp
     python run.py probe          list and call the boundary's tools across a real process line
+    python run.py eval           the boundary evalset, over stdio
+    python run.py eval --http    the same evalset, against a server already listening
 """
 
 from __future__ import annotations
 
+import json
 import subprocess
 import sys
 import threading
@@ -88,6 +91,26 @@ def check_tests_pass() -> list[str]:
     return []
 
 
+def check_the_boundary_answers() -> list[str]:
+    """The seventh check, and the first that leaves this process.
+
+    Day 7 ended by writing down that `check` was green on a machine with the boundary deleted:
+    six checks, none of which crossed the process line the whole project is built around. This is
+    the one that does. It runs the evalset over stdio, which launches the server itself, so it
+    needs nothing running and no key — and it goes red when the boundary is gone, which is the
+    entire point of adding it.
+    """
+    from evals import harness
+
+    result = subprocess.run([sys.executable, "run.py", "eval"],
+                            cwd=HERE, capture_output=True, text=True)
+    if result.returncode != 0:
+        red = [ln.strip() for ln in result.stdout.splitlines() if ln.startswith("RED")]
+        return [f"{len(harness.load_cases())} case evalset failed: "
+                f"{red[0] if red else 'run `python run.py eval` to see why'}"]
+    return []
+
+
 CHECKS = {
     "keys": check_keys,
     "interpreter": check_interpreter,
@@ -95,6 +118,7 @@ CHECKS = {
     "lock": check_lock_is_obeyed,
     "model": check_model_is_registered,
     "tests": check_tests_pass,
+    "boundary": check_the_boundary_answers,
 }
 
 
@@ -113,8 +137,6 @@ def check() -> int:
 
 def parts(query: str) -> int:
     """Find parts. Straight through the tools, with no model in the way."""
-    import json
-
     from parts_mcp import server
 
     print(json.dumps(server.find_part(query), indent=2))
@@ -162,7 +184,14 @@ def serve_mcp(http: bool = False) -> int:
     from parts_mcp.server import mcp
 
     if http:
-        mcp.settings.host, mcp.settings.port = "127.0.0.1", 8090
+        # ── changed on day 8 ──
+        # Day 6 set host and port here, after the server object existed. That works for a bind
+        # and quietly does not work for anything derived from one: `transport_security` is
+        # decided inside `FastMCP.__init__` from the host it was given, so a host assigned
+        # afterwards leaves a loopback allowlist in front of a server listening everywhere.
+        # The bind is now read from the environment in `parts_mcp/server.py`, at construction.
+        print(f"boundary listening on http://{mcp.settings.host}:{mcp.settings.port}"
+              f"{mcp.settings.streamable_http_path}", file=sys.stderr)
         mcp.run(transport="streamable-http")
     else:
         mcp.run(transport="stdio")
@@ -183,9 +212,12 @@ def probe() -> int:
             for tool in sorted(tools, key=lambda t: t.name):
                 print(f"  {tool.name}")
             print()
-            result = await tools[0].run_async(
-                args={"part_no": "BRK-0143"} if tools[0].name == "stock_level" else {},
-                tool_context=None)
+            by_name = {tool.name: tool for tool in tools}
+            if "stock_level" not in by_name:
+                raise SystemExit("the boundary answered, but without a stock_level tool: "
+                                 f"{sorted(by_name)}")
+            result = await by_name["stock_level"].run_async(
+                args={"part_no": "BRK-0143"}, tool_context=None)
             print("one call, returned across the boundary:")
             print(" ", json.dumps(result)[:200])
         finally:
@@ -209,6 +241,15 @@ def main(argv: list[str]) -> int:
             return serve_mcp(http=True)
         case ["probe"]:
             return probe()
+        case ["eval"]:
+            from evals import harness
+            return harness.main()
+        case ["eval", "--http"]:
+            from evals import harness
+            return harness.main(http=True)
+        case ["eval", "--http", url]:
+            from evals import harness
+            return harness.main(http=True, url=url)
         case _:
             print(__doc__, file=sys.stderr)
             return 2

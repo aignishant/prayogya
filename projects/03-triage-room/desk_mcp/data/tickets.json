@@ -1,0 +1,128 @@
+{
+  "_comment": "Synthetic support tickets for P03. No real customer, product, person or incident appears here; every ticket, name and identifier is invented for this curriculum.",
+  "categories": ["billing", "access", "hardware", "how-to"],
+  "severities": ["low", "normal", "high", "urgent"],
+  "tickets": [
+    {
+      "ticket_id": "TR-0001",
+      "opened": "2026-09-02",
+      "channel": "email",
+      "subject": "Charged twice for the September plan",
+      "body": "My card shows two charges dated the same morning, both for the monthly plan. I have not changed anything on the account. Can one of them be reversed?",
+      "status": "open",
+      "category": null,
+      "severity": null,
+      "reply": null
+    },
+    {
+      "ticket_id": "TR-0002",
+      "opened": "2026-09-03",
+      "channel": "web form",
+      "subject": "Cannot sign in after the phone was replaced",
+      "body": "I moved to a new handset and the sign-in code goes to the old one, which is wiped. There is no other way in that I can see. This is blocking my whole team.",
+      "status": "open",
+      "category": null,
+      "severity": null,
+      "reply": null
+    },
+    {
+      "ticket_id": "TR-0003",
+      "opened": "2026-09-03",
+      "channel": "email",
+      "subject": "Label printer prints blank stickers",
+      "body": "The desk printer feeds the roll and cuts it but nothing is printed. Ribbon is new. It worked on Friday.",
+      "status": "open",
+      "category": null,
+      "severity": null,
+      "reply": null
+    },
+    {
+      "ticket_id": "TR-0004",
+      "opened": "2026-09-04",
+      "channel": "web form",
+      "subject": "How do I export last quarter's invoices?",
+      "body": "I need every invoice from July to September as one file for the accountant. I can only find them one at a time.",
+      "status": "open",
+      "category": null,
+      "severity": null,
+      "reply": null
+    },
+    {
+      "ticket_id": "TR-0005",
+      "opened": "2026-09-04",
+      "channel": "phone",
+      "subject": "Whole floor locked out since the maintenance window",
+      "body": "Nobody on the second floor can sign in. It started after the overnight maintenance window. Fourteen people are sitting doing nothing.",
+      "status": "open",
+      "category": null,
+      "severity": null,
+      "reply": null
+    },
+    {
+      "ticket_id": "TR-0006",
+      "opened": "2026-09-05",
+      "channel": "email",
+      "subject": "Refund never arrived",
+      "body": "A refund was agreed three weeks ago and nothing has landed. I was told five working days.",
+      "status": "open",
+      "category": null,
+      "severity": null,
+      "reply": null
+    },
+    {
+      "ticket_id": "TR-0900",
+      "opened": "2026-08-11",
+      "channel": "email",
+      "subject": "Duplicate charge on the August plan",
+      "body": "Two identical charges on the same day for the monthly plan.",
+      "status": "closed",
+      "category": "billing",
+      "severity": "normal",
+      "reply": "One of the two charges was a duplicate authorisation and has been reversed. It clears back to the card within five working days."
+    },
+    {
+      "ticket_id": "TR-0901",
+      "opened": "2026-08-14",
+      "channel": "phone",
+      "subject": "Sign-in code going to a lost phone",
+      "body": "Handset replaced, codes still going to the old number.",
+      "status": "closed",
+      "category": "access",
+      "severity": "high",
+      "reply": "The sign-in factor has been reset to the address on file. Set up the new handset from the security page before the temporary factor expires."
+    },
+    {
+      "ticket_id": "TR-0902",
+      "opened": "2026-08-19",
+      "channel": "email",
+      "subject": "Printer feeds paper but prints nothing",
+      "body": "Blank labels, ribbon looks fine.",
+      "status": "closed",
+      "category": "hardware",
+      "severity": "low",
+      "reply": "A ribbon fitted the wrong way round feeds and cuts normally and prints nothing. Refit it with the dull side facing the label."
+    },
+    {
+      "ticket_id": "TR-0903",
+      "opened": "2026-08-21",
+      "channel": "web form",
+      "subject": "Bulk download of invoices",
+      "body": "Wanted every invoice for a quarter in one file.",
+      "status": "closed",
+      "category": "how-to",
+      "severity": "low",
+      "reply": "Billing history has a date range and an export button; pick the quarter and choose the combined file."
+    },
+    {
+      "ticket_id": "TR-0904",
+      "opened": "2026-08-28",
+      "channel": "phone",
+      "subject": "Site-wide lockout after a maintenance window",
+      "body": "Nobody at one location could sign in after overnight work.",
+      "status": "closed",
+      "category": "access",
+      "severity": "urgent",
+      "reply": "A stale directory sync left one location's accounts unmatched. The sync was re-run and access returned within the hour."
+    }
+  ]
+}

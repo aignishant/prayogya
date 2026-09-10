@@ -21,13 +21,63 @@ Verified against mcp 1.30.0 on 2026-09-10.
 
 from __future__ import annotations
 
+import os
 from typing import Any
 
 from mcp.server.fastmcp import FastMCP
+from mcp.server.transport_security import TransportSecuritySettings
 
 from parts_mcp import store
 
-mcp = FastMCP("parts-mcp", stateless_http=True)
+# ── added on day 8; everything below the tools is unchanged from day 4 ────────────────────────
+#
+# Where this boundary listens, read from the environment **at construction**, under this project's
+# own names. Two things force that shape, and both were measured rather than assumed.
+#
+# The SDK's own `FASTMCP_*` variables do not work here. `Settings` is a pydantic-settings model
+# with `env_prefix="FASTMCP_"`, so `FASTMCP_HOST` looks like it should be read — and
+# `FastMCP.__init__` passes `host=host` into it explicitly, and an init argument outranks the
+# environment. Setting `FASTMCP_HOST=0.0.0.0` on a container changes nothing at all, silently.
+#
+# And the bind cannot be moved after construction, because one thing is derived from it: with a
+# loopback host and no `transport_security`, the SDK switches DNS-rebinding protection on and
+# builds a loopback allowlist. Pass `host="0.0.0.0"` and that branch does not fire, so the
+# protection is not weakened — it is *absent*.
+BIND_HOST = os.environ.get("PARTS_MCP_HOST", "127.0.0.1")
+BIND_PORT = int(os.environ.get("PARTS_MCP_PORT", "8090"))
+#: Comma-separated `host:port` values this boundary will answer to, as the deployment sees it.
+#: Empty is legal only on loopback; see `_transport_security`.
+ALLOWED_HOSTS = [value.strip()
+                 for value in os.environ.get("PARTS_MCP_ALLOWED_HOSTS", "").split(",")
+                 if value.strip()]
+
+
+def _transport_security(host: str, allowed: list[str]) -> TransportSecuritySettings | None:
+    """Decide the Host/Origin allowlist, refusing the combination that silently has none.
+
+    Returning `None` hands the decision back to the SDK, which is correct and safe on loopback
+    and nowhere else. Off loopback the allowlist has to be stated, because there is no default
+    that could be right: only the deployment knows the name clients will use.
+    """
+    if host in ("127.0.0.1", "localhost", "::1"):
+        return None
+    if not allowed:
+        raise RuntimeError(
+            f"PARTS_MCP_HOST is {host!r}, which is not loopback, and PARTS_MCP_ALLOWED_HOSTS is "
+            f"empty. Passing a non-loopback host skips the SDK's automatic DNS-rebinding "
+            f"protection entirely, so an empty allowlist here means no Host or Origin checking "
+            f"at all. Set PARTS_MCP_ALLOWED_HOSTS to the names clients will actually use, "
+            f"comma-separated, for example 'parts-mcp:8090,127.0.0.1:8090'."
+        )
+    return TransportSecuritySettings(
+        enable_dns_rebinding_protection=True,
+        allowed_hosts=allowed,
+        allowed_origins=[f"http://{value}" for value in allowed],
+    )
+
+
+mcp = FastMCP("parts-mcp", stateless_http=True, host=BIND_HOST, port=BIND_PORT,
+              transport_security=_transport_security(BIND_HOST, ALLOWED_HOSTS))
 
 
 @mcp.tool()
