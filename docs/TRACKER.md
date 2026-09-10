@@ -10,16 +10,16 @@ column. Projects are independent, so they may be built in any order (plan §15).
 | | Count | Of plan |
 | --- | --- | --- |
 | Sittings in the plan | **816** | 100% |
-| Days written | **0** | 0.0% |
-| Days complete | **0** | 0.0% |
-| Subtopic documents | **0** | — |
+| Days written | **7** | 0.9% |
+| Days complete | **7** | 0.9% |
+| Subtopic documents | **43** | — |
 
 ## Every project
 
 | # | Project | Industry | Days | Tier | Written | Complete |
 | --- | --- | --- | --- | --- | --- | --- |
 | 00 | Foundry | — | 5 | — | 0/5 | 0/5 |
-| 01 | Claims Intake Desk | Insurance — first notice of loss | 20 | D3 | 0/20 | 0/20 |
+| 01 | Claims Intake Desk | Insurance — first notice of loss | 20 | D3 | 7/20 | 7/20 |
 | 02 | Warehouse Stock Control | Logistics — warehouse management | 20 | D3 | 0/20 | 0/20 |
 | 03 | Clinical Triage Room | Healthcare — symptom triage and escalat… | 21 | D3 | 0/21 | 0/21 |
 | 04 | Loan Underwriting Desk | Retail finance — credit decisions | 20 | D3 | 0/20 | 0/20 |
@@ -59,3 +59,28 @@ column. Projects are independent, so they may be built in any order (plan §15).
 | 38 | Partner Agent Network | Cross-company interop — A2A | 21 | D5 | 0/21 | 0/21 |
 | 39 | Municipal Grievance Office | Public services — citizen grievances | 20 | D3 | 0/20 | 0/20 |
 | 40 | The Enterprise Desk | Cross-industry — six agents, three boun… | 22 | D5 | 0/22 | 0/22 |
+
+### P01 · Claims Intake Desk
+
+| Day | Title | Status | Parts |
+| --- | --- | --- | --- |
+| 0 | [The machine and the repository](../days/01-claims-intake-desk/day-00-machine-and-repository/LESSON.md) | complete | 8 |
+| 1 | [The skeleton and the kit](../days/01-claims-intake-desk/day-01-skeleton-and-kit/LESSON.md) | complete | 9 |
+| 2 | [The domain and its data](../days/01-claims-intake-desk/day-02-domain-and-its-data/LESSON.md) | complete | 6 |
+| 3 | [The boundary, part one](../days/01-claims-intake-desk/day-03-boundary-part-one/LESSON.md) | complete | 5 |
+| 4 | [The boundary, part two](../days/01-claims-intake-desk/day-04-boundary-part-two/LESSON.md) | complete | 5 |
+| 5 | [Tools](../days/01-claims-intake-desk/day-05-tools/LESSON.md) | complete | 5 |
+| 6 | [The tool that must refuse — a deficiency is an answer, not an error](../days/01-claims-intake-desk/day-06-tool-that-must-refuse/LESSON.md) | complete | 5 |
+| 7 | The first agent | not started | 0 |
+| 8 | Sessions and state | not started | 0 |
+| 9 | The cast | not started | 0 |
+| 10 | The workflow runtime | not started | 0 |
+| 11 | Callbacks and plugins | not started | 0 |
+| 12 | Memory and retrieval | not started | 0 |
+| 13 | Structured output | not started | 0 |
+| 14 | The decision record: why this claim was fast-tracked, in a form an audi… | not started | 0 |
+| 15 | Reliability | not started | 0 |
+| 16 | Security and privilege | not started | 0 |
+| 17 | Observability | not started | 0 |
+| 18 | Evals | not started | 0 |
+| 19 | Ship | not started | 0 |

@@ -6,3 +6,15 @@ _Generated 2026-09-10 by `p.py`._
 For a day's parts open `wiki/PNN-day-DD.md`; open the day folder itself only to
 write it.
 
+## P01 · Claims Intake Desk — Insurance — first notice of loss
+
+| Day | Subject | Parts |
+| --- | --- | --- |
+| [00](wiki/P01-day-00.md) | The machine and the repository | 8 |
+| [01](wiki/P01-day-01.md) | The skeleton and the kit | 9 |
+| [02](wiki/P01-day-02.md) | The domain and its data | 6 |
+| [03](wiki/P01-day-03.md) | The boundary, part one | 5 |
+| [04](wiki/P01-day-04.md) | The boundary, part two | 5 |
+| [05](wiki/P01-day-05.md) | Tools | 5 |
+| [06](wiki/P01-day-06.md) | The tool that must refuse — a deficiency is an answer, not an error | 5 |
+

@@ -19,10 +19,177 @@ order between projects is free. This is the only region `python p.py` reads.
 
 | Project | Day | Date | Title | Parts | Commit | Gates green? |
 | ------- | --- | ---- | ----- | ----- | ------ | ------------ |
+| 01 | 0 | 2026-09-10 | The machine and the repository | 8 | <hash> | yes |
+| 01 | 1 | 2026-09-10 | The skeleton and the kit | 9 | <hash> | yes |
+| 01 | 2 | 2026-09-10 | The domain and its data | 6 | <hash> | yes |
+| 01 | 3 | 2026-09-10 | The boundary, part one | 5 | <hash> | yes |
+| 01 | 4 | 2026-09-10 | The boundary, part two | 5 | <hash> | yes |
+| 01 | 5 | 2026-09-10 | Tools | 5 | <hash> | yes |
+| 01 | 6 | 2026-09-10 | The tool that must refuse — a deficiency is an answer, not an error | 5 | <hash> | yes |
 
 <!-- granth:ledger:end -->
 
-*(No v4 sittings yet. `python p.py brief 01 0` is the first one.)*
+> **Note on what a v4 row means, decided 2026-09-10.** The plan §15 says a row means a *completed*
+> day. In practice, in this repository, rows have always been appended **when the day was written**,
+> with the day's `CHECKLIST.md` boxes still unticked — that is what the notes under the v3 table
+> below record, and it was confirmed as the convention before P01 day 1 was written. So: **a row
+> here means the day document exists and its gates are green. The day's `CHECKLIST.md` is the
+> record of what has actually been built and understood**, and `python p.py done NN D` still
+> refuses on an unticked box. Where the two disagree, the checklist is the truthful one.
+>
+> **P01 day 0.** Written 2026-09-10. Eight parts, three sections. Every file it prints was built and
+> run in a throwaway directory outside this repository and deleted afterwards (plan §0 rule 5); every
+> transcript in it was observed on 2026-09-10, including the deliberate failure — the forced
+> `git add -f .env`, the two red checks, the untracking, and the key still readable from history.
+> `python p.py depth 01 0` and `python p.py check` are green. The commit hash is `<hash>` because the
+> row was written before the commit existed; it is filled in from the commit that lands the day.
+> **Its checklist is unticked at the time of writing**, and the day has no provider key involved at
+> all — it makes no model call.
+>
+> **P01 day 1.** Written 2026-09-10. Nine parts, three sections. The whole tree — `pyproject.toml`,
+> the package, the four kit modules, the model registry, the `run` driver and nine tests — was built
+> and run in a throwaway directory outside this repository and deleted afterwards. `./run check` was
+> green there (ruff, 9 passed, day 0's four checks), and every failure the day prints was caused on
+> purpose and pasted verbatim: the `os error 396` hardlink failure in a cloud-synced folder, pytest's
+> `ModuleNotFoundError` under `package = false`, the em-dash mojibake in the driver's output, the
+> four kit error messages, the shared-dictionary budget leak, and the red gate after the model
+> registry was broken. **One transcript in part 2.2 was written before it was run, caught on review,
+> and replaced with the real output** — the nested-redaction example. It is recorded here because a
+> ledger that only records successes teaches nothing.
+>
+> Still no provider key and still no model call: `claims_desk/models.py` names two models and
+> contacts neither. **Its checklist is unticked at the time of writing.**
+>
+> **P01 day 2.** Written 2026-09-10. Six parts, three sections. The fixture set, the domain types,
+> the store and ten tests were built and run in a throwaway directory outside this repository and
+> deleted afterwards; `./run check` was green there with 19 tests.
+>
+> **Two mistakes were made writing this day and both are worth recording.** The rules originally
+> decided injury by scanning the description, and the very first notification — "Plumber has been
+> and capped it. No one hurt." — came out as a deficiency. That was found by the fixture set on the
+> first run, and the fix was not a longer word list but a signature change: `assess` now takes the
+> injury as a fact and reads no English at all. The failure became part 3.2, and it is the argument
+> for a model existing in this project.
+>
+> The second was in the test file. `test_every_deficiency_names_a_reason_the_desk_can_produce`
+> asserted `len(set(reasons)) == 8`, which **does not catch a duplicate**: nine deficiencies with
+> eight distinct reasons passes it. It was found while trying to demonstrate the failure — the
+> thirteenth notification was added and the test went green. The assertion now checks
+> `len(reasons) == len(set(reasons))` as well, and both the printed file and the transcript in part
+> 3.1 are the corrected ones.
+>
+> Still no provider key and still no model call. **Its checklist is unticked at the time of
+> writing.**
+>
+> **P01 day 6.** Written 2026-09-10. Five parts, three sections. `./run check` green with 56 tests.
+> This is the day the desk first runs end to end: `{"deficiency": 4, "fast-track": 0, "pending": 8}`
+> over the real queue, writing exactly four claim files through the boundary.
+>
+> **Two real numbers came out of it.** The full pass takes **91.4 seconds** for twelve
+> notifications — about twenty-eight boundary calls, each a fresh connection and therefore a fresh
+> interpreter — which is day 9's argument made concrete rather than asserted. And the same eleven
+> tests run in about five seconds in-process, because the fixture swaps `boundary.connected` and
+> nothing else.
+>
+> **The day's deliberate failure was a real bug in this project's own code.** `run_queue` called
+> `record_decision` and discarded the answer, so when the boundary refused all four writes — as
+> data, correctly — the desk reported four deficiencies against an empty claims directory, with no
+> error anywhere. It was found by running the queue with a deliberately wrong reason code. The fix
+> reads the answer and escalates; a regression test now calls through to the real boundary with a
+> bad argument and asserts on the escalation. That failure is the honest counterweight to days 5 and
+> 6 both arguing that refusals should be data: **if refusals are data, somebody has to read the
+> data.**
+>
+> One reference was corrected before it shipped: part 3.2 first quoted a throwaway `_probe.py` that
+> the learner would not have, and now carries an inline command that was run as printed.
+>
+> This is the **last day with a zero request budget**. Day 7 makes the first model call, and the
+> eight pending notifications are what it will be spent on.
+>
+> **P01 day 5.** Written 2026-09-10. Five parts, three sections. Built and run in the same throwaway
+> directory and deleted afterwards; `./run check` green there with 45 tests, of which 14 are the new
+> in-process tool tests running in about four seconds.
+>
+> The docket went from one tool to four and the tools moved into `claims_mcp/tools.py`, leaving
+> `server.py` as wiring. **The boundary's version assertion went red for the second day running** —
+> `0.2.0` to `0.3.0` — and this time the docket assertion was moved out of `tests/test_boundary.py`
+> into `tests/test_tools.py` rather than updated, because the same claim in two files means one of
+> them stops being maintained.
+>
+> **The day's strongest finding was not planned.** A tool that raises loses its message entirely:
+> `read_decision` raising `KeyError("no decision recorded for FNOL-4471")` reaches the caller as
+> `is_error: true`, `structured_content: null`, and the text `Error executing tool read_decision`.
+> The SDK wraps arbitrary exceptions in `UnexpectedToolError` and forwards nothing — correct
+> behaviour, since an exception may carry a path or another policyholder's data, and it means
+> anything a caller needs must be a return value. That is the day's deliberate failure and it sets
+> up day 6.
+>
+> **One invented claim was corrected before it shipped.** Part 3.1's `test_an_answer_arrives_twice_over`
+> was described as a guard that could fail; running it showed it **cannot** currently fail, because
+> every tool lets the SDK derive both copies from one return. The part now says so plainly and the
+> rep is to make it fail once on purpose.
+>
+> Still no provider key and still no model call. **Its checklist is unticked at the time of
+> writing.**
+>
+> **P01 day 4.** Written 2026-09-10. Five parts, three sections. Built and run in the same throwaway
+> directory as day 3 and deleted afterwards; `./run check` green there with 31 tests. The suite is
+> now noticeably slow — 19.43s against 1.66s on day 3 — and almost all of it is subprocess startup,
+> which the day says out loud rather than hiding.
+>
+> **The day's finding was not planned.** Driving the HTTP endpoint by hand with `curl` showed that
+> the SDK's Streamable HTTP transport **defaults to the session-based mode** the `2026-07-28`
+> revision removed: without `stateless_http=True` a bare request gets `400 Bad Request`, an
+> `mcp-session-id` header and `Missing session ID`. Worse, the same server answers an `initialize`
+> handshake with `"protocolVersion":"2025-11-25"` while the Python client reports `2026-07-28`.
+> Both are honest: the era is a property of the exchange. And **no test in this project would notice
+> if `stateless_http=True` were deleted**, because every test connects in-process or over stdio.
+> That gap is the day's deliberate failure and the first rep in its build brief.
+>
+> The modern per-request envelope was discovered the same way, one refusal at a time: `_meta` must
+> carry both `io.modelcontextprotocol/protocolVersion` and `io.modelcontextprotocol/clientCapabilities`,
+> and an `mcp-method` header must match the body's method. Only then does `server/discover` answer.
+>
+> **Day 3's version assertion went red, correctly.** Adding a resource and a prompt moved the
+> boundary from `0.1.0` to `0.2.0`, and `tests/test_boundary.py` caught it — the first time that
+> assertion could have earned its place, it did. Two invented claims were corrected against real
+> output before they shipped: the connection-refused error is `httpx2.ConnectError`, not `httpx`,
+> and a resource leak that *replaces* the peril keys fails with an unhelpful `KeyError` rather than
+> the containment assertion, so the demonstration was changed to one that adds the leak alongside.
+>
+> Still no provider key and still no model call. **Its checklist is unticked at the time of
+> writing.**
+>
+> **P01 day 3.** Written 2026-09-10. Five parts, three sections. The boundary was built and run in a
+> throwaway directory outside this repository and deleted afterwards; `./run check` was green there
+> with 25 tests, one of which launches `python -m claims_mcp` as a real subprocess.
+>
+> **The freshness check moved a fact.** `mcp` 2.2.0 now exists and speaks the current revision
+> `2026-07-28`, which was not executable when the earlier boundary work was written. P01 therefore
+> runs the current era and writes its own client, and `google-adk` is installed without its `[mcp]`
+> extra so the `mcp<2` pin never applies. That decision, its cost — ADK's `McpToolset` is never used
+> in this project — and what would make it worth revisiting are `docs/adr/ADR-0009`.
+>
+> **Three claims written before they were run turned out to be wrong**, and all three were corrected
+> against real output rather than kept: an unknown tool comes back as a failed *result*
+> (`Tool 'read_file' failed: ...`) rather than raising; a bad module name gives the client only
+> `MCPError: Connection closed`, not a message about the module; and removing a parameter's type
+> annotation does **not** produce a schema without a type — the SDK falls back to string, so that
+> test still passes. The last one changed what part 3.1 teaches.
+>
+> **The day's deliberate failure is the one the gate cannot see.** A `print` inside a tool corrupts
+> the stdio wire, the client logs `Invalid JSON: expected value at line 1 column 1`, skips the line,
+> and answers correctly — and all twenty-five tests pass. The only visible difference was the
+> suite's reported duration: `8.30s` against `1.66s`. That is in part 3.2 with both numbers.
+>
+> One environment problem is worth recording because it cost real time and is not a curriculum
+> issue: the throwaway build was first placed at a path deep enough that `.venv` exceeded Windows'
+> 260-character limit, and the symptom was `FileNotFoundError` from Python for a file the shell
+> could read. The build was moved to a short path. It is in the day's traps because the learner's
+> own repository sits under a similarly deep path.
+>
+> Still no provider key and still no model call. **Its checklist is unticked at the time of
+> writing.**
 
 ---
 
