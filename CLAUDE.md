@@ -9,7 +9,7 @@ taught from zero, carrying the whole agent feature set.
 > and its rules (no code, no scripts, two documents a day) do not apply here. This is a coding
 > curriculum: it ships a stdlib driver, and every project it teaches is a running system.
 
-The single source of truth is `docs/00_MASTER_PLAN.md` ("the plan"), currently **v4.0.0**.
+The single source of truth is `docs/00_MASTER_PLAN.md` ("the plan"), currently **v4.1.0**.
 Progress is `docs/PROGRESS.md` — the last row of its **v4 ledger**. Amendments are logged in
 `docs/CHANGELOG_PLAN.md`. Structural decisions are ADRs in `docs/adr/`.
 
@@ -43,6 +43,7 @@ This is the mistake that costs the most, so it comes first.
 | Where | the root: `docs/`, `days/`, `p.py` | `projects/<NN-name>/` |
 | Driver | `python p.py` | its own `./run` |
 | Job | writes and checks the curriculum | is one of the forty systems |
+| Who writes it | **you** | **the learner**, by hand, from the days |
 | Depends on | nothing | **nothing, and never on the root** |
 
 `python p.py` is **authoring only**: brief, depth, index, codemap, check, verify, done, doctor. It
@@ -64,7 +65,7 @@ under `projects/` may import from the repository root** — that is plan §1 and
 
 *Additionally, in full, before writing or amending a day:*
 
-4. **The plan §5 — the part contract — and §5.1, the five constraints on real code.** Then §4.1 for
+4. **The plan §5 — the part contract — and §5.1, the six constraints on real code.** Then §4.1 for
    the hub, §12 for the spine slot this day is, §13 for this project's brief and its extra days,
    and §14 for the style rules that stop forty projects reading like one project pasted forty
    times. Never skim these, and never let the wiki or the brief stand in for them.
@@ -79,7 +80,7 @@ index disagrees with the day it indexes, **the day is right and the index is sta
 
 ## Non-negotiable rules
 
-The plan §0 carries four that outrank everything else here.
+The plan §0 carries five that outrank everything else here.
 
 - **The Completeness Rule.** Every line of code a project needs appears **in full, at its real
   path, inside that project's own day documents** — `.gitignore`, `pyproject.toml`, `Dockerfile`
@@ -92,6 +93,12 @@ The plan §0 carries four that outrank everything else here.
   `.env` exists, keys, green check. **No project may assume a machine another project prepared.**
 - **The Full-Stack Rule.** Every project ships the whole feature set — the eighteen spine slots of
   plan §12. A project that omits one because another project covers it is the v3 failure again.
+- **The Document Is The Deliverable.** **You never write into `projects/`.** You write day
+  documents; the learner types every file, runs every command and builds the tree themselves. A day
+  must carry every file in full at its real path, every command in order, and what each command
+  actually printed. Handing over a finished tree, or writing "create the usual scaffolding", is a
+  failed day. You still *run* everything — in a throwaway directory outside this repository, then
+  delete it — because that is the only way a transcript can be real.
 - **Nothing leaves the project.** No day document, checklist, docstring, README or commit message
   inside a project may reference another project — not by path, not by name, not as "as we saw".
   `python p.py check` greps for it and fails.
@@ -158,7 +165,7 @@ project is strict; order **between** projects is free — starting a new project
 
 **Never:** skip, merge, insert or reorder a day inside a project without an ADR · invent a version,
 an interface, a citation or a transcript · reference another project · solve the learner's
-`TODO(me)` reps.
+`TODO(me)` reps · **create, edit or scaffold anything under `projects/`**.
 
 ---
 
@@ -173,7 +180,7 @@ python p.py brief NN D     # the brief for day D of project NN, and the order gu
 python p.py start NN D     # open that day in reading order
 python p.py new NN D slug  # scaffold an empty day from days/_TEMPLATES/
 python p.py depth NN [D]   # the depth contract for one day, or a whole project
-python p.py codemap NN     # regenerate that project's CODEMAP.md
+python p.py codemap NN     # print that project's CODEMAP.md (the learner adds --write)
 python p.py index          # regenerate the derived documents in docs/
 python p.py check          # the whole-repository gate
 python p.py verify NN      # copy that project alone outside the repo and run its own check

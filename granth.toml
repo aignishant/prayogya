@@ -10,7 +10,7 @@
 name         = "Prayoga"
 slug         = "prayoga"
 topic        = "40 independent agentic systems with Google ADK 2.x, MCP, Agent Skills and A2A"
-plan_version = "v4.0.0"
+plan_version = "v4.1.0"
 driver       = "python p.py"
 
 [paths]

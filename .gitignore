@@ -7,8 +7,10 @@
 credentials.json
 secrets.*
 
-# The learner's own work. The teaching lives in parts/; lab/ is where you make mistakes.
-days/*/lab/
+# The learner's own scratch work inside a day. The teaching lives in parts/.
+# `days/*/lab/` was the v3 pattern and never matched, because a day sits one level deeper:
+# days/<project>/day-DD-<slug>/lab/. `**` is what reaches it.
+days/**/lab/
 
 # Generated locally, never committed
 __pycache__/

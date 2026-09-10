@@ -128,3 +128,21 @@ Anything structural also gets an ADR in `docs/adr/`, and the entry here links it
   `docs/CURRICULUM_INDEX.md` are deleted with the ID scheme they indexed. `p.py` was rewritten for
   project-local addressing. See `docs/adr/ADR-0006-repetition-replaces-depth-once.md` and
   `docs/adr/ADR-0007-v3-days-archived-and-the-restart.md`.
+
+- 2026-09-10 — **v4.0.0 → v4.1.0. Rule 5: the day document is the deliverable, and nothing is ever
+  written into `projects/`.** *What moved:* §0 gains a fifth rule. The author writes day documents;
+  **the learner types every file and runs every command from them.** A day must therefore carry
+  every file in full at its real path, every command in the order it is run, and what each command
+  actually printed. §5.1 gains a sixth constraint on real code — *typed, not received*. §1's opening
+  and §2's preamble now say who builds the tree, and §2 names the day that prints each of the four
+  project documents: `PROJECT.md` and `SETUP.md` on day 0, `README.md` and `CODEMAP.md` on the ship
+  day. `python p.py codemap NN` now prints rather than writes; `--write` is a command the learner
+  runs against their own tree. *Why:* the plan never said who types the code, and on the first day
+  written under v4 that ambiguity resolved the wrong way — a complete, working
+  `projects/01-claims-intake-desk/` was built before the day document was written, which is the
+  answer key next to the exercise. The learner named it immediately. *What it costs:* longer day
+  documents, and strictly more authoring work — build it, verify it, transcribe it, throw the build
+  away. There is no mechanical check for the rule; the cold clone and `CODEMAP.md` are what catch a
+  day that omitted a file. *What did not change:* Principle 7. The author still runs every command,
+  now in a throwaway directory outside the repository — only the transcripts ship. See
+  `docs/adr/ADR-0008-the-document-is-the-deliverable.md`.

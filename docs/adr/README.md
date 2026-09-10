@@ -45,3 +45,4 @@ justification written after the fact, not a decision record.
 | [0005](ADR-0005-mcp-era-gap-and-the-1x-pin.md) | The MCP era gap, and the 1.x pin | 2026-09-10 | accepted |
 | [0006](ADR-0006-repetition-replaces-depth-once.md) | Every project teaches everything it uses, in full, in its own documents | 2026-09-10 | accepted |
 | [0007](ADR-0007-v3-days-archived-and-the-restart.md) | The eighteen v3 days are archived unedited, and the curriculum restarts at P01 day 0 | 2026-09-10 | accepted |
+| [0008](ADR-0008-the-document-is-the-deliverable.md) | The day document is the deliverable; the learner builds the project | 2026-09-10 | accepted |

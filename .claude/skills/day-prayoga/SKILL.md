@@ -7,10 +7,10 @@ argument-hint: "[project-number] [day-number]"
 # Write day $2 of project $1
 
 > **Read `docs/00_MASTER_PLAN.md` §5 in full before writing a single line**, and §5.1 with it —
-> the five constraints that make "real code" mean something. This file is the *procedure*; §5 is
+> the six constraints that make "real code" mean something. This file is the *procedure*; §5 is
 > the *standard*, and the standard wins wherever the two seem to disagree.
 
-## The four rules that outrank everything (plan §0)
+## The five rules that outrank everything (plan §0)
 
 1. **Completeness.** Code is never referenced, only printed — in full, at its real path, inside
    this project's own day documents. That includes `.gitignore`, `pyproject.toml`, `Dockerfile`
@@ -24,6 +24,11 @@ argument-hint: "[project-number] [day-number]"
    machine.
 4. **Full stack.** The project ships all eighteen spine slots (plan §12). This day is one of them,
    or an extra day deepening one.
+5. **The document is the deliverable.** **Never create, edit or scaffold anything under
+   `projects/`.** The learner types every file and runs every command from this document. So the
+   document must carry: every file **in full at its real path**, every command **in the order it is
+   run**, and **what each command actually printed**. If a reader following the day top to bottom
+   would reach a point where they do not know what to type, the day is not finished.
 
 **And: nothing leaves the project.** No path into another project, no project name, no "as we
 saw", no `PRIMER.md`. `python p.py check` greps for all of it and fails the day.
@@ -35,7 +40,7 @@ saw", no `PRIMER.md`. `python p.py check` greps for all of it and fails the day.
 1. Run `python p.py brief $1 $2`. **If it exits non-zero, stop and report why.** Skipping,
    merging, inserting or reordering a day inside a project needs an ADR, written first. Order
    *between* projects is free — starting a new project is always allowed.
-2. Read the plan: **§0** (the four rules), **§3** (what a day is), **§4.1** (the hub), **§5 and
+2. Read the plan: **§0** (the five rules), **§3** (what a day is), **§4.1** (the hub), **§5 and
    §5.1** (the part contract and real code), **§6** (nothing leaves the project), **§9** (model and
    budget policy), **§12** (the spine slot this day is), **§13** (this project's brief, cast,
    boundary, tools and done-when), **§14** (style, and the four constraints against sameness).
@@ -60,10 +65,13 @@ saw", no `PRIMER.md`. `python p.py check` greps for all of it and fails the day.
 10. **Never invent a transcript.** If you have not run the command, the output block is
     `TODO(me): run <exact command>`. A missing output is fixed by one run; a fabricated one is
     undetectable, and Principle 7 outranks the document's shape.
-11. **Build the code before writing the day, where you can.** Every time this curriculum has done
-    it in the other order, the day shipped a claim the code contradicted. Where a provider key is
-    missing, a scripted stand-in model is legal (plan §9) — it must announce itself as a test
-    double in its own docstring and in every transcript it produces.
+11. **Run the day before you write it — in a throwaway directory, then delete it.** Build the
+    whole day's slice somewhere outside this repository, capture every real transcript, and remove
+    the directory when the day is written. Every time this curriculum has written first and run
+    second, the day shipped a claim the code contradicted. **The tree never ships and never lands
+    in `projects/`** (plan §0 rule 5) — only the transcripts do. Where a provider key is missing, a
+    scripted stand-in model is legal (plan §9); it must announce itself as a test double in its own
+    docstring and in every transcript it produces.
 
 ## Step 3 — plan the split, before writing any prose
 
@@ -142,9 +150,11 @@ Path: `days/<NN-project-slug>/day-DD-<day-slug>/parts/<SS>-<section-slug>/<S>.<T
 
 32. Run `python p.py depth $1 $2`. **Fix every failure; never hand-wave past one.**
 33. Run `python p.py index`, then `python p.py check`.
-34. If the project tree exists, run `python p.py codemap $1` and confirm every file this day
-    printed appears in it.
-35. Finish by printing: the part count, the day's check command, the request budget, the files this
+34. Run `python p.py codemap $1` and confirm every file this day printed appears in it. Do not
+    pass `--write` — that is the learner's command, against the learner's tree.
+35. **Delete the throwaway build directory**, and confirm `git status` shows nothing added under
+    `projects/`.
+36. Finish by printing: the part count, the day's check command, the request budget, the files this
     day printed, and the live pages you actually fetched.
 
 ---
@@ -160,7 +170,8 @@ Path: `days/<NN-project-slug>/day-DD-<day-slug>/parts/<SS>-<section-slug>/<S>.<T
   wrong document.
 - **Grammar and punctuation are part of the deliverable**, in every section. A sentence the reader
   has to parse twice has failed.
-- **Do not solve the `TODO(me)` reps.** Teach; do not do the learner's work.
+- **Do not solve the `TODO(me)` reps, and do not build the project.** Teach; do not do the
+  learner's work. The whole point of this curriculum is that they type it.
 - **All data is synthetic**, every project, every fixture, every eval.
 - **Never name a person, instructor, author, channel, academy, bootcamp or training company** — not
   in a lesson, a checklist, a docstring or a commit message. Tool and library names are required

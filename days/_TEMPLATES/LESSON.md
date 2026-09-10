@@ -5,7 +5,7 @@ title: "<the day's subject as a phrase — this is where the folder slug comes f
 spine: NN                # the plan §12 spine slot this day is, or the slot an extra day follows
 kind: concept            # concept | mechanism | setup | gate
 deploy_tier: D3          # D1..D5
-plan_version: "v4.0.0"
+plan_version: "v4.1.0"
 parts: 0                 # must equal the number of documents in parts/
 files_printed: []        # every file this day prints whole; feeds CODEMAP.md
 generated: "YYYY-MM-DD"

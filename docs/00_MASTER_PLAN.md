@@ -1,6 +1,6 @@
 ---
 plan: prayoga
-version: "v4.0.0"
+version: "v4.1.0"
 topic: "40 independent agentic systems with Google ADK 2.x, MCP, Agent Skills and A2A"
 projects: 40
 optional_projects: 1
@@ -11,8 +11,8 @@ amended: "2026-09-10"
 
 | plan | prayoga |
 | --- | --- |
-| version | **v4.0.0** |
-| supersedes | v3.1.0 — same subject, opposite rule about repetition |
+| version | **v4.1.0** |
+| supersedes | v4.0.0 (adds rule 5) · v3.1.0 — same subject, opposite rule on repetition |
 | projects | 40 · **each one a standalone repository, taught from zero** |
 | optional | P00 Foundry, 5 sittings · no project references it, no project needs it |
 | days | 811 project sittings + 5 optional = **816** |
@@ -21,6 +21,7 @@ amended: "2026-09-10"
 | rule 2 | **every concept a project uses is taught in that project, at full depth** |
 | rule 3 | **every project starts on a bare machine, at day 0** |
 | rule 4 | **every project ships the whole agent feature set** |
+| rule 5 | **the day document is the deliverable; the learner builds the project** |
 | doc architecture | 4 project documents + hub + RECALL + `parts/` |
 
 # MASTER PLAN v4.0.0 — **Prayoga**
@@ -40,7 +41,7 @@ proof of the hole. And the scaffolding that decides whether a stranger's clone r
 the `.gitignore` written before `.env` exists, the interpreter pin, the key handling — lived in a
 project nobody was required to read.
 
-**v4 makes independence mean what it says.** Four rules, in this order of precedence.
+**v4 makes independence mean what it says.** Five rules, in this order of precedence.
 
 > ### 1. The Completeness Rule — code is never referenced, only printed
 > Every line of code a project needs appears **in full, at its real path, inside that project's own
@@ -71,7 +72,23 @@ project nobody was required to read.
 > subsystem because another project covers it is the v3 failure wearing a new costume. **§12 fixes
 > the eighteen subsystems as a spine every project builds.**
 
-**And the rule that makes the four checkable: nothing leaves the project.** No day document,
+> ### 5. The Document Is The Deliverable — the author writes days, the learner builds
+> **Nothing is ever written into `projects/` by whoever writes the curriculum.** A day document
+> must carry everything needed to build that day's slice of the system: every file **in full at
+> its real path**, every command in the order it is run, and what each command actually printed.
+> The learner types all of it, by hand, from the document. A day that assumes a file whose
+> contents the learner was never given has failed; so has one that says "create the usual
+> scaffolding", and so has one that hands over a finished tree instead of the instructions for
+> building it. **`projects/<NN-name>/` is the learner's own work, and it is the only thing in this
+> repository that is.**
+
+> **How that squares with "never invent a transcript."** The author still runs every command —
+> in a **throwaway directory, outside this repository, deleted afterwards** — because that is the
+> only way an output block can be real. What ships is the transcript, never the tree. A day whose
+> commands were never run carries `TODO(me): run <exact command>` where each output would go, and
+> says so plainly.
+
+**And the rule that makes the five checkable: nothing leaves the project.** No day document,
 checklist, docstring, README or commit message inside `projects/<NN-name>/` may reference another
 project — not by path, not by name, not as "as we saw in P03". `python p.py check` fails on it. See
 §6.
@@ -88,22 +105,16 @@ What this costs is in §16, stated as a number. It was shown and accepted before
 ## §1 · What a project folder contains
 
 A project is a repository. It is complete on its own, it has its own git history, and it has no
-parent.
+parent. **The learner builds every file in it, by hand, from that project's day documents** — this
+tree is what the days describe, not something the curriculum ships (§0 rule 5).
 
 ```
-projects/05-contract-review-bench/     ← take this folder anywhere; it runs, and it teaches
+projects/05-contract-review-bench/     ← YOU build this, file by file, from the days below
 │
 ├── README.md              # a stranger's entry point: what it is, how to run it, what it needs
 ├── PROJECT.md             # the brief, the triad, the feature-set table (§2.2)
 ├── SETUP.md               # bare machine to green check, copy-pasteable, nothing assumed (§2.3)
 ├── CODEMAP.md             # every file in the finished project → the day that prints it (§2.4)
-│
-├── day-00-machine-and-repository/     # THE TEACHING — numbered inside this project, from 0
-│   ├── LESSON.md · RECALL.md · CHECKLIST.md
-│   ├── parts/01-<slug>/1.1-<slug>.md …
-│   └── lab/
-├── day-01-skeleton-and-kit/
-├── … day-20-ship/
 │
 ├── run                    # this project's own driver: ./run check | serve | mcp | eval | up
 ├── pyproject.toml         # its own pins. Not shared, not inherited.
@@ -133,6 +144,16 @@ independence and it is the correct price.
 
 v3 had five. `PRIMER.md` is gone: it existed only to make a pointer into another project
 survivable, and there are no such pointers now (ADR-0006).
+
+**The learner writes all four**, from a day document that prints each one whole (§0 rule 5). They
+are files in the project like any other, and `CODEMAP.md` lists them like any other:
+
+| Document | Printed in full by | Why there |
+| --- | --- | --- |
+| `PROJECT.md` | day 0 | Doc-first: write down what you are building before you build it. |
+| `SETUP.md` | day 0 | Day 0 *is* the setup. This is the same ground as a listing, for a reader in a hurry. |
+| `README.md` | the ship day | It describes a finished system, so it is written when one exists. |
+| `CODEMAP.md` | the ship day | It is the completeness proof, and proof comes last. |
 
 ### 2.1 `README.md` — the stranger's entry point
 
@@ -183,8 +204,9 @@ mostly commands. It is a listing; day 0 is the lesson behind it, in the same fol
 
 ### 2.4 `CODEMAP.md` — the completeness proof
 
-Generated by `python p.py codemap NN`. Every file in the finished project, and the day and part
-that prints it whole.
+Every file in the finished project, and the day and part that prints it whole. The ship day prints
+it, and `python p.py codemap NN` — **a command the learner runs**, against the tree they built —
+regenerates it from the day hubs so it cannot be wrong by hand.
 
 ```
 clause_desk/util/backoff.py         day-01-skeleton-and-kit/parts/03-resilience/3.1-backoff.md
@@ -270,7 +292,7 @@ exists and the checks are green.
 
 ### 5.1 The mechanism section — the rule, stated hard
 
-**Real code, and these five constraints are what make that mean something:**
+**Real code, and these six constraints are what make that mean something:**
 
 1. **Real path, real project.** The block is headed with the file's actual path in *this* project —
    `clause_mcp/server.py`, never `server.py` and never `# in your MCP server`.
@@ -279,9 +301,13 @@ exists and the checks are green.
 3. **No import from outside this project.** If it needs a helper, this project printed the helper.
 4. **Runnable as printed.** Imports at the top, no invented API, verified against the live
    documentation on the day. If it needs a key, the `.env.example` line is in the same day.
-5. **The output is real.** The block showing what it prints was actually run. If it could not be
-   run, the block is `TODO(me): run <exact command>` — **never an invented transcript.** A missing
-   output is fixed by one run; a fabricated one is undetectable.
+5. **The output is real.** The block showing what it prints was actually run — by the author, in a
+   throwaway directory outside this repository (§0 rule 5). If it could not be run, the block is
+   `TODO(me): run <exact command>` — **never an invented transcript.** A missing output is fixed
+   by one run; a fabricated one is undetectable.
+6. **Typed, not received.** The learner types this file into their own tree from this block. So the
+   block is the whole file, the path above it is where it goes, and any command needed to create
+   the directory it sits in is in the day's hub §3. Nothing arrives pre-built.
 
 ### 5.2 `Line by line` has one depth, and it is full
 
@@ -329,12 +355,14 @@ The one document allowed to know the whole curriculum is this plan, plus the gen
 ## §7 · Verification — how independence is proved, not claimed
 
 The authoring driver is `python p.py`, and it never builds, serves, tests or deploys a project.
+It also never writes into `projects/` (§0 rule 5) — the two commands that read a project tree,
+`codemap` and `verify`, are run **by the learner**, against the tree the learner built.
 
 ```
 python p.py brief NN D     # the day-D-of-project-NN assignment, and the order guard
 python p.py new NN D slug  # scaffold an empty day from days/_TEMPLATES/
 python p.py depth NN [D]   # the depth contract for one day, or the whole project
-python p.py codemap NN     # regenerate that project's CODEMAP.md from the day hubs
+python p.py codemap NN     # print that project's CODEMAP.md from the day hubs (--write to save)
 python p.py index          # regenerate the derived documents in docs/
 python p.py check          # the whole-repository gate, including the no-escape grep of §6
 python p.py verify NN      # independence: copy the project out on its own, run its own check
@@ -1380,4 +1408,5 @@ and ADRs are never rewritten.
 | --- | --- | --- |
 | v3.0.0 | 2026-09-08 | `_shared/` deleted; forty independent project repositories (ADR-0001) |
 | v3.1.0 | 2026-09-09 | Machine-readable blocks, the ID scheme, day 0 (ADR-0002) |
-| **v4.0.0** | **2026-09-10** | **The Repetition Rule replaces the Depth Rule; From-Scratch and Full-Stack rules added; `PRIMER.md`, the ID scheme, the track table and global day numbering deleted; days numbered per project from 0; projects renamed to their industry and resized to 16–22 days (ADR-0006, ADR-0007)** |
+| **v4.1.0** | **2026-09-10** | **Rule 5 added — the day document is the deliverable, and nothing is ever written into `projects/`. §5.1 gains a sixth constraint on real code; §2 names the day that prints each of the four project documents; `p.py codemap` prints instead of writing (ADR-0008)** |
+| v4.0.0 | 2026-09-10 | The Repetition Rule replaces the Depth Rule; From-Scratch and Full-Stack rules added; `PRIMER.md`, the ID scheme, the track table and global day numbering deleted; days numbered per project from 0; projects renamed to their industry and resized to 16–22 days (ADR-0006, ADR-0007)** |
