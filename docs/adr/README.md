@@ -12,7 +12,7 @@ time, which is the only thing that makes the next decision easier.
 
 For anything **structural** — a change to the shape of the work rather than to its content:
 
-- the day format, the ID scheme, the phase boundaries, the numbering rule
+- the day format, the numbering rule, the project boundaries, the depth contract
 - skipping, merging, reordering or inserting a day (the plan forbids doing this without one)
 - adopting, replacing or dropping a tool the whole curriculum depends on
 - a change in scope: something the plan promised and no longer will, or the reverse
@@ -41,3 +41,7 @@ justification written after the fact, not a decision record.
 | [0001](ADR-0001-the-plan-as-adopted.md) | The plan as adopted | 2026-09-08 | accepted |
 | [0002](ADR-0002-day-zero-and-the-authoring-repo.md) | Day zero, and the authoring repository | 2026-09-08 | accepted |
 | [0003](ADR-0003-days-grouped-by-project.md) | Day folders grouped by the project that owns them | 2026-09-09 | accepted |
+| [0004](ADR-0004-generatecontent-by-hand-and-unpublished-limits.md) | `generateContent` by hand, and the limits that are no longer published | 2026-09-09 | accepted |
+| [0005](ADR-0005-mcp-era-gap-and-the-1x-pin.md) | The MCP era gap, and the 1.x pin | 2026-09-10 | accepted |
+| [0006](ADR-0006-repetition-replaces-depth-once.md) | Every project teaches everything it uses, in full, in its own documents | 2026-09-10 | accepted |
+| [0007](ADR-0007-v3-days-archived-and-the-restart.md) | The eighteen v3 days are archived unedited, and the curriculum restarts at P01 day 0 | 2026-09-10 | accepted |

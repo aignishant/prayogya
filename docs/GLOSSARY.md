@@ -2,13 +2,29 @@
 
 Append-only. One row per term, defined **once**, with the part that introduced it.
 
-This file exists because 297 sittings is long enough that day 3 is forgotten by day 200. Its real
-job is not to be read front to back; it is to be **checked before defining anything**, so a term
-is never defined twice, slightly differently, in two places. Two nearly-identical definitions are
-worse than one bad definition, because the reader cannot tell which is current.
+This file exists because 816 sittings is long enough that a term defined early is forgotten later.
+Its real job is not to be read front to back; it is to be **checked before defining anything**, so
+a term is never defined twice, slightly differently, in two places. Two nearly-identical
+definitions are worse than one bad definition, because the reader cannot tell which is current.
 
-Before you define a term in a day document, search this file. If it is here, link the part that
-introduced it instead of redefining it.
+Before you define a term in a day document, search this file. If it is here, **define it the same
+way**. Note the difference from v3: a day may no longer *link* to another project's definition, and
+must restate it, because every project teaches everything it uses (plan §0 rule 2, ADR-0006). This
+glossary is an **authoring** index that keeps forty restatements consistent — no project reads it,
+and no project needs it.
+
+New rows use the v4 address: `PNN day D part S.T`.
+
+> **Two things to know about the rows below.**
+>
+> **Their `Introduced in` column points into the archive.** Every row here was written under plan
+> v3, whose days were archived to `days/_archive-v3/` when v4 landed (ADR-0007). The *definitions*
+> are still good and are still the ones to reuse; the day references are historical. A term is
+> re-anchored when a v4 day defines it, by appending a new row rather than editing the old one.
+>
+> **Two rows are misfiled.** The `fastapi` and `uvicorn` rows are pinned-version records that
+> belong in `docs/PINS.md`, not term definitions. They are left in place rather than deleted, in
+> keeping with the append-only rule, and named here so the next reader is not confused by them.
 
 | Term | Plain-language definition | Introduced in | Also called |
 | ---- | ------------------------- | ------------- | ----------- |

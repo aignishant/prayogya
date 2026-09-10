@@ -6,8 +6,10 @@ permitted to touch.
 
 This is blast radius before capability, written as a table. A dependency you have not audited is a
 capability you granted without deciding to. It matters more here than in most repositories,
-because P12 audits third-party skills and P28 runs a deliberately hostile boundary: the discipline
-being taught has to be visible in the repository doing the teaching.
+because P30 Vendor Risk Assessor reads third-party components like an attacker and P29
+Prompt Injection Range runs a deliberately hostile boundary: the discipline being taught
+has to be visible in the repository doing the teaching. (Those were P12 and P28 under plan
+v3; v4 renumbered every project — ADR-0006.)
 
 | What | Source | Version | Licence | Audited on | Audited by | Permitted scope |
 | ---- | ------ | ------- | ------- | ---------- | ---------- | --------------- |

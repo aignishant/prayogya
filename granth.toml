@@ -1,25 +1,26 @@
 # granth.toml - this repository's identity, and the knobs the depth contract exposes.
 #
-# The master plan is the single source of truth for *what the curriculum is*: the tracks, the
-# phases and the day map all live there, between `<!-- granth:...:start -->` markers, so that a
-# human reading the plan and a script parsing it can never disagree. This file holds only what
-# the plan cannot express - where things live, and the shell commands of the local toolchain.
+# The master plan is the single source of truth for *what the curriculum is*: the project list,
+# the eighteen-slot spine and each project's extra days all live there, between
+# `<!-- granth:...:start -->` markers, so that a human reading the plan and a script parsing it
+# can never disagree. This file holds only what the plan cannot express - where things live, and
+# the shell commands of the local toolchain.
 
 [project]
 name         = "Prayoga"
 slug         = "prayoga"
 topic        = "40 independent agentic systems with Google ADK 2.x, MCP, Agent Skills and A2A"
-plan_version = "v3.1.0"
+plan_version = "v4.0.0"
 driver       = "python p.py"
 
 [paths]
-plan = "docs/00_MASTER_PLAN.md"
-docs = "docs"
-days = "days"
+plan     = "docs/00_MASTER_PLAN.md"
+docs     = "docs"
+days     = "days"
+projects = "projects"
 
 [contract]
-parts_dir   = "parts"
-sources_dir = "sources"
+parts_dir = "parts"
 
 levels = ["foundation", "working", "production"]
 
@@ -32,9 +33,12 @@ exempt_headings = "when it breaks|check yourself|verified|verify|budget|ledger|t
 require_failure_part = true
 require_sources      = true
 
-# The part contract is the plan's own SS5 - eight sections, of which `frontmatter` is not a
+# The part contract is the plan's own SS5 - seven sections, of which `frontmatter` is not a
 # heading. The order is the pedagogy: claim, scene, real code, walkthrough, failure, production,
 # rep. Changing it is a plan amendment, not a preference.
+#
+# v4 note: `line by line` is the only conditional one, and it is now required after EVERY code
+# block at full depth. Recap depth was deleted with the Depth Rule (plan SS5.2, ADR-0006).
 part_sections = [
   "one-line answer",
   "the idea",

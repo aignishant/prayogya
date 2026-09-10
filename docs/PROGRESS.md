@@ -1,11 +1,40 @@
 # Progress ledger — Prayoga
 
-Append-only. **The last row is where we actually are.** One row per *completed* day, pasted from
-that day hub section 10 before `python p.py done N` will commit. A day with no row here is not
-finished, whatever the folder looks like.
+Append-only. **The last row of the v4 table is where we actually are.** One row per *completed*
+day, pasted from that day hub's §10 before `python p.py done NN D` will commit. A day with no row
+here is not finished, whatever the folder looks like.
 
-Nothing is ever deleted from this table. A day that went wrong gets a note under it saying what
-went wrong — a ledger that only records successes is a ledger nobody can learn from.
+Nothing is ever deleted. A day that went wrong gets a note under its table saying what went wrong —
+a ledger that only records successes is a ledger nobody can learn from, and the notes under the v3
+table below are the proof of that.
+
+---
+
+## The v4 ledger — plan v4.0.0
+
+Days are numbered **inside their project, from 0** (plan §15). Order inside a project is strict;
+order between projects is free. This is the only region `python p.py` reads.
+
+<!-- granth:ledger:start -->
+
+| Project | Day | Date | Title | Parts | Commit | Gates green? |
+| ------- | --- | ---- | ----- | ----- | ------ | ------------ |
+
+<!-- granth:ledger:end -->
+
+*(No v4 sittings yet. `python p.py brief 01 0` is the first one.)*
+
+---
+
+## The v3 ledger — superseded, kept verbatim
+
+Everything below this line was written under plan v3.1.0 and is **history, not progress**. Its
+eighteen days were archived unedited to `days/_archive-v3/` and `projects/_archive-v3/` when v4
+landed; the reasons are in `docs/adr/ADR-0007-v3-days-archived-and-the-restart.md`, and the reason
+v4 exists at all is in `ADR-0006`. These rows are not counted by any tool and are never edited —
+a superseded row is the only evidence of what was superseded.
+
+The `IDs closed` column refers to the v3 curriculum ID scheme, which v4 deleted.
 
 | Day | Date | IDs closed | Parts | Commit | Gates green? |
 | --- | ---- | ---------- | ----- | ------ | ------------ |

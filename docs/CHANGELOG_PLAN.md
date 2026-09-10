@@ -100,3 +100,31 @@ Anything structural also gets an ADR in `docs/adr/`, and the entry here links it
   17 therefore teach the era they can run, and every day that teaches a legacy mechanism quotes,
   in its body, the specification line that removed it. See
   `docs/adr/ADR-0005-mcp-era-gap-and-the-1x-pin.md`.
+
+- 2026-09-10 — **v3.1.0 → v4.0.0. The Depth Rule is deleted and repetition replaces it; every
+  project is taught from zero, ships the whole feature set, and numbers its own days from 0.**
+  *What moved:* almost everything structural. §0 now carries **four** rules — Completeness
+  (widened to include `.gitignore`, `pyproject.toml`, `Dockerfile`, CI and the `run` driver),
+  **Repetition** (every concept a project uses is taught *in that project, at full depth* — recap
+  depth is gone), **From-Scratch** (day 0 begins on a bare machine, in every project), and
+  **Full-Stack** (every project ships all eighteen subsystems of the new §12 spine). §6 was the
+  pointer format and is now *"nothing leaves the project"*, enforced by a grep in
+  `python p.py check`. `PRIMER.md` and the *Borrowed concepts* table are deleted, because both
+  existed only to make an out-of-project pointer survivable. §15's ID scheme, the ten-track table
+  and the global day map are deleted; days are numbered inside their project from 0 and addressed
+  as `NN D`. §11 renames all forty projects to their real-world industry and resizes them to 16–22
+  days. §12 is new — the eighteen-slot spine. §13 is new — each project's brief plus the extra days
+  its subject earns, which `p.py` expands against the spine so the two cannot drift. §14 is new —
+  the style rules, including the test that stops forty projects reading like one pasted forty
+  times: *a scene that would work unchanged in another project has failed its contract.*
+  *Why:* v3 claimed independence and delivered it for code only. Its own Depth Rule sent a reader
+  with one folder to a folder they did not have, and the scaffolding that decides whether a clone
+  runs at all lived in P00, which nothing required anyone to read. The learner named this on
+  2026-09-10. *What it costs:* the curriculum roughly triples, 297 sittings to **816**, and every
+  core concept is now written forty times at full depth. That number was quoted and accepted before
+  the rewrite began. *What else changed:* the eighteen v3 days and their project trees are archived
+  unedited under `days/_archive-v3/` and `projects/_archive-v3/`, the v3 ledger is kept verbatim
+  with the v4 ledger below it inside `granth:ledger` markers, and `docs/TRACEABILITY.md` and
+  `docs/CURRICULUM_INDEX.md` are deleted with the ID scheme they indexed. `p.py` was rewritten for
+  project-local addressing. See `docs/adr/ADR-0006-repetition-replaces-depth-once.md` and
+  `docs/adr/ADR-0007-v3-days-archived-and-the-restart.md`.
