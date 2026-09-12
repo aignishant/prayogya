@@ -26,6 +26,17 @@ order between projects is free. This is the only region `python p.py` reads.
 | 01 | 4 | 2026-09-10 | The boundary, part two | 5 | <hash> | yes |
 | 01 | 5 | 2026-09-10 | Tools | 5 | <hash> | yes |
 | 01 | 6 | 2026-09-10 | The tool that must refuse — a deficiency is an answer, not an error | 5 | <hash> | yes |
+| 01 | 7 | 2026-09-10 | The first agent | 5 | <hash> | yes |
+| 01 | 8 | 2026-09-10 | Sessions and state | 5 | <hash> | yes |
+| 01 | 9 | 2026-09-10 | The cast | 6 | <hash> | yes |
+| 01 | 10 | 2026-09-10 | The workflow runtime | 7 | <hash> | yes |
+| 01 | 11 | 2026-09-10 | Callbacks and plugins | 6 | <hash> | yes |
+| 01 | 12 | 2026-09-10 | Memory and retrieval | 6 | <hash> | yes |
+| 01 | 13 | 2026-09-10 | Structured output | 4 | <hash> | yes |
+| 01 | 14 | 2026-09-11 | The decision record: why this claim was fast-tracked, in a form an auditor accepts | 4 | <hash> | yes |
+| 01 | 15 | 2026-09-11 | Reliability | 4 | <hash> | yes |
+| 01 | 16 | 2026-09-11 | Security and privilege | 9 | <hash> | yes |
+| 01 | 17 | 2026-09-12 | Observability | 7 | <hash> | yes |
 
 <!-- granth:ledger:end -->
 
@@ -106,6 +117,375 @@ order between projects is free. This is the only region `python p.py` reads.
 > This is the **last day with a zero request budget**. Day 7 makes the first model call, and the
 > eight pending notifications are what it will be spent on.
 >
+> **P01 day 7.** Written 2026-09-10. Five parts, three sections. `./run check` green with 66 tests.
+> **The first model call in this curriculum's fourth project-day of agent work**, and the day the
+> project's day-0 promise came true: the queue now runs `{"deficiency": 8, "fast-track": 4,
+> "pending": 0}` with twelve claim files and eight distinct reasons, which is `PROJECT.md`'s
+> `Done when` paragraph minus the cold clone and the eval.
+>
+> **`google-adk==2.8.0` installs cleanly without its `[mcp]` extra and `mcp` stays at 2.2.0**, which
+> is ADR-0009's plan working in practice rather than in principle. Every API fact in the day was
+> read off the installed package: `Agent is LlmAgent`, the `Runner` keyword-only signature,
+> `BaseLlm` having exactly one field.
+>
+> **Every model call went to a stand-in**, and the day is built around making that impossible to
+> forget: the double announces itself in its name (`scripted/`), in every answer (`scripted: true`)
+> and to the registry, which admits it *because* of the prefix rather than by an exemption. The
+> framework's own `Skipping missing token usage metadata` warning is quoted rather than silenced,
+> because it is the list of things this project cannot learn from its own transcripts. The honest
+> gap is a `TODO(me)` in the build brief: **run one notification against a real model and write down
+> what differed.** Until that exists, this project has proved its own code and nothing about a model.
+>
+> **Nine tests from days 2 and 6 went red and were meant to.** `assess` now takes a `Cover` rather
+> than a `Policy` — the boundary decided that shape on day 3 and the domain caught up four days
+> later — `decide` takes a budget, and two tests were **deleted rather than weakened** because their
+> subject no longer exists. One count was wrong in a first draft and corrected against a run:
+> `tests/test_agent.py` has twelve tests, not thirteen.
+>
+> The ordering that matters: the classifier is asked **last**, so four of twelve notifications cost
+> no model call at all, and a test asserts `budget.spent == 0` for one of them.
+>
+> **P01 day 8.** Written 2026-09-10. Five parts, three sections. `./run check` green with 78 tests,
+> and the suite got **faster** — 25s to 8.6s — because the classifier stopped building a new session
+> service on every call.
+>
+> Conversations are now addressed by the claim reference and kept in one service for the process, so
+> two questions about a claim accumulate (2 events, then 4) and a question about another claim finds
+> `None`. Session state carries a reference and refuses, by key name, anything that looks like a
+> secret or a person's contact details — **refused rather than redacted**, because a log line can be
+> redacted and a retained record cannot be un-kept.
+>
+> **Two claims written before they were run were wrong and were corrected against real output.**
+> `tests/test_sessions.py` has twelve tests, not eleven. And disabling the isolation fixture does
+> **not** leave the suite passing as first written: it produces `assert 4 == 2` in
+> `test_a_failure_also_arrives_as_an_event_in_the_conversation`, which passes when run alone with
+> `-k`. That is a better demonstration than the one drafted, and the part now carries it.
+>
+> The day's deliberate failure is the guard nobody would think to write. A model failure arrives
+> **twice** — as a raised `RuntimeError` and as an error event with `is_final_response()` true and
+> `content` of `None` — and removing `and event.content` from the read loop leaves every test green
+> while turning the next provider outage into `AttributeError: 'NoneType' object has no attribute
+> 'parts'` inside the parser, with the real cause nowhere in the traceback.
+>
+> Part 1.2 is honest about its own limit: the deny-list is about key names, so `caller_ref` and
+> `notes` both walk past it, and so does `e_mail`. All three were run. The allow-list version is a
+> rep rather than a claim.
+>
+> **P01 day 9.** Written 2026-09-10. Six parts, three sections — one more than planned, because the
+> day turned up a real defect that deserved its own part. `./run check` green with 96 tests, up from
+> 78, eighteen of them in the new `tests/test_cast.py`.
+>
+> The desk has two agents. The letter writer is given a claim reference, one reason and the sentence
+> the department wrote, and the eight letters come from a table in the stand-in rather than from a
+> model — so this project still knows nothing about how a provider would word one, which is the same
+> honest gap day 7 opened. The boundary now keeps the letter with the decision and **refuses a
+> fast-track that carries one**: `{"recorded": false, "refused": "a fast-track has no letter"}`.
+>
+> **A claim written in part 1.1 was false, and the probe that disproved it is now part 3.1.** The
+> part said the letter writer is given three labelled lines and nothing else. It was not. Day 8's
+> one-session-per-claim meant the second agent was replayed the first agent's whole exchange — the
+> policyholder's own words, then the classifier's verdict inside the framework's quoted-agent guard,
+> and only then its own question. **Every test in the project passed while this happened.** The only
+> signal the framework gives is a WARNING line, `Event from an unknown agent: classifier`, which says
+> nothing about what was shared and which nobody would act on.
+>
+> The fix is a `thread` parameter on `sessions.address`, `turn` and `stored`, so each agent gets its
+> own conversation under the same claim reference — printed as a marked diff against day 8, with day
+> 8's module docstring corrected in the same hunk rather than left contradicting its own code. Part
+> 1.1 was rewritten to print the corrected file and to point forward at the failure rather than to
+> keep its original claim. The regression test asserts on both directions: the description **is** in
+> the classifier's thread and **is not** in the letter writer's.
+>
+> **The day's deliberate failure is that leak**, and deleting `thread=NAME` takes exactly one test
+> red — verified, `1 failed, 17 passed`. The lesson the part actually teaches is the one that
+> generalises: an agent's input is not the string you passed it, and if the input is a design
+> decision it has to be asserted on directly.
+>
+> Part 2.1 drives the framework's own delegation for real — three events, `transfer_to_agent` as an
+> ordinary tool call, `actions.transfer_to_agent` on the handover — and then argues that this desk
+> should not use it for a claim decision, because *why did this claim go to correspondence* must be
+> answerable by reading a rule. The framework's own warning about the cost is quoted verbatim: every
+> transfer changes the prompt prefix and re-sends the whole prompt uncached. A test keeps the
+> demonstration green so the decision stays a decision rather than an absence.
+>
+> The ceiling moved from two calls per notification to three, and part 3.2 is about why that is the
+> right shape: one shared budget of three, not a budget each, because two budgets of three is a
+> ceiling of six that nobody agreed to. Measured over the whole queue: 16 model calls, 42 subprocess
+> boundary launches, 43.3 seconds, `claim files: 12 | with a letter: 8`.
+>
+> As with every day so far, this row was appended when the day was written, and its `CHECKLIST.md`
+> boxes are unticked at the time of writing.
+
+> **P01 day 10.** Written 2026-09-10. Seven parts, four sections — two more than planned, because
+> the day turned up a deprecation that deserved its own part and a parallel arrangement that deserved
+> its own measurement. `./run check` green with 110 tests, up from 96.
+>
+> The order the desk works in stopped being a `for` loop and became `claims_desk/workflow.py`: triage
+> as a `SequentialAgent` over the classifier and a node that is code, correspondence as a `LoopAgent`
+> that drafts, checks and redrafts with the objection attached, and the queue-at-once as a
+> `ParallelAgent`. **Two agent modules lost thirty-four and thirty-one lines of orchestration** and
+> neither agent changed — `classify` and `write` are gone, and the four jobs they did belong to
+> whoever owns the order.
+>
+> **Twenty tests across three files went red and every one of them was the change working.** None was
+> deleted to make it green: the parsing tests followed the parser into the workflow, the session
+> tests dropped a budget they never needed, and two tests about `classify` spending a call were
+> deleted outright because their subject no longer exists — with the test that now covers that ground
+> named in the day.
+>
+> The repair loop is real and cheap: eleven of twelve letters pass the house style on the first
+> draft, and one — `above_fast_track_limit` — is refused on a `2`, told *write it again with no
+> figure of any kind in it*, and accepted at 165 characters. The queue costs 17 model calls, and the
+> ceiling moved from 3 to 5 because the letter can now take three attempts.
+>
+> **The day's deliberate failure is the parallel queue's shared state**, and it is the quietest one
+> this project has produced. Un-namespace the keys and twelve rules nodes run, twelve verdicts are
+> computed, twelve correct log lines are emitted — and the session ends holding **one** of them, with
+> no error, no warning and no way to tell which claim's verdict survived. The fix is two fields on
+> the node and a key built from the claim reference.
+>
+> Two defects in the parallel version were measured rather than argued about, and both are asserted
+> by tests **named for the fact that they are defects**: every branch shares the agent's name, so a
+> per-author budget breakdown collapses to one entry; and a `ParallelAgent` fans out the invocation
+> rather than the input, so all twelve branches read the same message and returned the same peril.
+> That decides it — this desk keeps its sequential queue.
+>
+> **The finding that changed the day's shape was a line of stderr.** `SequentialAgent`,
+> `ParallelAgent` and `LoopAgent` are all deprecated in `google-adk` 2.8.0 — the version this project
+> pins — in favour of a graph-based `google.adk.workflow.Workflow` with real edges, conditional
+> routing and plain Python functions as nodes. The successor was driven for real against this
+> project's own classifier and it works; the conditional edge needed for the loop did not, and that
+> is a `TODO(me)` carrying the exact lookup command rather than a guess. The decision to stay on the
+> deprecated three, and its reasons, are `docs/adr/ADR-0010-p01-stays-on-the-composition-workflow-agents.md`.
+>
+> Two claims drafted before they were run were wrong and were corrected against real output. Part
+> 2.1 first transcribed `drafts: 1` where the run said `drafts: 2`, and then explained a defect that
+> did not exist; the paragraph is gone. Part 4.1 first claimed that removing the loop's bound turns
+> two tests red — it turns **one** red, because
+> `test_the_bound_is_what_stops_a_loop_that_cannot_converge` builds its own `LoopAgent` and therefore
+> defends nothing about `correspondence()`. That is now the part's failure section and a `TODO(me)`.
+>
+> As with every day so far, this row was appended when the day was written, and its `CHECKLIST.md`
+> boxes are unticked at the time of writing.
+
+> **P01 day 11.** Written 2026-09-10. Six parts, four sections. `./run check` green with 124 tests,
+> up from 110.
+>
+> The budget moved out of day 10's event-counting and into a plugin's `before_model_callback`, which
+> is the one place every agent's request passes through. `charge` is deleted and with it three
+> assumptions, the worst of which was `event.partial is not True` — a guess about streaming written
+> by somebody who had never seen this project stream. The number is now an observation rather than a
+> reconstruction, and because the hook can replace a call, the budget stopped being a record and
+> became a limit.
+>
+> **The day's deliberate failure was not planned: it happened while the budget was being moved.** The
+> obvious code kept day 7's decision that `BudgetExceeded` raises. It does raise — and the framework
+> catches whatever comes out of a plugin and re-raises its own
+> `RuntimeError: Error in plugin 'claims-desk' during 'before_model_callback' callback: ...`, so
+> `except BudgetExceeded` in `desk.decide` stopped catching anything and that whole branch went dead.
+> An over-budget claim would have stopped the morning's queue instead of going pending.
+>
+> **Two tests failed and neither was the thing that broke.** `desk.decide`'s over-budget path had no
+> test driving a real claim to its limit; it had only ever been reached by a unit test calling the
+> budget directly. That test now exists — `test_a_refused_claim_goes_pending_and_names_the_reason`,
+> four lines — and it is the day's most useful artefact. The general form is in part 3.1: a branch
+> reached only through a framework's extension point is a branch unit tests do not reach.
+>
+> The refusal is now a returned `LlmResponse` and a name on a list, `run_triage` reports
+> `OVER_BUDGET`, and the desk checks it **before** the general failure branch — because a claim that
+> went pending for want of allowance should be re-run and a claim whose model answered badly should
+> be looked at, and without the check both arrive as `needs_classification`. That was verified by
+> deleting the check and watching the wrong reason appear silently.
+>
+> Day 9's leak got a second lock: `refuse_the_description`, an agent callback on the letter writer
+> alone, which refuses any request carrying the policyholder's own words. Day 9's threads are a
+> convention enforced by two strings differing; this is enforced on the request. **What it costs was
+> measured rather than assumed** — a refused leak spins the repair loop its full three passes and
+> charges three of the claim's five calls, because the plugin charges before the agent callback
+> refuses. The function's docstring first said a leak costs nothing; it now says three drafts, and
+> the test asserts `{"letter_writer": 3}`.
+>
+> Two smaller findings worth keeping. `ruff` rule `B039` refused a mutable `ContextVar` default,
+> which would have leaked one run's refusals into the next — the second time a lint rule this project
+> did not choose has caught a real bug. And the desk's own budget now bites **before** day 10's
+> `max_llm_calls`, because the ceiling is derived from the same budget the plugin spends; the
+> framework's net is still set and is no longer what stops anything, which is an improvement and is
+> stated rather than left to be discovered.
+>
+> As with every day so far, this row was appended when the day was written, and its `CHECKLIST.md`
+> boxes are unticked at the time of writing.
+
+> **P01 day 12.** Written 2026-09-10. Six parts, four sections. `./run check` green with 141 tests,
+> up from 124, and **no earlier test went red** — the first day since day 7 that adds without
+> rewiring.
+>
+> **The build tree had to be reconstructed before this day could start.** The previous batch deleted
+> it, as the rules require, so P01 was rebuilt from its own day documents — which is exactly what the
+> learner does, and it found two Completeness Rule violations that the original build had hidden.
+> `claims_desk/boundary.py` grew `call`, `check_in_force`, `record_decision` and `read_decision`
+> across days 5 and 6 and **no day printed any of them**; and `claims_desk/agents/__init__.py` is
+> never printed at all, although day 7's hub says to "type it from part 1.1's setup". Both are now
+> fixed in the days that owed them: a marked diff of `boundary.py` in day 5 part 1.2, its `letter`
+> parameter in day 9 part 1.2, and the agents package printed in day 7 part 1.1. The rebuilt tree
+> reaches the same headline numbers — `{'fast-track': 4, 'deficiency': 8, 'pending': 0}`, twelve
+> claim files, eight letters — which is what says the reconstruction is faithful.
+>
+> The day itself: a synthetic claims handbook of eight rules, one identifier each, split at its own
+> headings; a retriever made of term frequencies, inverse document frequency and a cosine, with no
+> provider and no embedding anywhere; citations that resolve; and `recall@k` measured against ten
+> hand-written questions. **No model call at all**, which is the point rather than an omission.
+>
+> The numbers are honest and unflattering in places. `recall@1` is 0.700, `recall@2` 0.800,
+> `recall@3` 0.900. The highest score anywhere in the day — `0.406` — is on a **wrong** answer, for
+> the question about quoting the fast-track limit. And the one question that fails at every k was
+> investigated rather than described: the question shares **no terms at all** with the section that
+> answers it, and reaches the wrong section on the single word "about", idf 1.39.
+>
+> **The deliberate failure did not do what the draft said it would.** Adding "about" to the stop list
+> was written up as turning two tests red and moving the recall numbers. It turns **one** test red
+> and moves **none** of them: all three recalls stay at 0.7, 0.8 and 0.9, while the escalation
+> question changes from a confidently wrong answer to no answer at all. That is an improvement
+> `recall@k` cannot see, and the part now says so — a wrong answer and no answer score identically,
+> and they are not the same thing.
+>
+> Three other drafted claims were corrected against real runs before shipping. A deleted heading
+> separator absorbs its section into the one **above** it, not below, and takes HB-01 from 412 to 790
+> characters. A question the draft called obvious — "what may a deficiency letter never contain" —
+> reaches HB-01 rather than HB-05, and is now a named test of the retriever's weakness rather than an
+> example of its strength. And the empty-corpus failure prints `[]`, `index over 0 chunks` and
+> `recall@3 -> 0.0` with no error anywhere.
+>
+> Part 3.1 is the refusal. `InMemoryMemoryService` was driven for real: two claims stay isolated as
+> sessions, and once both are handed to memory a query taking **no claim reference** returns one
+> policyholder's exact words. The difference between a session and a memory is not the data, the
+> retention or the storage — it is whether the events can be reached without knowing which claim they
+> belong to. This desk registers no memory service, and a test greps `sessions.py` to keep it that
+> way.
+>
+> As with every day so far, this row was appended when the day was written, and its `CHECKLIST.md`
+> boxes are unticked at the time of writing.
+
+> **P01 day 13.** Written 2026-09-10. Four parts, three sections. `./run check` green with 157 tests,
+> up from 141, and six tests from days 7, 10 and 11 went red on the way — every one of them the
+> change working.
+>
+> The six perils became a `StrEnum` in `domain.py`, because the same list was written out in three
+> places and the third — `data/policies.json` — is where it is actually true. `claims_desk/schemas.py`
+> declares what the classifier may return, the agent gets `output_schema=Reading`, and the
+> consequences are most of the day.
+>
+> **The framework now writes a validated dict into state where day 12 wrote a JSON string**, so day
+> 10's fourteen-line `parse_reading` becomes four lines and loses its `json` import. What is left is
+> the one case a schema cannot cover: the key is absent because nothing ran.
+>
+> **The day's deliberate failure appeared while wiring it.** A schema refusal is raised **inside** the
+> turn as a `ValidationError`, so an unreadable description came out of `run_triage`, out of
+> `desk.decide`, out of `run_queue` — one claim stopping the morning. It is day 11's lesson from the
+> opposite direction: there an exception was wrapped and never arrived, here one arrives at a caller
+> that never expected any. Caught once, given its own constant `REFUSED_SHAPE`, and logged by field
+> and error type with `input_value` deliberately excluded.
+>
+> The refusal that mattered was the stand-in's own. `{"scripted": true, "error": "..."}` is refused by
+> `extra="forbid"` because `error` is not a declared field — which is exactly the setting working, and
+> is why `scripted` had to be declared with a default rather than left to slip through.
+>
+> **Printing the generated JSON schema was worth doing.** `Peril`'s two-paragraph docstring — written
+> for maintainers, explaining why the enum exists — crosses to a provider on every call, along with
+> pydantic's invented titles. That is a real per-request cost found by looking rather than by
+> reasoning, and shortening it is a `TODO(me)` with the measurement attached.
+>
+> Part 2.1 is schema evolution, and it is the part with no code in production: three models in the
+> test file, and the finding that a schema change is **two** migrations in opposite directions. A
+> default fixes old data under a new reader; nothing on the writing side fixes new data under an old
+> one, because `extra="forbid"` refuses it. Readers before writers.
+>
+> Two drafted transcripts were corrected against real runs. A missing doubled brace in the f-string
+> prompt raises `ValueError: Invalid format specifier ...` at import time, not the `KeyError` the
+> draft claimed. And pytest truncates both sets when the peril-agreement test fails, so the useful
+> line is `Extra items in the left set`, not the full comparison the draft printed.
+>
+> As with every day so far, this row was appended when the day was written, and its `CHECKLIST.md`
+> boxes are unticked at the time of writing.
+
+> **P01 day 14.** Written 2026-09-11. Four parts, three sections. `./run check` green with 181 tests,
+> up from 157, and one day-6 stub went red on the way — the fourth time that stub has changed.
+>
+> Every decided claim now carries a `DecisionRecord`: the eleven facts `assess` reads, the provenance
+> that says who read them and what it cost, the handbook citations a handler would follow, and the
+> letter — stored beside the record because a policyholder received it, with its own schema
+> description saying it is not evidence. `replay()` re-derives the verdict from the record alone, with
+> no store, no boundary and no model, using the same `assess` the desk called rather than a copy.
+>
+> **All twelve claims replay to their own verdicts**, covering all eight deficiency reasons plus four
+> fast-tracks — day 2's fixture set paying off five days later, because every rule has a claim that
+> fires it. The four claims settled from their fields carry a record with `loss_type: ''`, `model:
+> ''` and `calls: {}`, which is the strongest available answer to "was this decided by a model".
+>
+> **The limit is stated rather than discovered.** Editing a stored verdict is caught; editing a
+> stored fact is caught; editing **both** consistently — the estimate and the outcome, two fields —
+> passes with `defensible=True`, on a record whose own letter contradicts it. This desk is
+> inconsistency-evident, not tamper-evident, and the difference is a hash it does not have. That is a
+> `TODO(me)` with what it would cost, not a silent gap.
+>
+> **The deliberate failure turned out to be two failures, and the drafted one was wrong.** Swapping
+> two checks in `assess` was written up as breaking the replay. It breaks **nothing** — twenty-four
+> passed — because the queue test writes its records with the current rules and then replays them
+> against the current rules. Both halves move together. The real demonstration keeps records from
+> before the change: take `fire` out of `PHOTO_REQUIRED_FOR` and one stored record stops being
+> defensible, filed as `missing_photo_reference` and now replaying as `fast-track`. The part now
+> carries both, and the second is the more useful: **a test that creates its own evidence can only
+> find bugs in the thing it did not create.**
+>
+> Two smaller decisions worth keeping. The rule that fired is **derived** from the reason rather than
+> stored, because a stored rule name would be a second field written by the same code that wrote the
+> outcome. And the reason-to-citation mapping is eight lines of hand-written dictionary rather than a
+> call to day 12's retriever — whose own `recall@1` is 0.7, and which day 12 measured reaching HB-01
+> instead of HB-04 for exactly the fast-track-limit phrasing a record would ask about.
+>
+> As with every day so far, this row was appended when the day was written, and its `CHECKLIST.md`
+> boxes are unticked at the time of writing.
+
+> **P01 day 15.** Written 2026-09-11. Four parts, three sections. `./run check` green with 200 tests,
+> up from 181, and one day-6 stub went red — the fifth time, which is now a `TODO(me)` about the
+> shape of `record_decision`.
+>
+> Day 1's `util/backoff.py` finally has something to defend. Three attempts, day 1's waits of 1 and
+> 2, and the provider's own `Retry-After` beating that schedule whenever it gives one — capped at
+> thirty seconds, past which "wait" is a refusal and the desk escalates. A retry the budget cannot
+> pay for is **not attempted at all**: one attempt, no waits, straight to escalation, because
+> spending the last call in an allowance to discover it is gone charges the next claim for the
+> discovery.
+>
+> Writes got an idempotency key derived from the decision's own content. The same write twice lands
+> once and returns `repeat: True`; a **different** decision about the same claim is refused rather
+> than overwriting. Running two keyless writes showed what used to happen: `{'outcome':
+> 'deficiency', 'reason': 'injury_reported'}` — the second write silently won, and that was true of
+> any second write to a decided claim, not only a retried one.
+>
+> **The day's deliberate failure is the one this whole project has been pointed at since day 1.**
+> Default the classification when the provider is down — `peril_not_covered`, the conservative
+> choice — and run the queue during an outage: twelve claims decided, twelve decision records, and
+> **every one of them defensible**. FNOL-4477's record asserts that its policy does not cover an
+> escape of water, on a policy that covers escape of water, and day 14's replay confirms the record
+> is internally consistent because the arithmetic is fine and the input was invented. Two hundred
+> tests stay green. The only trace is `model: ''`, sitting in a field that legitimately means "no
+> model was involved" on four claims in twelve.
+>
+> Two real defects were found by reading output rather than by a test. The `reliability.unavailable`
+> log line reported `attempts` as the *constant* rather than the count, so a run stopped by the
+> budget guard after one attempt printed `"attempts": 3` — fixed by tracking `made` and logging
+> `allowed` beside it. And `test_a_provider_that_never_answers_leaves_the_claim_pending` recursed
+> infinitely on the first attempt, because `desk.reliability` **is** the module and the replacement
+> called the name it had just replaced; the original has to be captured first, and the test now says
+> so in a comment.
+>
+> One drafted number was wrong and is corrected. Part 3.1 claimed a sleeping suite takes 23 seconds;
+> measured, it is **10.12** against 2.25 — still four and a half times slower, still the argument for
+> day 1's `sleep` parameter, and now a figure rather than a guess.
+>
+> As with every day so far, this row was appended when the day was written, and its `CHECKLIST.md`
+> boxes are unticked at the time of writing.
+
 > **P01 day 5.** Written 2026-09-10. Five parts, three sections. Built and run in the same throwaway
 > directory and deleted afterwards; `./run check` green there with 45 tests, of which 14 are the new
 > in-process tool tests running in about four seconds.
@@ -388,3 +768,76 @@ The `IDs closed` column refers to the v3 curriculum ID scheme, which v4 deleted.
 >
 > As with every day so far, these rows were appended when the days were written, and their
 > `CHECKLIST.md` boxes are unticked at the time of writing.
+
+> **P01 day 16 — Security and privilege.** Nine parts, and the day's honest shape is that most of it
+> names controls this project already had: the boundary's projection (day 3), agents with no tools
+> (day 7), per-agent conversations (day 9), the second lock on the letter writer's request (day 11),
+> the schema that refuses a peril outside its enum (day 13). Two things are new — the quarantined
+> description, and an approval gate that holds a decided claim.
+>
+> **Four things were got wrong while writing and corrected against real runs.** First, a test
+> asserted that `GOOGLE_API_KEY` appears only in `keys.py`; the literal string is not in that file at
+> all, because it works generically on names. Rewritten to assert what is true — that exactly two
+> files name `.env`, and only one holds a value. Second, the naive version of that test searched for
+> `.env` and accused `boundary.py`, because `os.environ` contains those four characters; the test now
+> matches the quoted literal, and the mistake became part 2.2's and part 5.1's teaching. Third,
+> `APPROVAL_ABOVE` was drafted at 10000 — above every estimate in the fixture, so **the gate could
+> never fire against this project's own data**. It was set to 2500, the fast-track ceiling, which
+> holds exactly one claim: FNOL-4481, the 4800 claim the rules already call too large to fast-track.
+> Fourth, part 1.3 originally said day 11's hook compared the *draft* against the description; it
+> compares the outgoing **request**, which is why it caught a route nobody predicted. Corrected.
+>
+> **Moving the threshold to 2500 reddened five tests from days 6, 7, 9, 11 and 14**, all asserting the
+> queue's totals — twelve decided became eleven recorded and one held. Every one was updated to the
+> actual numbers with a comment naming the claim and the figure, and part 5.2 is about that bill
+> rather than hiding it. One earlier assertion was genuinely lost: `len(set(reasons)) == 8`, eight
+> deficiencies with eight distinct reasons, is now seven, because the held claim's
+> `above_fast_track_limit` is the reason that left the recorded set. That trade is written down.
+> **The day-0 brief's "eight letters" is now false** — seven are written. The brief was not quietly
+> edited; the checklist asks the learner which of the two should change.
+>
+> **The day's strongest transcript is a failure with no symptom.** Returning the whole policy record
+> from `fetch_policy` leaves all 200 pre-today tests green, writes nothing to disk, logs nothing, and
+> changes no behaviour — because `Cover.from_boundary` takes three fields and drops the rest. The
+> policyholder's address reaches the process that runs models and holds the provider key, and the only
+> thing that disagrees is a test written today. Both deliberate-failure diffs were reverted; the gate
+> is green at `225 passed`.
+>
+> Request budget was measured both ways rather than reasoned about: fifteen model calls across the
+> queue with the gate, seventeen without it, the difference being FNOL-4481's letter, which had needed
+> two drafts.
+
+> **P01 day 17 — Observability.** Seven parts. A correlation id in a `ContextVar` read by `log`
+> itself, so fifty existing call sites across nine modules became correlated without one being
+> edited; the id carried into the boundary subprocess's environment, so a line written by the server
+> process shares the desk's trace; spans; and a table saying which single event wakes a person.
+>
+> **The day found two real defects in this project, and neither was found by a test.** First: putting
+> a span round `boundary.call` and actually reading the trace showed `boundary.call: 1863ms`
+> containing nothing. Two more spans found it — `boundary.tool` answers in 12.5ms and
+> `boundary.connect` takes 2078.9ms, because every call launches a Python subprocess. Over the whole
+> queue that is **98.1% of a 67.8-second run spent starting interpreters**, against 0.6s of actual
+> tool work and 0.7s of model calls. Day 4's docstring had said "a connection per call, on purpose
+> and only for now" for thirteen days; today is the first time it had a number. Not fixed today — a
+> pool needs a lifetime owner and a failure story, and that is day 19.
+>
+> Second: `hooks.tool_result` has been emitting `"keys": "<redacted>"` since day 11, and
+> `boundary.record_decision.repeat` the same for `key` since day 15. Day 1's redactor matches secret
+> hints as substrings, and `keys` contains `key`. Six days, every check green, because **no test
+> asserted that a log line says anything**. Fixed by naming today's field `fields` rather than by
+> weakening the redactor, and there is now a test asserting no field of any line is the redaction
+> marker — which catches the next collision rather than only this one.
+>
+> **Two things were got wrong while writing and corrected against real runs.** A drafted transcript
+> showed `boundary.record_decision.repeat` printing its key unredacted; the real output redacts it,
+> and the corrected passage makes the sharper point that the two lines are different cases — one a
+> plain bug, one a defensible redaction of a non-secret. And `alerts.summarise` returned `TICKET` for
+> any run containing any event at all, so a perfectly clean queue was a ticket; the level now comes
+> from the rules, and `test_a_clean_run_wakes_nobody` is the test that caught it.
+>
+> One test from day 4 went red: `test_the_desk_reaches_the_boundary_over_stdio_by_default` asserted
+> `target() is LAUNCH`, and the launch parameters now carry an environment. Rewritten to assert the
+> command and args, with a comment naming today.
+>
+> Nothing today changes what the desk decides — twelve claims, four fast-tracked, seven recorded, one
+> held, identical to day 16. `250 passed`, gate green.
