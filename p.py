@@ -623,6 +623,55 @@ def check_no_escape(cfg: Config, text: str, number: str, where: str, report: Rep
             report.fail(where, f"{hit.group(0)!r} names another project (plan §6)")
 
 
+# --- plan §0 rule 1: the Completeness Rule, made mechanical ----------------------------------
+#
+# "No `...` and no 'the rest is unchanged'." Without a check this is a rule people keep by hand,
+# and a rebuild of P01 from its own documents in 2026-09 found 22 places where it had not been:
+# a bare `...` standing for an unchanged region inside a marked diff, which is a diff a learner
+# cannot apply. See docs/PROGRESS.md for that pass.
+
+#: A fenced block that is really a marked diff, whatever it is tagged. `+` at column zero is not
+#: valid Python, TOML or JSON, so it is the reliable tell.
+FENCED = re.compile(r"^```([a-zA-Z0-9]*)\n(.*?)^```", re.M | re.S)
+
+#: Fence languages that are output rather than source, where an ellipsis is an honest abbreviation
+#: of repeated lines and a `+` is just a character.
+NOT_SOURCE = {"bash", "text", "console"}
+
+
+def check_completeness(cfg: Config, content: str, where: str, report: Report) -> None:
+    """No unmarked elision inside a marked diff, and no diff tagged as source (plan §0 rule 1).
+
+    A `...` on a context line of a diff means "an unchanged region sits here", which is exactly
+    what `@@` says in unified-diff syntax — and unlike `...` it is a thing a reader can act on and
+    a tool can apply. A diff tagged ```python is worse: a learner copying that block gets a file
+    with `-` and `+` down the left margin.
+    """
+    for hit in FENCED.finditer(content):
+        language, block = hit.group(1), hit.group(2)
+        if language in NOT_SOURCE:
+            continue
+        lines = block.split("\n")
+        added = [line for line in lines if line.startswith("+")]
+        if language != "diff" and not added:
+            continue
+        if language != "diff":
+            line_number = content[: hit.start()].count("\n") + 1
+            report.fail(
+                where,
+                f"code block at line {line_number} is a marked diff tagged ```{language or 'none'}"
+                " — tag it ```diff, or a reader copies the markers into the file",
+            )
+        for offset, line in enumerate(lines):
+            if line.strip() == "..." and not line.startswith(("+", "-")):
+                line_number = content[: hit.start()].count("\n") + 1 + offset
+                report.fail(
+                    where,
+                    f"line {line_number}: a bare '...' stands for an unchanged region inside a "
+                    "diff — use '@@ ... @@' and say what is unchanged (plan §0 rule 1)",
+                )
+
+
 def section_regex(cfg: Config, name: str) -> re.Pattern[str]:
     pattern = cfg.section_patterns.get(name, re.escape(name))
     if name == "line by line":
@@ -704,6 +753,7 @@ def check_part(cfg: Config, path: Path, number: str, day: int, report: Report) -
     check_citations(cfg, meta, where, report)
     check_no_clocks(cfg, text, where, report)
     check_no_escape(cfg, text, number, where, report)
+    check_completeness(cfg, content, where, report)
     for line in unexplained_code_blocks(cfg, content):
         report.fail(where, f"code block at line {line} has no 'Line by line' walkthrough after it")
     return PartResult(section, subtopic,

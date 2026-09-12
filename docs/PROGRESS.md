@@ -841,3 +841,32 @@ The `IDs closed` column refers to the v3 curriculum ID scheme, which v4 deleted.
 >
 > Nothing today changes what the desk decides — twelve claims, four fast-tracked, seven recorded, one
 > held, identical to day 16. `250 passed`, gate green.
+
+> **P01 repair pass, 2026-09-12 — the Completeness Rule, checked mechanically for the first time.**
+> No new day. Rebuilding P01's tree from its own day documents, the way the learner does, turned up
+> three classes of defect in days already marked green, and all three are now fixed.
+>
+> **Twenty-two marked diffs used a bare `...` as a context line**, meaning "an unchanged region sits
+> here". That is plan §0 rule 1 — *no `...`* — and its practical cost is that the diff cannot be
+> applied: a learner reaching one has to guess what was elided. All twenty-two became `@@ ... @@`
+> hunk separators, which say the same thing in the syntax a reader and a tool both understand.
+>
+> **Sixteen diff blocks were tagged ```python, ```toml or untagged** rather than ```diff. A learner
+> copying one of those gets a source file with `-` and `+` down the left margin. Retagged.
+>
+> **Day 15 never printed `ScriptedTransient`.** Its checklist demanded the class, three of its
+> transcripts used it, and no day in this project contained the code — a Completeness Rule violation
+> that thirteen green gates did not notice. It is now printed in part 1.1 as a marked diff against
+> `claims_desk/scripted.py`, written and run before being written down: it fails twice with
+> `retry_after=0.5` and then returns `escape-of-water`, which is exactly what part 1.1's existing
+> transcript claims. Two elisions in day 7's `domain.py` diff (`assess`'s docstring, and the
+> photo-reference and injury checks) were also unmarked, and now carry `@@` markers saying what sits
+> there unchanged.
+>
+> **`python p.py check` now enforces all of this.** `check_completeness` fails a part that carries a
+> bare `...` on a context line of a diff, or a marked diff tagged as source. It was verified by
+> reintroducing one deliberately and watching the gate go red. Before this, the Completeness Rule
+> was a rule kept by hand, and by day 15 it had not been.
+>
+> The lesson for the days still to come: **a rule with no check is a preference.** The same is true
+> of the four other rules in plan §0, and only two of them currently have one.

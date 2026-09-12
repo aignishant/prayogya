@@ -93,10 +93,11 @@ time that stub has changed and is now a `TODO(me)` about the shape of that tool.
 | `claims_desk/reliability.py` | part 1.1 |
 | `tests/test_reliability.py` | part 3.1 |
 
-Three earlier files change, each printed as a marked diff naming the day that printed the original:
-`claims_mcp/tools.py` (day 5 part 1.1) and `claims_desk/desk.py` (day 7 part 2.1) in part 1.2, and
-`claims_desk/desk.py` again in part 2.1 for the escalation. `claims_desk/scripted.py` gains
-`ScriptedTransient`, and `claims_desk/boundary.py` passes the key across.
+Four earlier files change, each printed as a marked diff naming the day that printed the original:
+`claims_desk/scripted.py` (day 7 part 1.2, extended day 9 part 1.2) gains `ScriptedTransient` in
+part 1.1; `claims_mcp/tools.py` (day 5 part 1.1) and `claims_desk/desk.py` (day 7 part 2.1) change
+in part 1.2; `claims_desk/desk.py` again in part 2.1 for the escalation; and
+`claims_desk/boundary.py` passes the key across.
 
 ## §5 Build brief
 
