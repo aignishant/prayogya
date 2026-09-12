@@ -28,4 +28,15 @@ write it.
 | [15](wiki/P01-day-15.md) | Reliability | 4 |
 | [16](wiki/P01-day-16.md) | Security and privilege | 9 |
 | [17](wiki/P01-day-17.md) | Observability | 7 |
+| [18](wiki/P01-day-18.md) | Evals | 7 |
+| [19](wiki/P01-day-19.md) | Ship | 7 |
+
+## P02 · Warehouse Stock Control — Logistics — warehouse management
+
+| Day | Subject | Parts |
+| --- | --- | --- |
+| [00](wiki/P02-day-00.md) | The machine and the repository | 8 |
+| [01](wiki/P02-day-01.md) | The skeleton and the kit | 9 |
+| [02](wiki/P02-day-02.md) | The domain and its data | 6 |
+| [03](wiki/P02-day-03.md) | The boundary, part one | 5 |
 

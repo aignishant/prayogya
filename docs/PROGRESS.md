@@ -37,6 +37,12 @@ order between projects is free. This is the only region `python p.py` reads.
 | 01 | 15 | 2026-09-11 | Reliability | 4 | <hash> | yes |
 | 01 | 16 | 2026-09-11 | Security and privilege | 9 | <hash> | yes |
 | 01 | 17 | 2026-09-12 | Observability | 7 | <hash> | yes |
+| 01 | 18 | 2026-09-12 | Evals | 7 | <hash> | yes |
+| 01 | 19 | 2026-09-12 | Ship | 7 | <hash> | yes |
+| 02 | 0 | 2026-09-12 | The machine and the repository | 8 | <hash> | yes |
+| 02 | 1 | 2026-09-12 | The skeleton and the kit | 9 | <hash> | yes |
+| 02 | 2 | 2026-09-12 | The domain and its data | 6 | <hash> | yes |
+| 02 | 3 | 2026-09-12 | The boundary, part one | 5 | <hash> | yes |
 
 <!-- granth:ledger:end -->
 
@@ -870,3 +876,128 @@ The `IDs closed` column refers to the v3 curriculum ID scheme, which v4 deleted.
 >
 > The lesson for the days still to come: **a rule with no check is a preference.** The same is true
 > of the four other rules in plan §0, and only two of them currently have one.
+
+> **P01 day 18 — Evals.** Seven parts. The whole desk run as a subprocess and marked against the
+> answer key `data/notifications.json` has carried since day 2 — outcome, reason, loss type, the
+> boundary route and the model-call bill read back from day 17's spans, and the letter judged by a
+> four-row rubric — with no partial credit on a claim. A baseline of day 2's rules with a guessed
+> peril scores 9/12 on verdicts and 6/12 once a right verdict for the wrong peril stops counting, so
+> the model's whole contribution is three claims. Disabling the in-force check turns ten of twelve
+> claims red, one on its verdict and nine on their route; the unit suite goes red too, on seven tests
+> that name FNOL-4474 and not the cause. The framework's evaluator was installed (`google-adk[eval]`,
+> fifty-two packages, `mcp` still 2.2.0), given the classifier as a `root_agent`, run from pytest and
+> from `adk eval`, and measured: its word-overlap judge scores an inverted injury flag 0.889, the same
+> as the right answer, and a wrong peril 0.625. The marking scheme itself was wrong twice — a bill
+> that forgot letters, and a test reading claim files from the wrong store — and both are kept as
+> tests. Gate: `280 passed` on the rebuilt tree, `./run eval` green, `python p.py check` green.
+>
+> **Day 18 was verified on a tree rebuilt strictly from days 0–17's printed files and marked
+> diffs**, because no earlier throwaway survived. That tree reached `247 passed`, not day 17's `250`:
+> three assertions day 13's hub says it added to `tests/test_agent.py` and `tests/test_workflow.py`
+> were never printed. The rebuild found four other changes that a hub or checklist names and no part
+> prints — day 14's diffs to `claims_desk/desk.py`, `claims_desk/workflow.py`,
+> `claims_desk/boundary.py` and `claims_mcp/tools.py` (the decision record threaded through to the
+> claim file); day 15's diffs to `boundary.py` and `tools.py` (the idempotency key); day 11's two
+> test updates; day 17's `tests/test_transports.py` diff — and five earlier tests that later days'
+> changes made stale with no printed update (`test_the_server_says_who_it_is` at 0.4.0 after day 9
+> moved the server to 0.5.0; `test_a_notification_the_rules_cannot_settle_is_pending_with_a_reason_why`
+> still expecting FNOL-4471 to be pending after day 7; the refused-write stub in `test_desk.py` with
+> day 6's three-argument signature; `test_the_classifier_reports_rather_than_guesses` without the
+> `output_key` that makes day 13's schema run; `test_triage_leaves_its_verdict_in_state` asserting
+> the wrong peril). Each was reconstructed from the transcripts those days do print. They are
+> Completeness Rule debts of days 7, 9, 11, 13, 14, 15 and 17, owed as marked diffs to those days;
+> `python p.py check` did not notice any of them, because the gate checks a diff's shape and not
+> whether a change a hub announces was ever printed.
+
+> **P01 day 19 — Ship.** Seven parts, and the last day of the project. A two-stage image on
+> `python:3.12.12-slim` with uv 0.12.3 copied in, `--locked --no-dev`, a non-root user and a
+> `HEALTHCHECK`; `.dockerignore` written before it; the boundary's HTTP host made a variable; a
+> standard-library service with `GET /healthz` that asks the boundary for a policy no book has and
+> reports the leaf exception, and `POST /queue`; `compose.yaml` with the boundary as a sidecar on a
+> private network, no port published for it, `env_file` on the desk alone and a health condition;
+> a workflow that runs both gates on `ubuntu-latest` with uv pinned and a key that says it is not one;
+> the README and the generated CODEMAP; twelve tests that read the files as text. **The cold clone
+> was run for real**: an empty folder, an empty `UV_CACHE_DIR`, 123 packages downloaded, `292
+> passed`, `eval: green`; the clone that forgot `uv.lock` and the pin moved without it were both
+> stopped by `--locked` with the fix in the message. **Not run on this machine, marked `TODO(me)`
+> with exact commands:** the image build, `./run up`, and the workflow's first run — there is no
+> Docker here and the throwaway repository has no remote. The first `./run serve` met a port held by
+> a process that was not this project's, which is why the port became a variable. Gate: `292
+> passed`, `./run eval` green, `python p.py check` green. P01 is complete: twenty days, seventy-two
+> files, all eighteen spine slots plus two extra days.
+
+> **P02 day 0 — The machine and the repository.** Eight parts, and the first day of the second
+> project, started from a bare folder on the day P01 closed. The freshness check plan §10 asks for
+> ran first: `google-adk` is at 2.9.0 (released 2026-09-10, two days ago) with breaking changes
+> listed for workflow resume, the in-memory session service and MCP 2.x field handling; `mcp` is
+> still 2.2.0; the protocol revision is still 2026-07-28; the provider's Flash list is unchanged.
+> Nothing in the plan's text depends on the framework's version, so no amendment — the pin is day
+> 1's decision, and the three facts are recorded in the project's `PACKAGES.md` as *observed, not
+> installed*. The interpreter pinned is 3.12.13, the newest patch `uv python list` offered, and it
+> was downloaded rather than found. The check asks five questions where P01's asked four — the
+> fifth is `git rev-parse --show-toplevel`, so a folder with no repository or inside somebody
+> else's goes red — and every one of six ways to make it red was run. Two things this day found
+> that its predecessor's day 0 did not say: `git check-ignore` is silent on a *tracked*
+> `.env.example` whatever the rules are, so the negation must be tested with `--no-index`; and a
+> `.python-version` in a parent folder is obeyed silently when the project has none. `SETUP.md`
+> was handed to an empty folder and followed cold to five green lines. Gate: `python p.py check`
+> green.
+
+> **P02 day 1 — The skeleton and the kit.** Nine parts. `pyproject.toml` declared `ruff==0.16.7`
+> and `pytest==9.1.1` — both current on the day, checked live — with `dependencies = []` because
+> the framework is not yet installed. `uv sync` fell back from hardlinks to a full copy on this
+> filesystem, a warning and not an error. `stock_desk` and `stock_desk.util` were declared as
+> packages, and `run` became the one door, refusing a missing program (`docker`) by name rather
+> than with a Python traceback. The kit's four modules were built and tested: `keys` never prints
+> a value, only a twelve-character fingerprint; `logging` redacts by whole word rather than
+> substring, so a field named `keys` survives where `api_key` does not; `backoff` honours a
+> provider's own `Retry-After` over its own schedule and escalates rather than inventing an
+> answer; `budget` raises rather than clamping. The registry refuses an alias, the provider's
+> legacy default, and any ID not on its list — and refuses the alias twice, by two independent
+> lines, which was demonstrated by disabling one and watching the other still catch it. The day's
+> own first `./run check` was red on its own test file's line length, which is the right way for a
+> gate to introduce itself; three more failures were caused on purpose and read in full. Gate:
+> `python p.py check` green.
+
+> **P02 day 2 — The domain and its data.** Six parts. Sixty synthetic bins across three aisles
+> (`data/ledger.json`) and sixty cycle counts (`data/counts.json`), generated deterministically
+> and then hand-crafted with nine planted variances: three receipts not yet booked, three picks
+> not yet confirmed, two known breakages, and one genuinely unexplained shortfall that must be
+> replenished. `Bin`, `Count`, `Outcome` and `Reason` were built as frozen dataclasses and a
+> `StrEnum`; `reconcile` decides between four outcomes from three given facts, checking a zero
+> delta first, an accepted reason second, and the sign of the gap only once neither of those
+> settles it. `Store` became the one class allowed to open a file, with an atomic
+> `write_reconciliation` demonstrated against two real crash simulations — a naive straight-to-
+> target write left a file that existed, was non-empty, and failed to parse; the same crash
+> against the atomic version left no file at all. The fixture set was asserted as a contract in
+> seven tests, one of which reproduces every declared outcome by running `reconcile` itself. The
+> day's deliberate failure: `guess_reason_from_note`, a keyword-scan stand-in, misreads exactly
+> one of the nine notes — the one describing a receipt as "the supplier's Wednesday drop" rather
+> than using a recognised word. Widening its word list to catch that note was demonstrated to
+> break a different, previously-correct note instead (`C-05-1`, "dropped in transit"), with the
+> project's own inverted-case test catching the swap: `assert 'A-10-2' in ['C-05-1']`. Every
+> transcript in this day, including all "When it breaks" failures, was run for real and verified
+> against the actual command before being written down. Gate: `24 passed`, `python p.py check`
+> green.
+
+> **P02 day 3 — The boundary, part one.** Five parts. Measured the desk's blast radius before
+> building anything: a tool-shaped function running in the desk's own process can reach
+> forty-five files, `.env` among them, and a naive "helpful extra" tool was demonstrated leaking
+> the synthetic key in its return value. `stock_mcp` was built as a second top-level package,
+> importing from `stock_desk` in one direction only, declaring one tool — `fetch_bin` — whose
+> schema was derived entirely from its own signature and docstring. `mcp==2.2.0` was added as a
+> runtime dependency (installed directly, never through `google-adk[mcp]`'s `mcp<2` extra), the
+> module was made runnable with `python -m stock_mcp`, and the `run` driver's `mcp` command moved
+> from `PLANNED` to real. A real round trip over a subprocess was captured: protocol version
+> `2026-07-28`, server identity `stock-boundary 0.1.0`, a found bin and a `{"found": false}` miss,
+> neither carrying an error flag. Six tests hold the boundary to its docket — five in-process, one
+> over a real subprocess — including an exact-list assertion on the tool docket and a smell test
+> that a bin's reply carries no file path. Three ways to make the gate go red were caused and read
+> in full: adding a tool, leaking a path, and pointing the client at a misspelled module
+> (`MCPError: Connection closed`). The day's deliberate failure is the one that does not go red: a
+> `print` inside `fetch_bin` corrupts one line of the stdio wire, the client logs a parse failure
+> and skips it, the call still succeeds, and all thirty tests still pass — and on this run, unlike
+> a prior observation of the same failure on a different project, the suite's own timing did not
+> move either, which is written down as the harder and more honest version of the lesson. A stale
+> `docs/PINS.md` row claiming this project "cannot run" the current MCP revision was superseded,
+> not edited, with a new dated row. Gate: `30 passed`, `python p.py check` green.

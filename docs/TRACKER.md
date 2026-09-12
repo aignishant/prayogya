@@ -10,17 +10,17 @@ column. Projects are independent, so they may be built in any order (plan §15).
 | | Count | Of plan |
 | --- | --- | --- |
 | Sittings in the plan | **816** | 100% |
-| Days written | **18** | 2.2% |
-| Days complete | **18** | 2.2% |
-| Subtopic documents | **106** | — |
+| Days written | **24** | 2.9% |
+| Days complete | **24** | 2.9% |
+| Subtopic documents | **148** | — |
 
 ## Every project
 
 | # | Project | Industry | Days | Tier | Written | Complete |
 | --- | --- | --- | --- | --- | --- | --- |
 | 00 | Foundry | — | 5 | — | 0/5 | 0/5 |
-| 01 | Claims Intake Desk | Insurance — first notice of loss | 20 | D3 | 18/20 | 18/20 |
-| 02 | Warehouse Stock Control | Logistics — warehouse management | 20 | D3 | 0/20 | 0/20 |
+| 01 | Claims Intake Desk | Insurance — first notice of loss | 20 | D3 | 20/20 | 20/20 |
+| 02 | Warehouse Stock Control | Logistics — warehouse management | 20 | D3 | 4/20 | 4/20 |
 | 03 | Clinical Triage Room | Healthcare — symptom triage and escalat… | 21 | D3 | 0/21 | 0/21 |
 | 04 | Loan Underwriting Desk | Retail finance — credit decisions | 20 | D3 | 0/20 | 0/20 |
 | 05 | Contract Review Bench | Legal — commercial contract review | 21 | D3 | 0/21 | 0/21 |
@@ -82,5 +82,30 @@ column. Projects are independent, so they may be built in any order (plan §15).
 | 15 | [Reliability](../days/01-claims-intake-desk/day-15-reliability/LESSON.md) | complete | 4 |
 | 16 | [Security and privilege](../days/01-claims-intake-desk/day-16-security-privilege/LESSON.md) | complete | 9 |
 | 17 | [Observability](../days/01-claims-intake-desk/day-17-observability/LESSON.md) | complete | 7 |
+| 18 | [Evals](../days/01-claims-intake-desk/day-18-evals/LESSON.md) | complete | 7 |
+| 19 | [Ship](../days/01-claims-intake-desk/day-19-ship/LESSON.md) | complete | 7 |
+
+### P02 · Warehouse Stock Control
+
+| Day | Title | Status | Parts |
+| --- | --- | --- | --- |
+| 0 | [The machine and the repository](../days/02-warehouse-stock-control/day-00-machine-and-repository/LESSON.md) | complete | 8 |
+| 1 | [The skeleton and the kit](../days/02-warehouse-stock-control/day-01-skeleton-and-kit/LESSON.md) | complete | 9 |
+| 2 | [The domain and its data](../days/02-warehouse-stock-control/day-02-domain-and-its-data/LESSON.md) | complete | 6 |
+| 3 | [The boundary, part one](../days/02-warehouse-stock-control/day-03-boundary-part-one/LESSON.md) | complete | 5 |
+| 4 | One writer, one truth — what two writers do to a stock ledger | not started | 0 |
+| 5 | The boundary, part two | not started | 0 |
+| 6 | The boundary under a second replica, and the call that must be idempote… | not started | 0 |
+| 7 | Tools | not started | 0 |
+| 8 | The first agent | not started | 0 |
+| 9 | Sessions and state | not started | 0 |
+| 10 | The cast | not started | 0 |
+| 11 | The workflow runtime | not started | 0 |
+| 12 | Callbacks and plugins | not started | 0 |
+| 13 | Memory and retrieval | not started | 0 |
+| 14 | Structured output | not started | 0 |
+| 15 | Reliability | not started | 0 |
+| 16 | Security and privilege | not started | 0 |
+| 17 | Observability | not started | 0 |
 | 18 | Evals | not started | 0 |
 | 19 | Ship | not started | 0 |
