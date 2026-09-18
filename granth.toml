@@ -1,81 +1,90 @@
 # granth.toml - this repository's identity, and the knobs the depth contract exposes.
 #
-# The master plan is the single source of truth for *what the curriculum is*: the project list,
-# the eighteen-slot spine and each project's extra days all live there, between
-# `<!-- granth:...:start -->` markers, so that a human reading the plan and a script parsing it
-# can never disagree. This file holds only what the plan cannot express - where things live, and
-# the shell commands of the local toolchain.
+# The master plan is the single source of truth for *what the curriculum is*: the tracks, the
+# phases and the day map all live there, between `<!-- granth:...:start -->` markers, so that a
+# human reading the plan and a script parsing it can never disagree. This file holds only what
+# the plan cannot express - where things live, and the shell commands of the local toolchain.
+#
+# Every key is optional. Delete a line to take the default.
 
 [project]
-name         = "Prayoga"
-slug         = "prayoga"
-topic        = "40 independent agentic systems with Google ADK 2.x, MCP, Agent Skills and A2A"
-plan_version = "v4.1.0"
-driver       = "python p.py"
+name         = "Prahari"     # how the project is named in generated documents
+slug         = "prahari"     # lowercase, no spaces; used in skill and folder names
+topic        = "Building agentic AI systems in Python, from the transformer up to a client-ready platform: models, agents, MCP, RAG, memory, multi-agent orchestration, trust, ops and plugins"            # one line: what this curriculum teaches
+plan_version = "v1.0.0"               # must match every hub's `plan_version` frontmatter
+driver       = "python granth.py"   # how generated documents tell the reader to run commands
 
 [paths]
-plan     = "docs/00_MASTER_PLAN.md"
-docs     = "docs"
-days     = "days"
-projects = "projects"
+plan = "docs/00_MASTER_PLAN.md"
+docs = "docs"
+days = "days"
 
 [contract]
-parts_dir = "parts"
+# Directory names inside a day folder.
+parts_dir   = "parts"
+sources_dir = "sources"
 
+# The ladder every part declares. A day climbs it; a day that is all `foundation` is a tutorial,
+# and a day that opens at `production` has skipped the reader.
 levels = ["foundation", "working", "production"]
 
+# Fenced blocks whose contents are output, a diagram or a config dump. They carry no logic, so
+# the contract does not demand a walkthrough after them - demanding one would only teach padding.
 no_walkthrough_langs = [
   "", "text", "console", "output", "traceback", "mermaid", "diff", "json", "toml", "yaml", "ini", "csv",
 ]
 
-exempt_headings = "when it breaks|check yourself|verified|verify|budget|ledger|the map|setup|files this day prints"
+# Headings under which a code block is evidence rather than teaching.
+exempt_headings = "when it breaks|check yourself|verify|budget|ledger|the map|setup"
 
+# Every day carries at least one part whose subject is a deliberate failure. The part declares
+# itself with `failure: true` in its frontmatter, because no script can recognise one by reading.
 require_failure_part = true
-require_sources      = true
 
-# The part contract is the plan's own SS5 - seven sections, of which `frontmatter` is not a
-# heading. The order is the pedagogy: claim, scene, real code, walkthrough, failure, production,
-# rep. Changing it is a plan amendment, not a preference.
-#
-# v4 note: `line by line` is the only conditional one, and it is now required after EVERY code
-# block at full depth. Recap depth was deleted with the Depth Rule (plan SS5.2, ADR-0006).
+# Every identifier a document cites must already have a dated row in docs/SOURCES.md. Set false
+# only for a curriculum with no citable primary sources at all - and think twice before you do.
+require_sources = true
+
+# The eleven part sections, in the order the contract requires them. The order is the pedagogy:
+# scene before definition, definition before mechanism, mechanism before failure, failure before
+# production. Changing it is a plan amendment, not a preference.
 part_sections = [
   "one-line answer",
-  "the idea",
+  "the story",
+  "the idea in plain language",
+  "why this project needs it",
+  "the source behind it",
   "the mechanism",
   "line by line",
+  "the source in one demo",
   "when it breaks",
   "in production",
   "check yourself",
 ]
 
-
-# The hub contract is the plan's own SS4.1 - ten sections, numbered `## SS1 ...` through
-# `## SS10 ...`. The checker matches them by number, so these titles are labels for its error
-# messages and for `python p.py depth --list`.
+# The eleven hub sections, numbered in the hub as `## §1 ...` through `## §11 ...`.
 hub_sections = [
-  "The scene",
+  "Where we are",
   "The map",
-  "Setup - run this",
-  "Files this day prints",
+  "Setup",
   "Build brief",
   "The check that must be able to fail",
-  "Request budget",
+  "Budget",
   "Traps",
-  "Verified today",
+  "Verify before you build",
+  "Say it out loud",
+  "Done when",
   "Ledger & commit",
 ]
 
-[contract.section_patterns]
-# `the idea` is this plan's merged story-plus-plain-language section; the checker ships no
-# pattern for a heading by that name, so the plan supplies one.
-"the idea" = "the idea"
+# Reword a heading here if the project's voice needs it; the slot itself stays. The value is a
+# regular expression matched against the heading text, case-insensitively.
+# [contract.section_patterns]
+# "why this project needs it" = "why .{0,40}needs? it"
 
 [toolchain]
-# This is the authoring repository. It ships one stdlib-only script and no package, so there is
-# nothing here to lint, format or unit-test - `check` runs the depth contract and the generated
-# documents, and that is the whole of it. Every *project* carries its own `./run check`, which is
-# where ruff and pytest live.
-lint         = ""
-format_check = ""
-test         = ""
+# Whatever this project runs to stay honest. Leave a value empty and `check` skips that step,
+# which is the right setting for a curriculum with no code in it.
+lint         = "uv run ruff check . && uv run mypy ."
+format_check = "uv run ruff format --check ."
+test         = "uv run pytest -q"
