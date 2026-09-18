@@ -8,3 +8,4 @@ it. Cross-day lookups live in `wiki/ENTITIES.md`.
 
 | Day | Subject | IDs closed | Parts | Sources |
 | --- | --- | --- | --- | --- |
+| [00](wiki/day-00.md) | The machine and the repository — uv, the Python pin, git, the secrets rule | — | 7 | — |

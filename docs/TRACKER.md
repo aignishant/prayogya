@@ -9,16 +9,16 @@ only when it also has a ledger row. A thin day is visible from the parts column.
 | | Count | Of plan |
 | --- | --- | --- |
 | Days in the plan | **137** | 100% |
-| Days written | **0** | 0.0% |
+| Days written | **1** | 0.7% |
 | Days complete | **0** | 0.0% |
-| Subtopic documents | **0** | — |
+| Subtopic documents | **7** | — |
 | Source documents | **0** | — |
 
 ## Every day
 
 | Day | Phase | Title | Status | Parts | Sources | IDs |
 | --- | --- | --- | --- | --- | --- | --- |
-| 0 | 0 | The machine and the repository — uv, the Python pin, git, the secrets r… | not started | 0 | 0 | — |
+| 0 | 0 | [The machine and the repository — uv, the Python pin, git, the secrets r…](../days/day-00-machine-and-repository/LESSON.md) | written | 7 | 0 | — |
 | 1 | 0 | The toolchain gate — ruff, mypy, pytest, and `check` green on an empty… | not started | 0 | 0 | — |
 | 2 | 1 | Text in, text out — what a language model actually does, and what it do… | not started | 0 | 0 | `FND-01` |
 | 3 | 1 | Tokens — why the model does not see words, and why that costs money | not started | 0 | 0 | `FND-02` |
@@ -160,7 +160,7 @@ only when it also has a ledger row. A thin day is visible from the parts column.
 
 | Phase | Days | Theme | Written | Complete | Gate |
 | --- | --- | --- | --- | --- | --- |
-| 0 | 0–1 | Setup | 0/2 | 0/2 | `python granth.py check` is green on an empty package,… |
+| 0 | 0–1 | Setup | 1/2 | 0/2 | `python granth.py check` is green on an empty package,… |
 | 1 | 2–8 | What a model is | 0/7 | 0/7 | you can say out loud, and draw, the difference between… |
 | 2 | 9–23 | Inside the model | 0/15 | 0/15 | your specialised model beats the base model on your tas… |
 | 3 | 24–35 | The loop by hand | 0/12 | 0/12 | the triage agent runs the hand-rolled tool loop on all… |
