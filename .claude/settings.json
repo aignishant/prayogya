@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python granth.py status)",
+      "Bash(python granth.py brief:*)",
+      "Bash(python granth.py depth:*)",
+      "Bash(python granth.py index:*)",
+      "Bash(python granth.py check)",
+      "Bash(python granth.py doctor)"
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+# Secrets never touch git. This file exists before the first secret does.
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+credentials.json
+secrets.*
+
+# The learner's own work. The teaching lives in parts/; lab/ is where you make mistakes.
+days/*/lab/
+
+# Generated locally, never committed
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+venv/
+node_modules/
+dist/
+build/
+*.egg-info/
+
+# Editors and operating systems
+.DS_Store
+Thumbs.db
+.idea/
+*.swp
